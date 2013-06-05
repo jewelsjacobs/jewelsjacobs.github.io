@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-05T17:53:22-05:00</updated>
+  <updated>2013-06-05T18:03:40-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -467,7 +467,7 @@ There&#8217;s a whole bunch of other cool console functions as well. Check them 
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[tAbsolutely awesome article on plugin development, testing, and CI with grunt]]></title>
+    <title type="html"><![CDATA[Absolutely awesome article on plugin development, testing, and CI with grunt]]></title>
     <link href="http://html5devgal.com//blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt/"/>
     <updated>2013-05-12T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt</id>
