@@ -9,6 +9,9 @@
 	-o-user-select: $select;
 	user-select: $select;
 }
+@mixin reset-shadow-box() {
+  @include shadow-box(0px, 0px, 0px);
+}
 @mixin border-shadow($top: $color-gray05, $bottom: $color-gray04){
 	border-top: 1px solid $top;
 	border-bottom: 1px solid $bottom;
