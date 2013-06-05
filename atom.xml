@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-05T16:53:14-05:00</updated>
+  <updated>2013-06-05T17:06:38-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -576,13 +576,16 @@ UPDATE: Actually I wound up changing this to use User-Agent sniffing based on a 
     <link href="http://html5devgal.com//blog/2013/05/01/career-tips-for-javascript-developers/"/>
     <updated>2013-05-01T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/01/career-tips-for-javascript-developers</id>
-    <content type="html"><![CDATA[<img class=" " alt="" src="http://s3.amazonaws.com/rapgenius/1291131680_two-thumbs-up.jpg" /> I am very much success in my jobs!
-
+    <content type="html"><![CDATA[  <span class='caption-wrapper'><img class='caption' src='http://s3.amazonaws.com/rapgenius/1291131680_two-thumbs-up.jpg' width='' height='' alt='I am very much success in my jobs!' title='I am very much success in my jobs!'><span class='caption-text'>I am very much success in my jobs!</span></span>
 Here&#8217;s some tips that will benefit ANY JavaScript developer on their path to success:
 
-Tip #1 : In a JavaScript interview don&#8217;t say &#8216;Vanilla JavaScript? What framework is that?&#8217;.
-Tip #2 : No motivation to learn that new tech? Go on lots of interviews for jobs you can&#8217;t do. Can&#8217;t forget those wrong answers!
-Tip #3 : Don&#8217;t do phone interviews while going to the bathroom. No matter how nervous you are. That goes for Skype too.
+  <ul>
+	<li>Tip #1 : In a JavaScript interview don&#8217;t say &#8216;Vanilla JavaScript? What framework is that?&#8217;.</li>
+<li>Tip #2 : No motivation to learn that new tech? Go on lots of interviews for jobs you can&#8217;t do.
+    Can&#8217;t forget those wrong answers! </li>
+<li>Tip #3 : Don&#8217;t do phone interviews while going to the bathroom. No matter how nervous you are.
+    That goes for Skype too.</li>
+    </ul>
 
 More to come - feel free to comment on your own!
 ]]></content>
@@ -593,11 +596,18 @@ More to come - feel free to comment on your own!
     <link href="http://html5devgal.com//blog/2013/04/25/three-js-object-and-camera-position-tracking-in-real-time/"/>
     <updated>2013-04-25T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/04/25/three-js-object-and-camera-position-tracking-in-real-time</id>
-    <content type="html"><![CDATA[<h3>In the &#8220;2D&#8221; world, you can inspect an element in a browser using the browser&#8217;s development tool (Firebug in Firefox, Chrome IE and Safari have their own) and view / tweak the css in realtime to move the element around.</h3>
+    <content type="html"><![CDATA[<h3>In the &#8220;2D&#8221; world, you can inspect an element in a browser using the browser&#8217;s development
+    tool (Firebug in Firefox, Chrome IE and Safari have their own) and view / tweak the css
+    in realtime to move the element around.</h3>
 <h3>In the CSS3D world this is *not* so easy.</h3>
-The <a title="three.js library" href="http://threejs.org/" target="_blank">three.js library</a> is great in that it allows you to create objects, cameras, lights, etc. and position / animate them (animating three.js objects can be achieved with <a title="tween.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/libs/tween.min.js" target="_blank">tween.js</a>) with x, y, and z coordinates.
+The <a title="three.js library" href="http://threejs.org/" target="_blank">three.js library</a>
+is great in that it allows you to create objects, cameras, lights, etc. and position / animate
+them (animating three.js objects can be achieved with <a title="tween.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/libs/tween.min.js" target="_blank">tween.js</a>)
+with x, y, and z coordinates.
+
 <h3>3D positioning</h3>
-Basically a 3D grid has an <strong>x plane</strong> (which is horizontal), a <strong>y plane</strong> (which is vertical) and a <strong>z plane</strong> (which is depth)
+Basically a 3D grid has an <strong>x plane</strong> (which is horizontal), a <strong>y plane</strong>
+(which is vertical) and a <strong>z plane</strong> (which is depth)
 
 An object with coordinates x=0, y=0 and z=0 is smack in the <strong>middle</strong> of this grid
 <ul>
@@ -605,9 +615,13 @@ An object with coordinates x=0, y=0 and z=0 is smack in the <strong>middle</stro
 	<li>A negative coordinate on the y plane will move an element down, positive will move it up</li>
 	<li>A negative coordinate on the z plane will move an element back, positive will move it forward</li>
 </ul>
-<img alt="3dGrid" src="http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png" width="603" height="503" /> 3D Grid
 
-three.js has a <a title="CSS3D renderer" href="https://raw.github.com/mrdoob/three.js/master/examples/js/renderers/CSS3DRenderer.js" target="_blank">CSS3D renderer</a> which, magically using some very heavy matrix equations, dynamically translates x, y and z coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:
+  <span class='caption-wrapper'><img class='caption' src='http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png' width='' height='' alt='3D Grid' title='3D Grid'><span class='caption-text'>3D Grid</span></span>
+
+three.js has a
+<a title="CSS3D renderer" href="https://raw.github.com/mrdoob/three.js/master/examples/js/renderers/CSS3DRenderer.js" target="_blank">CSS3D renderer</a>
+which, magically using some very heavy matrix equations, dynamically translates x, y and z
+coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -630,11 +644,14 @@ three.js has a <a title="CSS3D renderer" href="https://raw.github.com/mrdoob/thr
 
 <em>Yick.</em>
 
-For more somewhat understandable info on matrix3d, <a title="matrix3D" href="http://9elements.com/html5demos/matrix3d/" target="_blank">this</a> is probably the best documentation out there.
+For more somewhat understandable info on matrix3d,
+<a title="matrix3D" href="http://9elements.com/html5demos/matrix3d/" target="_blank">this</a>
+is probably the best documentation out there.
 
 So how are you supposed to figure out the position of a camera in real time after you&#8217;ve zoomed into your app?
 
-Say you want an event to fire off when the camera is close to a certain object? Or an event to fire off only if you click on objects located in a certain z-plane coordinate?
+Say you want an event to fire off when the camera is close to a certain object? Or an event to
+fire off only if you click on objects located in a certain z-plane coordinate?
 <h3>Tracking Objects</h3>
 Say you&#8217;ve got an object element with the following css:
 
@@ -655,7 +672,8 @@ Say you&#8217;ve got an object element with the following css:
 </span><span class='line'> -800, 800, 3500, 1
 </span><span class='line'> );</span></code></pre></td></tr></table></div></figure>
 
-<strong><em>All you really care about as far as tracking the x, y and z coordinates of the object&#8217;s element is the 13th, 14th and 15th values: -800, 800, 3500.</em></strong>
+<strong><em>All you really care about as far as tracking the x, y and z coordinates
+            of the object&#8217;s element is the 13th, 14th and 15th values: -800, 800, 3500.</em></strong>
 
 Here&#8217;s an image to illustrate this object element:
 <img class="{{ root_url" src="}}/images/att-html5-u-verse-poc.png">
@@ -758,7 +776,8 @@ So the way it works in the three.js library is:
 </ul>
 <strong>AN IMPORTANT NOTE ABOUT TRACKBALL / TOUCH CONTROLS AND THE CAMERA Z POSITION:</strong>
 To facilitate scroll wheel, trackball and touch zoom controls, a three.js utility
-library called <a title="TrackballControls.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js" target="_blank">
+library called
+<a title="TrackballControls.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js" target="_blank">
   Trackball Controls</a> can be used.
 Make sure all of your objects have <strong>POSITIVE</strong> z coordinate values.
 If they don&#8217;t the camera will never reach them as it can only zoom up to
