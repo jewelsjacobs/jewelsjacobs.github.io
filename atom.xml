@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-05T16:51:09-05:00</updated>
+  <updated>2013-06-05T16:53:14-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -481,7 +481,7 @@ If your new to testing, CI, plugin development or just want to see a good way to
     <updated>2013-05-09T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/09/vanilla-javascript-menu-from-json</id>
     <content type="html"><![CDATA[I was asked to create a side nav with submenus using just plain vanilla JavaScript.
-  <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/8aaq/embedded/result,js,html,css/light/"></iframe>
+  <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/8aaqW/embedded/result,js,html,css/light/"></iframe>
 ]]></content>
   </entry>
   
