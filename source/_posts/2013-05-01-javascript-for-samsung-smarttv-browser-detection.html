@@ -1,22 +1,13 @@
 ---
 layout: post
-title: JavaScript For Samsung SmartTV Browser Detection
-tags:
-- javaScript
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-  _wpas_done_3476921: '1'
-  publicize_reach: a:2:{s:7:"twitter";a:1:{i:3476925;i:104;}s:2:"wp";a:1:{i:0;i:0;}}
-  publicize_twitter_user: jewelsjacobs
-  _wpas_done_3476925: '1'
-  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:75352127;b:1;}}
-  _wpas_skip_3476925: '1'
-  _wpas_skip_3476921: '1'
+title: "JavaScript For Samsung SmartTV Browser Detection"
+comments: true
+categories: [javaScript]
 ---
+
 Here's the code to determine if the current browser is a SmartTV - requires <a title="Modernizr" href="http://modernizr.com/" target="_blank">Modernizr</a>:
+
+  <!-- more -->
 
 {% codeblock lang:javascript %}
 function isSmartTV() {
@@ -30,6 +21,6 @@ UPDATE: Actually I wound up changing this to use User-Agent sniffing based on a 
 
 {% codeblock lang:javascript %}
 function () {
-    return navigator.userAgent.search(/TV/i) &gt;= 0;
+    return navigator.userAgent.search(/TV/i) >= 0;
 }
 {% endcodeblock %}

@@ -1,25 +1,13 @@
 ---
 layout: post
-title: Trick to get three.js camera z plane value in browser development tools console
-tags:
-- 3D UI
-- CSS3D
-- javaScript
-- three.js
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-  _wpas_done_3476921: '1'
-  publicize_reach: a:2:{s:7:"twitter";a:1:{i:3476925;i:104;}s:2:"wp";a:1:{i:0;i:0;}}
-  publicize_twitter_user: jewelsjacobs
-  _wpas_done_3476925: '1'
-  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:75352127;b:1;}}
-  _wpas_skip_3476925: '1'
-  _wpas_skip_3476921: '1'
+title: "Trick to get three.js camera z plane value in browser development tools console"
+comments: true
+categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js]
 ---
 Here's a tip on how to get the z plane camera position in chrome's console.
+
+  <!-- more -->
+
 In this example my render DOM element container has an id of 'video_container'.
 Just replace it with yours. Also I'm using jquery so you will need to have that included in your app.
 
@@ -27,7 +15,7 @@ I attached this to a global variable (poc is the global namespace of my app) so 
 
 {% codeblock lang:javascript %}
 poc.DebugData = function () {
-     if ($("#video_container").length &gt; 0) {
+     if ($("#video_container").length > 0) {
          return {
              "window height" : window.innerHeight,
              "window width" : window.innerWidth,

@@ -1,28 +1,13 @@
 ---
 layout: post
-title: Create Dynamic Namespace Autoloader With Node.js, Express, and Walk
-tags:
-- express guide
-- global namespace
-- javaScript
-- language javascript
-- node.js
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-  publicize_reach: a:2:{s:7:"twitter";a:1:{i:3476925;i:101;}s:2:"wp";a:1:{i:0;i:1;}}
-  publicize_twitter_user: jewelsjacobs
-  _wpas_done_3476925: '1'
-  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:75352127;b:1;}}
-  _wpas_done_3476921: '1'
-  _wpas_skip_3476925: '1'
-  _wpas_skip_3476921: '1'
+title: "Create Dynamic Namespace Autoloader With Node.js, Express, and Walk"
+comments: true
+categories: [express, node.js, javaScript]
 ---
-UPDATE: This only makes global namespace objects based on directory structure.  Read my updated article on including file names as well.
+I was tired of manually creating namespace objects for my javascript files so I decided to dynamically generate a namespace.js file
+based on the directory structure of my app.
 
-I was tired of manually creating namespace objects for my javascript files so I decided to dynamically generate a namespace.js file based on the directory structure of my app.
+  <!-- more -->
 
 Here's how:
 <h2>Requirements</h2>
@@ -161,7 +146,6 @@ I got a twitter response from a one of the great JavaScript masters
   lobrow library</a> could be used to do this only using browser modules.
 I wasn't able to do it and wound up with this solution but he gives some tips:
 
-<blockquote class="twitter-tweet"><p>@<a href="https://twitter.com/jewelsjacobs">jewelsjacobs</a> Have you tried browserify? <a href="http://t.co/nQSytJGunc" title="http://browserify.org/">browserify.org</a>Best you can do with files in browsers: <a href="http://t.co/gm7Z7kwB0J" title="http://www.html5rocks.com/en/tutorials/file/filesystem/">html5rocks.com/en/tutorials/f…</a></p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/status/335016533325647872">May 16, 2013</a></blockquote>
-
+  {% tweet https://twitter.com/rauschma/status/335016533325647872 align='right' width='350' %}
 
 I hope someone finds this helpful!
