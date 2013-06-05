@@ -1,0 +1,77 @@
+---
+layout: post
+title: My Two New jQuery Plugins and One New Node Module
+tags:
+- About Me
+- HTML5
+- javaScript
+- node.js
+status: publish
+type: post
+published: true
+meta:
+  publicize_reach: a:2:{s:7:"twitter";a:1:{i:3476925;i:101;}s:2:"wp";a:1:{i:0;i:1;}}
+  _publicize_pending: '1'
+  _wpas_done_3476921: '1'
+  publicize_twitter_user: jewelsjacobs
+  _wpas_done_3476925: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:75352127;b:1;}}
+  switch_like_status: '1'
+  _wpas_mess: My Two New jQuery Plugins and One New Node Module http://wp.me/p3moSn-1d
+  _wpas_skip_3476925: '1'
+  _wpas_skip_3476921: '1'
+  _oembed_1b6f3653644565697c154bb1e1bb9b2c: ! '{{unknown}}'
+  _oembed_6710350664c02e8576839d8fb7a06b11: ! '{{unknown}}'
+  _oembed_c9290163b5f2b7ac6d5bd3caf9b3880c: ! '{{unknown}}'
+---
+On my quest to plugify and properly modulerize my code I created two new jQuery plugins and one new node nodule.
+<h1>jQuery plugins</h1>
+<a title="jQuery Prettify" href="https://github.com/jewelsjacobs/jquery.prettify" target="_blank">jQuery Prettify</a>
+jQuery plugin to print an associative array / object in the browser
+
+UPDATE: The a jQuery UI function <a href="http://api.jqueryui.com/position/" target="_blank">position()</a> centers fine so don't even bother with the following plugin.
+
+My Simple Center Plugin
+<a title="jQuery Simple Center Plugin" href="https://github.com/jewelsjacobs/jquery.simpleCenter" target="_blank">jQuery SimpleCenter</a>
+Simple jQuery plugin to vertically and horizontally center an element within another element.
+<h1>Node.js modules</h1>
+<a title="titlecaps Node.js Module" href="https://npmjs.org/package/titlecaps" target="_blank">titlecaps</a>
+Node module to capitalize first letter in each word
+
+Please bear in mind that they have not been node unit or qunit tested yet, just jhinted as I'm on a tight schedule at work.  I'll make it happen very soon!
+
+UPDATE:  I was 'schooled' by the more experienced dev <a href="http://uk.linkedin.com/in/nelsonic/" title="Nelson Kenneth Correia" target="_blank">Nelson Kenneth Correia</a> who mentioned these plugins / mod were overkill.  I thought it prudent to mention his response:
+
+<blockquote>@Juila, just had a look at your SimpleCenter Plugin. 
+
+Firstly I want to applaud your effort to create a JQuery plugin, 
+and then advise everyone *new* to javascript to *not* do this! 
+Positioning elements on the page/canvas is done with CSS. 
+
+Here is your JS fiddle without *any* JavaScript: http://jsfiddle.net/jewelsjacobs/Nuyc9/ 
+
+Centering an element in a div is *easy* in CSS and should be done in a stylesheet unless there's a very good reason to do it *dynamically* in JS. 
+
+Secondly I don't see how your Prettify is better than the original: https://code.google.com/p/google-code-prettify/wiki/GettingStarted 
+
+And finally Capitalizing the first letter of each word in a string has been done many times and does not require an entire Node Module... 
+
+It can be done with a *single* line of JavaScript: 
+http://jsfiddle.net/jewelsjacobs/Nuyc9/ 
+
+Once again, I congratulate your efforts! 
+Especially the fact that you've written tests and used Travis.com to confirm the build status of your module! :-) 
+
+But please pick which Modules and Plugins you share here more carefully. 
+As developers we need to set a good example to others. 
+Writing an entire *module* just to capitalize first letters in a string is like using a bomb to build a sand castle! ... #overkill! 
+
+And building JQuery plugins when simple CSS will achieve your goal is a good *thought* exercise, but should *never* be used in the real world because its a code maintenance nightmare! 
+
+The last thing I want is my junior developers copy-pasting this kind of code! 
+
+I look forward to reading your *next* efforts. :-)</blockquote>
+
+His Caps code worked perfectly but his CSS code has to be changed depending on the sizes of the elements which is not exactly what I wanted to do.  The Prettify code he references doesn't really do what I want either.
+
+I made the plugin because I wanted a way to spit out all of the necessary code dynamically without including it in the html file. Basically , just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag. You still have to attach the text to the pre tag or generate the pre tag.
