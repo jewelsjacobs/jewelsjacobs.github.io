@@ -81,32 +81,53 @@
 	
 	<div id="content" class="inner"><article class="post">
 	<h2 class="title">Trick to Get three.js Camera Z Plane Value in Browser Development Tools Console</h2>
-	<div class="entry-content">Here&#8217;s a tip on how to get the z plane camera position in chrome&#8217;s console. In this example my render DOM element container has an id of &#8216;video_container&#8217;. Just replace it with yours. Also I&#8217;m using jquery so you will need to have that included in your app.
+	<div class="entry-content">Here&#8217;s a tip on how to get the z plane camera position in chrome&#8217;s console.
+In this example my render DOM element container has an id of &#8216;video_container&#8217;.
+Just replace it with yours. Also I&#8217;m using jquery so you will need to have that included in your app.
 
 I attached this to a global variable (poc is the global namespace of my app) so I can just enter &#8220;poc.DebugData()&#8221; in the console.
 
-[code language=&#8221;javascript&#8221;]
-poc.DebugData = function () {
-     if ($(&quot;#video_container&quot;).length &gt; 0) {
-         return {
-             &quot;window height&quot; : window.innerHeight,
-             &quot;window width&quot; : window.innerWidth,
-             &quot;camera z pos&quot; : Math.abs(
-                 parseInt(
-                     $(&quot;#video_container&quot;)
-                         .children(&quot;div&quot;)
-                         .eq(0)
-                         .children()[0]
-                         .attributes.style.nodeValue
-                         .split(&#8216;: &#8216;)[4]
-                         .split(&#8216;) &#8216;)[1]
-                         .split(&#8216;, &#8216;)[14]
-                 )
-             )
-         };
-     }
- };
-[/code]
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">DebugData</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>     <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>         <span class="k">return</span> <span class="p">{</span>
+</span><span class='line'>             <span class="s2">&quot;window height&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
+</span><span class='line'>             <span class="s2">&quot;window width&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
+</span><span class='line'>             <span class="s2">&quot;camera z pos&quot;</span> <span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span>
+</span><span class='line'>                 <span class="nb">parseInt</span><span class="p">(</span>
+</span><span class='line'>                     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">)</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">children</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">nodeValue</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;: &#39;</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;) &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">14</span><span class="p">]</span>
+</span><span class='line'>                 <span class="p">)</span>
+</span><span class='line'>             <span class="p">)</span>
+</span><span class='line'>         <span class="p">};</span>
+</span><span class='line'>     <span class="p">}</span>
+</span><span class='line'> <span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
 
 There&#8217;s probably a cleaner way to do this but this is what I&#8217;ve got!
 </div>
