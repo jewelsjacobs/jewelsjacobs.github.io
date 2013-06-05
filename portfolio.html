@@ -7,7 +7,7 @@
 	<meta name="author" content="Julia Jacobs">
 
 	
-	<meta name="description" content=">Disney HTML5, CSS3D, PHP, ZendFramework Portal.   Worked on area which converts paper tickets to electronic tickets on an armband.   Can&#8217;t &hellip;">
+	<meta name="description" content="Disney HTML5, CSS3D, PHP, ZendFramework Portal.   Worked on area which converts paper tickets to electronic tickets on an armband.   Can&#8217;t &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -87,7 +87,7 @@
   <img src="/images/mydisneyexperience.png" alt=""/>
 </a>
 <div id="title-1" class="hidden">
-	<b>>Disney</b>  <br />
+	<b>Disney</b>  <br />
 	HTML5, CSS3D, PHP, ZendFramework Portal.  
   Worked on area which converts paper tickets to electronic tickets on an armband.  
   Can&#8217;t show that part of the site because it can only be accessed by an account
@@ -188,7 +188,41 @@
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
-	$('.fancybox').fancybox();
+	$(".fancybox")
+    .eq(0).trigger('click')
+		.attr('rel', 'gallery')
+		.fancybox({
+		helpers : {
+			title: {
+				type: 'outside'
+			}
+		},
+		beforeLoad: function() {
+			var el, id = $(this.element).data('title-id');
+
+			if (id) {
+				el = $('#' + id);
+
+				if (el.length) {
+					this.title = el.html();
+				}
+			}
+		},
+		padding    : 0,
+		margin     : 5,
+		nextEffect : 'fade',
+		prevEffect : 'none',
+		autoCenter : false,
+		afterLoad  : function () {
+      $.extend(this, {
+        aspectRatio : false,
+        type    : 'html',
+        width   : '100%',
+        height  : '100%',
+        content : '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: cover; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /></div>'
+      });
+    }
+                });
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
 
