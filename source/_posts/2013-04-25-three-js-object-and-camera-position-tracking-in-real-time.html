@@ -32,11 +32,11 @@ An object with coordinates x=0, y=0 and z=0 is smack in the <strong>middle</stro
 	<li>A negative coordinate on the y plane will move an element down, positive will move it up</li>
 	<li>A negative coordinate on the z plane will move an element back, positive will move it forward</li>
 </ul>
-[caption id="" align="alignnone" width="603"]<img alt="3dGrid" src="http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png" width="603" height="503" /> 3D Grid[/caption]
+<img alt="3dGrid" src="http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png" width="603" height="503" /> 3D Grid
 
 three.js has a <a title="CSS3D renderer" href="https://raw.github.com/mrdoob/three.js/master/examples/js/renderers/CSS3DRenderer.js" target="_blank">CSS3D renderer</a> which, magically using some very heavy matrix equations, dynamically translates x, y and z coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:
 
-[code language="text" gutter="false"]
+{% codeblock %}
 -webkit-transform:
    translate3d(0px, 0px, 473.7224230277783px)
    matrix3d(
@@ -46,7 +46,7 @@ three.js has a <a title="CSS3D renderer" href="https://raw.github.com/mrdoob/thr
       0.000002216018401668407, 0, -4987.5380859375, 1
    )
    translate3d(747.5px, 363.5px, 0px);
-[/code]
+{% endcodeblock %}
 
 <em>Yick.</em>
 
@@ -58,7 +58,7 @@ Say you want an event to fire off when the camera is close to a certain object? 
 <h3>Tracking Objects</h3>
 Say you've got an object element with the following css:
 
-[code language="text" gutter="false" highlight="7"]
+{% codeblock %}
 -webkit-transform:
  translate3d(-50%, -50%, 0px)
  matrix3d(
@@ -67,22 +67,31 @@ Say you've got an object element with the following css:
  0, 0, 1, 0,
  -800, 800, 3500, 1
  );
-[/code]
+{% endcodeblock %}
 
 <strong><em>All you really care about as far as tracking the x, y and z coordinates of the object's element is the 13th, 14th and 15th values: -800, 800, 3500.</em></strong>
 
 Here's an image to illustrate this object element:
-
-[caption id="attachment_7" align="alignnone" width="700"]<a href="http://html5devgal.files.wordpress.com/2013/04/att-html5-u-verse-poc.png"><img class="size-large wp-image-7" alt="videoGrid" src="http://html5devgal.files.wordpress.com/2013/04/att-html5-u-verse-poc.png?w=700" width="700" height="428" /></a> Video Grid[/caption]
+{% img {{ root_url }}/images/att-html5-u-verse-poc.png %}
 
 So by viewing these coordinates we know where the object is!
 
 This comes in <strong>VERY </strong>handy when tracking the camera position during navigation.
 
 <strong>UPDATE</strong>
-I just was honored with a tweet from the great Ricardo Cabello Miguel aka <a title="mr.doob" href="http://www.mrdoob.com/" target="_blank">mr.doob</a>, creator of three.js, about a better way to get the cameras position in relationship to an object:
+I just was honored with a tweet from the great Ricardo Cabello Miguel aka
+<a title="mr.doob" href="http://www.mrdoob.com/" target="_blank">mr.doob</a>,
+creator of three.js, about a better way to get the cameras position in relationship to an object:
+
 {% tweet https://twitter.com/mrdoob/status/327555248531050497 align='right' width='350' %}
-Unfortunately, I can't really use this for realtime results during navigation because my camera and object position code is in global variables in a different files order to make things more modular. Setting breakpoints in the browser or entering it in the console isn't quote working for me. To just get the camera z-plane value in the browser console check out <a title="Trick to get three.js camera z plane value in browser development tools console" href="http://html5devgal.wordpress.com/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console/" target="_blank">this</a> tip:
+
+Unfortunately, I can't really use this for realtime results during navigation
+because my camera and object position code is in global variables in a different
+files order to make things more modular. Setting breakpoints in the browser or
+entering it in the console isn't quote working for me. To just get the camera z-plane
+value in the browser console check out
+  [this post](/blog/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console/)
+
 <h3>Tracking The Camera</h3>
 The camera position can be found in the second child of whatever element is defined as the 'container' of the scene.
 
@@ -90,7 +99,7 @@ In this example this element has an id of 'video_container'.
 
 Here's the JavaScript code to illustrate adding a scene to an element container:
 
-[code language="javascript" highlight="14"]
+{% codeblock lang:javascript %}
 var camera, scene, renderer, controls;
 
 camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 5000);
@@ -105,15 +114,15 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.domElement.style.position = 'absolute';
 
 document.getElementById('video_container').appendChild(renderer.domElement);
-[/code]
+{% endcodeblock %}
 
 Here's the element in the markup, shown in Chrome's Developer Tools:
 
-[caption id="attachment_8" align="alignnone" width="700"]<a href="http://html5devgal.files.wordpress.com/2013/04/cameraobject.png"><img class="size-large wp-image-8" alt="cameraobject" src="http://html5devgal.files.wordpress.com/2013/04/cameraobject.png?w=700" width="700" height="554" /></a> Camera Object Element[/caption]
+{% img {{ root_url }}/images/cameraobject.png %}
 
 Here's the CSS matrix3D values:
 
-[code language="text" gutter="false" highlight="8"]
+{% codeblock %}
 -webkit-transform:
    translate3d(0px, 0px, 445.70307751169236px)
    matrix3d(
@@ -124,18 +133,25 @@ Here's the CSS matrix3D values:
       0, 0, -5000.0625, 1
    )
    translate3d(747.5px, 342px, 0px);
-[/code]
+{% endcodeblock %}
 
-As you can see the camera coordinates in the JavaScript code shows z = 5000, but in the css z = -5000.0625, a <strong>NEGATIVE</strong> value.
+As you can see the camera coordinates in the JavaScript code shows z = 5000,
+but in the css z = -5000.0625, a <strong>NEGATIVE</strong> value.
 
 What gives?
 
-Because the camera is 'facing' <em><strong>toward</strong></em> the grid and the objects in the grid, the negative and positive values of the x, y, and z coordinates are OPPOSITE of the actual grid and objects. So the way it works in the three.js library is:
+Because the camera is 'facing' <em><strong>toward</strong></em> the grid and the objects in the grid,
+the negative and positive values of the x, y, and z coordinates are OPPOSITE of the actual grid and objects.
+So the way it works in the three.js library is:
 <ul>
 	<li>+x moves the camera to the LEFT of the grid whereas -z moves the camera to the RIGHT</li>
 	<li>+y moves the camera DOWN in the grid whereas -z moves the camera UP</li>
 	<li>+z moves the camera AWAY from the grid whereas -z moves the camera CLOSER</li>
 </ul>
 <strong>AN IMPORTANT NOTE ABOUT TRACKBALL / TOUCH CONTROLS AND THE CAMERA Z POSITION:</strong>
-To facilitate scroll wheel, trackball and touch zoom controls, a three.js utility library called <a title="TrackballControls.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js" target="_blank">Trackball Controls</a> can be used.
-Make sure all of your objects have <strong>POSITIVE</strong> z coordinate values. If they don't the camera will never reach them as it can only zoom up to z coordinate = 0. Once the camera has z = 0 you will keep pinching / scrolling forever and go no where.
+To facilitate scroll wheel, trackball and touch zoom controls, a three.js utility
+library called <a title="TrackballControls.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js" target="_blank">
+  Trackball Controls</a> can be used.
+Make sure all of your objects have <strong>POSITIVE</strong> z coordinate values.
+If they don't the camera will never reach them as it can only zoom up to
+z coordinate = 0. Once the camera has z = 0 you will keep pinching / scrolling forever and go no where.

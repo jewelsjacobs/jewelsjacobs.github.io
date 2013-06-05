@@ -19,20 +19,22 @@ meta:
   _wpas_skip_3476925: '1'
   _wpas_skip_3476921: '1'
 ---
-Here's a tip on how to get the z plane camera position in chrome's console. In this example my render DOM element container has an id of 'video_container'. Just replace it with yours. Also I'm using jquery so you will need to have that included in your app.
+Here's a tip on how to get the z plane camera position in chrome's console.
+In this example my render DOM element container has an id of 'video_container'.
+Just replace it with yours. Also I'm using jquery so you will need to have that included in your app.
 
 I attached this to a global variable (poc is the global namespace of my app) so I can just enter "poc.DebugData()" in the console.
 
-[code language="javascript"]
+{% codeblock lang:javascript %}
 poc.DebugData = function () {
-     if ($(&quot;#video_container&quot;).length &gt; 0) {
+     if ($("#video_container").length &gt; 0) {
          return {
-             &quot;window height&quot; : window.innerHeight,
-             &quot;window width&quot; : window.innerWidth,
-             &quot;camera z pos&quot; : Math.abs(
+             "window height" : window.innerHeight,
+             "window width" : window.innerWidth,
+             "camera z pos" : Math.abs(
                  parseInt(
-                     $(&quot;#video_container&quot;)
-                         .children(&quot;div&quot;)
+                     $("#video_container")
+                         .children("div")
                          .eq(0)
                          .children()[0]
                          .attributes.style.nodeValue
@@ -44,6 +46,6 @@ poc.DebugData = function () {
          };
      }
  };
-[/code]
+{% endcodeblock %}
 
 There's probably a cleaner way to do this but this is what I've got!
