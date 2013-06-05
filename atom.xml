@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[HTML5 Dev Gal]]></title>
-  <link href="http://jewelsjacobs.github.io/atom.xml" rel="self"/>
-  <link href="http://jewelsjacobs.github.io/"/>
-  <updated>2013-06-05T14:38:56-05:00</updated>
-  <id>http://jewelsjacobs.github.io/</id>
+  <link href="http://html5devgal.com//atom.xml" rel="self"/>
+  <link href="http://html5devgal.com//"/>
+  <updated>2013-06-05T14:43:40-05:00</updated>
+  <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Vertically and Horizontally Center With Twitter Bootstrap (Responsive)]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive/"/>
+    <link href="http://html5devgal.com//blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive/"/>
     <updated>2013-05-29T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive</id>
+    <id>http://html5devgal.com//blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive</id>
     <content type="html"><![CDATA[I wanted a cross browser / cross device way to vertically and horizontally center my responsive bootstrap elements.
 
 I found a great way to do it.  Just add this to your site stylesheet to override / extend bootstrap.
@@ -28,14 +28,14 @@ I found a great way to do it.  Just add this to your site stylesheet to override
   
   <entry>
     <title type="html"><![CDATA[Dynamic Namespace Objects Based On Directory Structure and File Names]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names/"/>
+    <link href="http://html5devgal.com//blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names/"/>
     <updated>2013-05-24T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names</id>
+    <id>http://html5devgal.com//blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names</id>
     <content type="html"><![CDATA[In a <a href="http://html5devgal.wordpress.com/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/" title="Create Dynamic Namespace Autoloader With Node.js, Express, and Walk" target="_blank">previous article</a> I showed how to create a dynamic namespace autoloader with node.js, express, and walk.  Please check out this article for information on how to set this up, what node modules to install and where to put this code.
 
 In the http.createServer() function, add this code (or something like it):
 
-<figure class='code'><figcaption><span> (dynamicNamespaceObjectsFilenames.js)</span> <a href='http://jewelsjacobs.github.io/downloads/code/dynamicNamespaceObjectsFilenames.js'>download</a></figcaption>
+<figure class='code'><figcaption><span> (dynamicNamespaceObjectsFilenames.js)</span> <a href='http://html5devgal.com//downloads/code/dynamicNamespaceObjectsFilenames.js'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -181,9 +181,9 @@ Please note this is kind of a mess of arrays so I&#8217;d be very grateful for a
   
   <entry>
     <title type="html"><![CDATA[My Two New jQuery Plugins and One New Node Module]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module/"/>
+    <link href="http://html5devgal.com//blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module/"/>
     <updated>2013-05-16T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module</id>
+    <id>http://html5devgal.com//blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module</id>
     <content type="html"><![CDATA[On my quest to plugify and properly modulerize my code I created two new jQuery plugins and one new node nodule.
 <h1>jQuery plugins</h1>
 <a title="jQuery Prettify" href="https://github.com/jewelsjacobs/jquery.prettify" target="_blank">jQuery Prettify</a>
@@ -240,9 +240,9 @@ I made the plugin because I wanted a way to spit out all of the necessary code d
   
   <entry>
     <title type="html"><![CDATA[Create Dynamic Namespace Autoloader With Node.js, Express, and Walk]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/"/>
+    <link href="http://html5devgal.com//blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/"/>
     <updated>2013-05-16T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps</id>
+    <id>http://html5devgal.com//blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps</id>
     <content type="html"><![CDATA[UPDATE: This only makes global namespace objects based on directory structure.  Read my updated article on including file names as well.
 
 I was tired of manually creating namespace objects for my javascript files so I decided to dynamically generate a namespace.js file based on the directory structure of my app.
@@ -388,9 +388,9 @@ I hope someone finds this helpful!
   
   <entry>
     <title type="html"><![CDATA[Cool Firefox and Chrome Console Functions]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/15/cool-firefox-and-chrome-console-functions/"/>
+    <link href="http://html5devgal.com//blog/2013/05/15/cool-firefox-and-chrome-console-functions/"/>
     <updated>2013-05-15T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/15/cool-firefox-and-chrome-console-functions</id>
+    <id>http://html5devgal.com//blog/2013/05/15/cool-firefox-and-chrome-console-functions</id>
     <content type="html"><![CDATA[When working with JavaScript, CSS and / or HTML we devs love browser development tools. Its a little known fact, however that the console in these tools have thier own handy functions.
 
 For example, if you want to copy an array or an object in the console, you can type
@@ -411,9 +411,9 @@ There&#8217;s a whole bunch of other cool console functions as well. Check them 
   
   <entry>
     <title type="html"><![CDATA[Ditching WordPress For Github Pages With Octopress]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/13/ditching-wordpress-for-github-pages-with-octopress/"/>
+    <link href="http://html5devgal.com//blog/2013/05/13/ditching-wordpress-for-github-pages-with-octopress/"/>
     <updated>2013-05-13T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/13/ditching-wordpress-for-github-pages-with-octopress</id>
+    <id>http://html5devgal.com//blog/2013/05/13/ditching-wordpress-for-github-pages-with-octopress</id>
     <content type="html"><![CDATA[After not being able to do things like embed jsfiddle code in this blog, I decided to ditch WordPress and go with <a title="Deploying Octopress to Github Pages" href="http://octopress.org/docs/deploying/github/" target="_blank">Github Pages + Octopress</a>.
 
 If you want some details about the advantages of switching, <a title="Switching to Octopress" href="http://aijazansari.com/2011/12/12/switching-to-octopress/" target="_blank">this blog article</a> explains in nicely.
@@ -426,9 +426,9 @@ It&#8217;s very empty now as I have to focus on my day job and not all of the sh
   
   <entry>
     <title type="html"><![CDATA[Absolutely awesome article on plugin development, testing, and CI with grunt]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt/"/>
+    <link href="http://html5devgal.com//blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt/"/>
     <updated>2013-05-12T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt</id>
+    <id>http://html5devgal.com//blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt</id>
     <content type="html"><![CDATA[I had one of those &#8216;Boy this would make an awesome jquery plugin&#8217; moments so I decided to roll my own. 
 
 I also decided I needed to do it right so I could contribute it to the open source community without shame. 
@@ -447,9 +447,9 @@ If your new to testing, CI, plugin development or just want to see a good way to
   
   <entry>
     <title type="html"><![CDATA[Vanilla JavaScript Menu from JSON]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/09/vanilla-javascript-menu-from-json/"/>
+    <link href="http://html5devgal.com//blog/2013/05/09/vanilla-javascript-menu-from-json/"/>
     <updated>2013-05-09T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/09/vanilla-javascript-menu-from-json</id>
+    <id>http://html5devgal.com//blog/2013/05/09/vanilla-javascript-menu-from-json</id>
     <content type="html"><![CDATA[<em>Ooops, wordpress.com hosted blogs do not allow iframe embeds :(
 Sorry to anyone who tried to see this earlier &#8230;</em>
 
@@ -462,9 +462,9 @@ Update - fixed a bug on this that would cause the menu to intermittently disappe
   
   <entry>
     <title type="html"><![CDATA[Trick to get three.js camera z plane value in browser development tools console]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console/"/>
+    <link href="http://html5devgal.com//blog/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console/"/>
     <updated>2013-05-01T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console</id>
+    <id>http://html5devgal.com//blog/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console</id>
     <content type="html"><![CDATA[Here&#8217;s a tip on how to get the z plane camera position in chrome&#8217;s console. In this example my render DOM element container has an id of &#8216;video_container&#8217;. Just replace it with yours. Also I&#8217;m using jquery so you will need to have that included in your app.
 
 I attached this to a global variable (poc is the global namespace of my app) so I can just enter &#8220;poc.DebugData()&#8221; in the console.
@@ -498,9 +498,9 @@ There&#8217;s probably a cleaner way to do this but this is what I&#8217;ve got!
   
   <entry>
     <title type="html"><![CDATA[JavaScript For Samsung SmartTV Browser Detection]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/01/javascript-for-samsung-smarttv-browser-detection/"/>
+    <link href="http://html5devgal.com//blog/2013/05/01/javascript-for-samsung-smarttv-browser-detection/"/>
     <updated>2013-05-01T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/01/javascript-for-samsung-smarttv-browser-detection</id>
+    <id>http://html5devgal.com//blog/2013/05/01/javascript-for-samsung-smarttv-browser-detection</id>
     <content type="html"><![CDATA[Here&#8217;s the code to determine if the current browser is a SmartTV - requires <a title="Modernizr" href="http://modernizr.com/" target="_blank">Modernizr</a>:
 
 [code language=&#8221;javascript&#8221;]
@@ -523,9 +523,9 @@ function () {
   
   <entry>
     <title type="html"><![CDATA[Career Tips for JavaScript Developers]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/05/01/career-tips-for-javascript-developers/"/>
+    <link href="http://html5devgal.com//blog/2013/05/01/career-tips-for-javascript-developers/"/>
     <updated>2013-05-01T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/05/01/career-tips-for-javascript-developers</id>
+    <id>http://html5devgal.com//blog/2013/05/01/career-tips-for-javascript-developers</id>
     <content type="html"><![CDATA[[caption id=&#8221;&#8221; align=&#8221;alignleft&#8221; width=&#8221;149&#8221;]<img class=" " alt="" src="http://s3.amazonaws.com/rapgenius/1291131680_two-thumbs-up.jpg" width="149" height="192" /> I am very much success in my jobs![/caption]
 
 Here&#8217;s some tips that will benefit ANY JavaScript developer on their path to success:
@@ -540,9 +540,9 @@ More to come - feel free to comment on your own!
   
   <entry>
     <title type="html"><![CDATA[three.js object and camera position tracking in real time]]></title>
-    <link href="http://jewelsjacobs.github.io/blog/2013/04/25/three-js-object-and-camera-position-tracking-in-real-time/"/>
+    <link href="http://html5devgal.com//blog/2013/04/25/three-js-object-and-camera-position-tracking-in-real-time/"/>
     <updated>2013-04-25T00:00:00-05:00</updated>
-    <id>http://jewelsjacobs.github.io/blog/2013/04/25/three-js-object-and-camera-position-tracking-in-real-time</id>
+    <id>http://html5devgal.com//blog/2013/04/25/three-js-object-and-camera-position-tracking-in-real-time</id>
     <content type="html"><![CDATA[<h3>In the &#8220;2D&#8221; world, you can inspect an element in a browser using the browser&#8217;s development tool (Firebug in Firefox, Chrome IE and Safari have their own) and view / tweak the css in realtime to move the element around.</h3>
 <h3>In the CSS3D world this is *not* so easy.</h3>
 The <a title="three.js library" href="http://threejs.org/" target="_blank">three.js library</a> is great in that it allows you to create objects, cameras, lights, etc. and position / animate them (animating three.js objects can be achieved with <a title="tween.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/libs/tween.min.js" target="_blank">tween.js</a>) with x, y, and z coordinates.
@@ -605,7 +605,7 @@ This comes in <strong>VERY </strong>handy when tracking the camera position duri
 <strong>UPDATE</strong>
 I just was honored with a tweet from the great Ricardo Cabello Miguel aka <a title="mr.doob" href="http://www.mrdoob.com/" target="_blank">mr.doob</a>, creator of three.js, about a better way to get the cameras position in relationship to an object:
 <div class='embed tweet'><blockquote class="twitter-tweet" align="right" width="350"><p><a href="https://twitter.com/jewelsjacobs">@jewelsjacobs</a> I think you are making things harder than they are&#8230; why not just camera.position.distanceTo( object.position )?</p>&mdash; Mr.doob (@mrdoob) <a href="https://twitter.com/mrdoob/statuses/327555248531050497">April 25, 2013</a></blockquote>
-<script async src="http://jewelsjacobs.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<script async src="http://html5devgal.com///platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 Unfortunately, I can&#8217;t really use this for realtime results during navigation because my camera and object position code is in global variables in a different files order to make things more modular. Setting breakpoints in the browser or entering it in the console isn&#8217;t quote working for me. To just get the camera z-plane value in the browser console check out <a title="Trick to get three.js camera z plane value in browser development tools console" href="http://html5devgal.wordpress.com/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console/" target="_blank">this</a> tip:
 <h3>Tracking The Camera</h3>
 The camera position can be found in the second child of whatever element is defined as the &#8216;container&#8217; of the scene.

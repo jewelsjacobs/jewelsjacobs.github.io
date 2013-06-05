@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://jewelsjacobs.github.io/sitemap.xml 
+Sitemap: http://html5devgal.com//sitemap.xml 
