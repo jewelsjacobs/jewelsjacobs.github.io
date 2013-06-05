@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: responsive design | HTML5 Dev Gal]]></title>
+  <link href="http://html5devgal.com//blog/categories/responsive-design/atom.xml" rel="self"/>
+  <link href="http://html5devgal.com//"/>
+  <updated>2013-06-05T17:53:22-05:00</updated>
+  <id>http://html5devgal.com//</id>
+  <author>
+    <name><![CDATA[Julia Jacobs]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vertically and Horizontally Center With Twitter Bootstrap (Responsive)]]></title>
+    <link href="http://html5devgal.com//blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive/"/>
+    <updated>2013-05-29T00:00:00-05:00</updated>
+    <id>http://html5devgal.com//blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive</id>
+    <content type="html"><![CDATA[<p>I wanted a cross browser / cross device way to vertically and horizontally center my responsive bootstrap elements.</p>
+
+<p>I found a great way to do it.</p>
+
+<!-- more -->
+
+
+<p>Just add this to your site stylesheet to override / extend bootstrap.</p>
+
+<p><iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/kSgE6/embedded/css,html/light/"></iframe></p>
+]]></content>
+  </entry>
+  
+</feed>

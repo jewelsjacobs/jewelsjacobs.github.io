@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-05T17:06:38-05:00</updated>
+  <updated>2013-06-05T17:53:22-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -20,7 +20,11 @@
     <id>http://html5devgal.com//blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive</id>
     <content type="html"><![CDATA[I wanted a cross browser / cross device way to vertically and horizontally center my responsive bootstrap elements.
 
-I found a great way to do it.  Just add this to your site stylesheet to override / extend bootstrap.
+I found a great way to do it.
+
+<!-- more -->
+
+Just add this to your site stylesheet to override / extend bootstrap.
 
 <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/kSgE6/embedded/css,html/light/"></iframe>
 ]]></content>
@@ -31,11 +35,12 @@ I found a great way to do it.  Just add this to your site stylesheet to override
     <link href="http://html5devgal.com//blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names/"/>
     <updated>2013-05-24T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names</id>
-    <content type="html"><![CDATA[In a [previous
-post](/blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/)
+    <content type="html"><![CDATA[In a [previous post](/blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/)
 
-I showed how to create a dynamic namespace autoloader with node.js, express, and walk.  P
-lease check out this article for information on how to set this up, what node modules to install and where to put this code.
+I showed how to create a dynamic namespace autoloader with node.js, express, and walk.
+
+<!-- more -->
+Please check out this article for information on how to set this up, what node modules to install and where to put this code.
 
 In the http.createServer() function, add this code (or something like it):
 
@@ -189,6 +194,9 @@ Please note this is kind of a mess of arrays so I&#8217;d be very grateful for a
     <updated>2013-05-16T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module</id>
     <content type="html"><![CDATA[On my quest to plugify and properly modulerize my code I created two new jQuery plugins and one new node nodule.
+
+  <!-- more -->
+
 <h1>jQuery plugins</h1>
 <a title="jQuery Prettify" href="https://github.com/jewelsjacobs/jquery.prettify" target="_blank">jQuery Prettify</a>
 jQuery plugin to print an associative array / object in the browser
@@ -222,9 +230,10 @@ I made the plugin because I wanted a way to spit out all of the necessary code d
     <link href="http://html5devgal.com//blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/"/>
     <updated>2013-05-16T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps</id>
-    <content type="html"><![CDATA[UPDATE: This only makes global namespace objects based on directory structure.  Read my updated article on including file names as well.
+    <content type="html"><![CDATA[I was tired of manually creating namespace objects for my javascript files so I decided to dynamically generate a namespace.js file
+based on the directory structure of my app.
 
-I was tired of manually creating namespace objects for my javascript files so I decided to dynamically generate a namespace.js file based on the directory structure of my app.
+  <!-- more -->
 
 Here&#8217;s how:
 <h2>Requirements</h2>
@@ -422,8 +431,8 @@ I got a twitter response from a one of the great JavaScript masters
   lobrow library</a> could be used to do this only using browser modules.
 I wasn&#8217;t able to do it and wound up with this solution but he gives some tips:
 
-<blockquote class="twitter-tweet"><p>@<a href="https://twitter.com/jewelsjacobs">jewelsjacobs</a> Have you tried browserify? <a href="http://t.co/nQSytJGunc" title="http://browserify.org/">browserify.org</a>Best you can do with files in browsers: <a href="http://t.co/gm7Z7kwB0J" title="http://www.html5rocks.com/en/tutorials/file/filesystem/">html5rocks.com/en/tutorials/f…</a></p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/status/335016533325647872">May 16, 2013</a></blockquote>
-
+  <div class='embed tweet'><blockquote class="twitter-tweet" align="right" width="350"><p><a href="https://twitter.com/jewelsjacobs">@jewelsjacobs</a> Have you tried browserify? <a href="http://t.co/nQSytJGunc">http://t.co/nQSytJGunc</a>&#10;Best you can do with files in browsers: <a href="http://t.co/gm7Z7kwB0J">http://t.co/gm7Z7kwB0J</a></p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/statuses/335016533325647872">May 16, 2013</a></blockquote>
+<script async src="http://html5devgal.com///platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
 I hope someone finds this helpful!
 ]]></content>
@@ -434,17 +443,20 @@ I hope someone finds this helpful!
     <link href="http://html5devgal.com//blog/2013/05/15/cool-firefox-and-chrome-console-functions/"/>
     <updated>2013-05-15T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/15/cool-firefox-and-chrome-console-functions</id>
-    <content type="html"><![CDATA[When working with JavaScript, CSS and / or HTML we devs love browser development tools. Its a little known fact, however that the console in these tools have thier own handy functions.
+    <content type="html"><![CDATA[When working with JavaScript, CSS and / or HTML we devs love browser development tools.
+It&#8217;s a little known fact, however that the console in these tools have thier own handy functions.
+
+  <!-- more -->
 
 For example, if you want to copy an array or an object in the console, you can type
 
-[code type=&#8221;javascript&#8221;]copy(someArrayVariableName)[/code]
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">copy</span><span class="p">(</span><span class="nx">someArrayVariableName</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-.  please note in this example I copied the contents of the clipboard to the console so you can see it.:
+  Please note in this example I copied the contents of the clipboard to the console so you can see it.:
 
-  Error processing input, expected syntax: {% img [class name(s)] [http[s]:/]/path/to/image [width [height]] [title text | &#8220;title text&#8221; [&#8220;alt text&#8221;]] %}
-
-[caption id=&#8221;attachment_64&#8221; align=&#8221;alignnone&#8221; width=&#8221;700&#8221;]<a href="http://html5devgal.files.wordpress.com/2013/05/copyfromconsole.png"><img class=" wp-image-64 " alt="Copying array in console to clipboard in Chrome" src="http://html5devgal.files.wordpress.com/2013/05/copyfromconsole.png?w=700" width="700" height="141" /></a> Copying array in console to clipboard in Chrome[/caption]
+  <span class='caption-wrapper'><img class='caption' src='http://html5devgal.files.wordpress.com/2013/05/copyfromconsole.png' width='' height='' alt='Copying array in console to clipboard in Chrome' title='Copying array in console to clipboard in Chrome'><span class='caption-text'>Copying array in console to clipboard in Chrome</span></span>
 
 There&#8217;s a whole bunch of other cool console functions as well. Check them out!
 
@@ -455,11 +467,13 @@ There&#8217;s a whole bunch of other cool console functions as well. Check them 
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Absolutely awesome article on plugin development, testing, and CI with grunt]]></title>
+    <title type="html"><![CDATA[tAbsolutely awesome article on plugin development, testing, and CI with grunt]]></title>
     <link href="http://html5devgal.com//blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt/"/>
     <updated>2013-05-12T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt</id>
-    <content type="html"><![CDATA[I had one of those &#8216;Boy this would make an awesome jquery plugin&#8217; moments so I decided to roll my own. 
+    <content type="html"><![CDATA[I had one of those &#8216;Boy this would make an awesome jquery plugin&#8217; moments so I decided to roll my own.
+
+  <!-- more -->
 
 I also decided I needed to do it right so I could contribute it to the open source community without shame. 
 
@@ -480,7 +494,10 @@ If your new to testing, CI, plugin development or just want to see a good way to
     <link href="http://html5devgal.com//blog/2013/05/09/vanilla-javascript-menu-from-json/"/>
     <updated>2013-05-09T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/09/vanilla-javascript-menu-from-json</id>
-    <content type="html"><![CDATA[I was asked to create a side nav with submenus using just plain vanilla JavaScript.
+    <content type="html"><![CDATA[I was asked to create a side nav with submenus using just plain vanilla JavaScript.  Here it is.
+
+  <!-- more -->
+
   <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/8aaqW/embedded/result,js,html,css/light/"></iframe>
 ]]></content>
   </entry>
@@ -491,6 +508,9 @@ If your new to testing, CI, plugin development or just want to see a good way to
     <updated>2013-05-01T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console</id>
     <content type="html"><![CDATA[Here&#8217;s a tip on how to get the z plane camera position in chrome&#8217;s console.
+
+  <!-- more -->
+
 In this example my render DOM element container has an id of &#8216;video_container&#8217;.
 Just replace it with yours. Also I&#8217;m using jquery so you will need to have that included in your app.
 
@@ -517,7 +537,7 @@ I attached this to a global variable (poc is the global namespace of my app) so 
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">DebugData</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>     <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>     <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>         <span class="k">return</span> <span class="p">{</span>
 </span><span class='line'>             <span class="s2">&quot;window height&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
 </span><span class='line'>             <span class="s2">&quot;window width&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
@@ -549,6 +569,8 @@ There&#8217;s probably a cleaner way to do this but this is what I&#8217;ve got!
     <id>http://html5devgal.com//blog/2013/05/01/javascript-for-samsung-smarttv-browser-detection</id>
     <content type="html"><![CDATA[Here&#8217;s the code to determine if the current browser is a SmartTV - requires <a title="Modernizr" href="http://modernizr.com/" target="_blank">Modernizr</a>:
 
+  <!-- more -->
+
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -565,7 +587,7 @@ UPDATE: Actually I wound up changing this to use User-Agent sniffing based on a 
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/TV/i</span><span class="p">)</span> <span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/TV/i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 ]]></content>
@@ -577,7 +599,10 @@ UPDATE: Actually I wound up changing this to use User-Agent sniffing based on a 
     <updated>2013-05-01T00:00:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/01/career-tips-for-javascript-developers</id>
     <content type="html"><![CDATA[  <span class='caption-wrapper'><img class='caption' src='http://s3.amazonaws.com/rapgenius/1291131680_two-thumbs-up.jpg' width='' height='' alt='I am very much success in my jobs!' title='I am very much success in my jobs!'><span class='caption-text'>I am very much success in my jobs!</span></span>
+
 Here&#8217;s some tips that will benefit ANY JavaScript developer on their path to success:
+
+  <!-- more -->
 
   <ul>
 	<li>Tip #1 : In a JavaScript interview don&#8217;t say &#8216;Vanilla JavaScript? What framework is that?&#8217;.</li>
@@ -600,6 +625,9 @@ More to come - feel free to comment on your own!
     tool (Firebug in Firefox, Chrome IE and Safari have their own) and view / tweak the css
     in realtime to move the element around.</h3>
 <h3>In the CSS3D world this is *not* so easy.</h3>
+
+  <!-- more -->
+
 The <a title="three.js library" href="http://threejs.org/" target="_blank">three.js library</a>
 is great in that it allows you to create objects, cameras, lights, etc. and position / animate
 them (animating three.js objects can be achieved with <a title="tween.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/libs/tween.min.js" target="_blank">tween.js</a>)

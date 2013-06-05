@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CSS3D | HTML5 Dev Gal]]></title>
+  <link href="http://html5devgal.com//blog/categories/css3d/atom.xml" rel="self"/>
+  <link href="http://html5devgal.com//"/>
+  <updated>2013-06-05T17:53:22-05:00</updated>
+  <id>http://html5devgal.com//</id>
+  <author>
+    <name><![CDATA[Julia Jacobs]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cool Firefox and Chrome Console Functions]]></title>
+    <link href="http://html5devgal.com//blog/2013/05/15/cool-firefox-and-chrome-console-functions/"/>
+    <updated>2013-05-15T00:00:00-05:00</updated>
+    <id>http://html5devgal.com//blog/2013/05/15/cool-firefox-and-chrome-console-functions</id>
+    <content type="html"><![CDATA[<p>When working with JavaScript, CSS and / or HTML we devs love browser development tools.
+It&rsquo;s a little known fact, however that the console in these tools have thier own handy functions.</p>
+
+<p>  <!-- more --></p>
+
+<p>For example, if you want to copy an array or an object in the console, you can type</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">copy</span><span class="p">(</span><span class="nx">someArrayVariableName</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>  Please note in this example I copied the contents of the clipboard to the console so you can see it.:</p>
+
+<p>  <span class='caption-wrapper'><img class='caption' src='http://html5devgal.files.wordpress.com/2013/05/copyfromconsole.png">http://html5devgal.files.wordpress.com/2013/05/copyfromconsole.png</a>' width='' height='' alt='Copying array in console to clipboard in Chrome' title='Copying array in console to clipboard in Chrome'><span class='caption-text'>Copying array in console to clipboard in Chrome</span></span></p>
+
+<p>There&rsquo;s a whole bunch of other cool console functions as well. Check them out!</p>
+
+<p><a title="Chrome Command Line API" href="https://developers.google.com/chrome-developer-tools/docs/commandline-api" target="_blank">Chrome Command Line API</a></p>
+
+<p><a title="Firebug Command Line API" href="http://getfirebug.com/wiki/index.php/Command_Line_API" target="_blank">Firebug Command Line API</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Trick to get three.js camera z plane value in browser development tools console]]></title>
+    <link href="http://html5devgal.com//blog/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console/"/>
+    <updated>2013-05-01T00:00:00-05:00</updated>
+    <id>http://html5devgal.com//blog/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console</id>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a tip on how to get the z plane camera position in chrome&rsquo;s console.</p>
+
+<p>  <!-- more --></p>
+
+<p>In this example my render DOM element container has an id of &lsquo;video_container&rsquo;.
+Just replace it with yours. Also I&rsquo;m using jquery so you will need to have that included in your app.</p>
+
+<p>I attached this to a global variable (poc is the global namespace of my app) so I can just enter &ldquo;poc.DebugData()&rdquo; in the console.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">DebugData</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span> <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>     <span class="k">return</span> <span class="p">{</span>
+</span><span class='line'>         <span class="s2">&quot;window height&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
+</span><span class='line'>         <span class="s2">&quot;window width&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
+</span><span class='line'>         <span class="s2">&quot;camera z pos&quot;</span> <span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span>
+</span><span class='line'>             <span class="nb">parseInt</span><span class="p">(</span>
+</span><span class='line'>                 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">)</span>
+</span><span class='line'>                     <span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+</span><span class='line'>                     <span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>                     <span class="p">.</span><span class="nx">children</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>                     <span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">nodeValue</span>
+</span><span class='line'>                     <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;: &#39;</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
+</span><span class='line'>                     <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;) &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>                     <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">14</span><span class="p">]</span>
+</span><span class='line'>             <span class="p">)</span>
+</span><span class='line'>         <span class="p">)</span>
+</span><span class='line'>     <span class="p">};</span>
+</span><span class='line'> <span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>There&rsquo;s probably a cleaner way to do this but this is what I&rsquo;ve got!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[three.js object and camera position tracking in real time]]></title>
+    <link href="http://html5devgal.com//blog/2013/04/25/three-js-object-and-camera-position-tracking-in-real-time/"/>
+    <updated>2013-04-25T00:00:00-05:00</updated>
+    <id>http://html5devgal.com//blog/2013/04/25/three-js-object-and-camera-position-tracking-in-real-time</id>
+    <content type="html"><![CDATA[<h3>In the "2D" world, you can inspect an element in a browser using the browser's development
+    tool (Firebug in Firefox, Chrome IE and Safari have their own) and view / tweak the css
+    in realtime to move the element around.</h3>
+
+
+<h3>In the CSS3D world this is *not* so easy.</h3>
+
+
+<p>  <!-- more --></p>
+
+<p>The <a title="three.js library" href="http://threejs.org/" target="_blank">three.js library</a>
+is great in that it allows you to create objects, cameras, lights, etc. and position / animate
+them (animating three.js objects can be achieved with <a title="tween.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/libs/tween.min.js" target="_blank">tween.js</a>)
+with x, y, and z coordinates.</p>
+
+<h3>3D positioning</h3>
+
+
+<p>Basically a 3D grid has an <strong>x plane</strong> (which is horizontal), a <strong>y plane</strong>
+(which is vertical) and a <strong>z plane</strong> (which is depth)</p>
+
+<p>An object with coordinates x=0, y=0 and z=0 is smack in the <strong>middle</strong> of this grid</p>
+
+<ul>
+    <li>A negative coordinate on the x plane will move an element left, positive to the right</li>
+    <li>A negative coordinate on the y plane will move an element down, positive will move it up</li>
+    <li>A negative coordinate on the z plane will move an element back, positive will move it forward</li>
+</ul>
+
+
+<p>  <span class='caption-wrapper'><img class='caption' src='http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png">http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png</a>' width='' height='' alt='3D Grid' title='3D Grid'><span class='caption-text'>3D Grid</span></span></p>
+
+<p>three.js has a
+<a title="CSS3D renderer" href="https://raw.github.com/mrdoob/three.js/master/examples/js/renderers/CSS3DRenderer.js" target="_blank">CSS3D renderer</a>
+which, magically using some very heavy matrix equations, dynamically translates x, y and z
+coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-webkit-transform:
+</span><span class='line'>   translate3d(0px, 0px, 473.7224230277783px)
+</span><span class='line'>   matrix3d(&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>  0.9999499917030334, 0, -0.009999499656260014, 0,
+</span><span class='line'>  0, -1, 0, 0,
+</span><span class='line'>  0.009999499656260014, 0, 0.9999499917030334, 0,
+</span><span class='line'>  0.000002216018401668407, 0, -4987.5380859375, 1
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>   )
+</span><span class='line'>   translate3d(747.5px, 363.5px, 0px);</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><em>Yick.</em></p>
+
+<p>For more somewhat understandable info on matrix3d,
+<a title="matrix3D" href="http://9elements.com/html5demos/matrix3d/" target="_blank">this</a>
+is probably the best documentation out there.</p>
+
+<p>So how are you supposed to figure out the position of a camera in real time after you&rsquo;ve zoomed into your app?</p>
+
+<p>Say you want an event to fire off when the camera is close to a certain object? Or an event to
+fire off only if you click on objects located in a certain z-plane coordinate?</p>
+
+<h3>Tracking Objects</h3>
+
+
+<p>Say you&rsquo;ve got an object element with the following css:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-webkit-transform:
+</span><span class='line'> translate3d(-50%, -50%, 0px)
+</span><span class='line'> matrix3d(
+</span><span class='line'> 1, 0, 0, 0,
+</span><span class='line'> 0, -1, 0, 0,
+</span><span class='line'> 0, 0, 1, 0,
+</span><span class='line'> -800, 800, 3500, 1
+</span><span class='line'> );</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><strong><em>All you really care about as far as tracking the x, y and z coordinates</p>
+
+<pre><code>        of the object's element is the 13th, 14th and 15th values: -800, 800, 3500.&lt;/em&gt;&lt;/strong&gt;
+</code></pre>
+
+<p>Here&rsquo;s an image to illustrate this object element:
+<img class="{{ root_url" src="}}/images/att-html5-u-verse-poc.png"></p>
+
+<p>So by viewing these coordinates we know where the object is!</p>
+
+<p>This comes in <strong>VERY </strong>handy when tracking the camera position during navigation.</p>
+
+<p><strong>UPDATE</strong>
+I just was honored with a tweet from the great Ricardo Cabello Miguel aka
+<a title="mr.doob" href="http://www.mrdoob.com/" target="_blank">mr.doob</a>,
+creator of three.js, about a better way to get the cameras position in relationship to an object:</p>
+
+<p><div class='embed tweet'>Tweet could not be processed</div></p>
+
+<p>Unfortunately, I can&rsquo;t really use this for realtime results during navigation
+because my camera and object position code is in global variables in a different
+files order to make things more modular. Setting breakpoints in the browser or
+entering it in the console isn&rsquo;t quote working for me. To just get the camera z-plane
+value in the browser console check out
+  <a href="/blog/2013/05/01/trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console/">this post</a></p>
+
+<h3>Tracking The Camera</h3>
+
+
+<p>The camera position can be found in the second child of whatever element is defined as the &lsquo;container&rsquo; of the scene.</p>
+
+<p>In this example this element has an id of &lsquo;video_container&rsquo;.</p>
+
+<p>Here&rsquo;s the JavaScript code to illustrate adding a scene to an element container:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">camera</span><span class="p">,</span> <span class="nx">scene</span><span class="p">,</span> <span class="nx">renderer</span><span class="p">,</span> <span class="nx">controls</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+</span><span class='line'><span class="c1">// camera is center &amp;amp; &amp;lsquo;front&amp;rsquo; or screen &amp;ndash; camera coordinates are opposite to object coordinates</span>
+</span><span class='line'><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span> <span class="c1">// lower the number &amp;lsquo;closer&amp;rsquo; to objects</span>
+</span><span class='line'><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25</span><span class="p">;</span> <span class="c1">// lower the number more to the right</span>
+</span><span class='line'><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// lower the number the more up</span>
+</span><span class='line'><span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
+</span><span class='line'><span class="c1">// CSS3D renderer</span>
+</span><span class='line'><span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">CSS3DRenderer</span><span class="p">();</span>
+</span><span class='line'><span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
+</span><span class='line'><span class="nx">renderer</span><span class="p">.</span><span class="nx">domElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">absolute</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">video_container</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">domElement</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Here&rsquo;s the element in the markup, shown in Chrome&rsquo;s Developer Tools:</p>
+
+<p><img class="{{ root_url" src="}}/images/cameraobject.png"></p>
+
+<p>Here&rsquo;s the CSS matrix3D values:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-webkit-transform:
+</span><span class='line'>   translate3d(0px, 0px, 445.70307751169236px)
+</span><span class='line'>   matrix3d(&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>  0.9999875426292419, 0, -0.004999937489628792,
+</span><span class='line'>  0, 0, -1,
+</span><span class='line'>  0, 0, 0.004999937489628792,
+</span><span class='line'>  0, 0.9999875426292419, 0,
+</span><span class='line'>  0, 0, -5000.0625, 1
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>   )
+</span><span class='line'>   translate3d(747.5px, 342px, 0px);</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>As you can see the camera coordinates in the JavaScript code shows z = 5000,
+but in the css z = -5000.0625, a <strong>NEGATIVE</strong> value.</p>
+
+<p>What gives?</p>
+
+<p>Because the camera is &lsquo;facing&rsquo; <em><strong>toward</strong></em> the grid and the objects in the grid,
+the negative and positive values of the x, y, and z coordinates are OPPOSITE of the actual grid and objects.
+So the way it works in the three.js library is:</p>
+
+<ul>
+    <li>+x moves the camera to the LEFT of the grid whereas -z moves the camera to the RIGHT</li>
+    <li>+y moves the camera DOWN in the grid whereas -z moves the camera UP</li>
+    <li>+z moves the camera AWAY from the grid whereas -z moves the camera CLOSER</li>
+</ul>
+
+
+<p><strong>AN IMPORTANT NOTE ABOUT TRACKBALL / TOUCH CONTROLS AND THE CAMERA Z POSITION:</strong>
+To facilitate scroll wheel, trackball and touch zoom controls, a three.js utility
+library called
+<a title="TrackballControls.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js" target="_blank">
+  Trackball Controls</a> can be used.
+Make sure all of your objects have <strong>POSITIVE</strong> z coordinate values.
+If they don&rsquo;t the camera will never reach them as it can only zoom up to
+z coordinate = 0. Once the camera has z = 0 you will keep pinching / scrolling forever and go no where.</p>
+]]></content>
+  </entry>
+  
+</feed>
