@@ -20,11 +20,18 @@ meta:
   _wpas_skip_3476925: '1'
   _wpas_skip_3476921: '1'
 ---
-<h3>In the "2D" world, you can inspect an element in a browser using the browser's development tool (Firebug in Firefox, Chrome IE and Safari have their own) and view / tweak the css in realtime to move the element around.</h3>
+<h3>In the "2D" world, you can inspect an element in a browser using the browser's development
+    tool (Firebug in Firefox, Chrome IE and Safari have their own) and view / tweak the css
+    in realtime to move the element around.</h3>
 <h3>In the CSS3D world this is *not* so easy.</h3>
-The <a title="three.js library" href="http://threejs.org/" target="_blank">three.js library</a> is great in that it allows you to create objects, cameras, lights, etc. and position / animate them (animating three.js objects can be achieved with <a title="tween.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/libs/tween.min.js" target="_blank">tween.js</a>) with x, y, and z coordinates.
+The <a title="three.js library" href="http://threejs.org/" target="_blank">three.js library</a>
+is great in that it allows you to create objects, cameras, lights, etc. and position / animate
+them (animating three.js objects can be achieved with <a title="tween.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/libs/tween.min.js" target="_blank">tween.js</a>)
+with x, y, and z coordinates.
+
 <h3>3D positioning</h3>
-Basically a 3D grid has an <strong>x plane</strong> (which is horizontal), a <strong>y plane</strong> (which is vertical) and a <strong>z plane</strong> (which is depth)
+Basically a 3D grid has an <strong>x plane</strong> (which is horizontal), a <strong>y plane</strong>
+(which is vertical) and a <strong>z plane</strong> (which is depth)
 
 An object with coordinates x=0, y=0 and z=0 is smack in the <strong>middle</strong> of this grid
 <ul>
@@ -32,9 +39,13 @@ An object with coordinates x=0, y=0 and z=0 is smack in the <strong>middle</stro
 	<li>A negative coordinate on the y plane will move an element down, positive will move it up</li>
 	<li>A negative coordinate on the z plane will move an element back, positive will move it forward</li>
 </ul>
-<img alt="3dGrid" src="http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png" width="603" height="503" /> 3D Grid
 
-three.js has a <a title="CSS3D renderer" href="https://raw.github.com/mrdoob/three.js/master/examples/js/renderers/CSS3DRenderer.js" target="_blank">CSS3D renderer</a> which, magically using some very heavy matrix equations, dynamically translates x, y and z coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:
+  {% imgcap http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png 3D Grid %}
+
+three.js has a
+<a title="CSS3D renderer" href="https://raw.github.com/mrdoob/three.js/master/examples/js/renderers/CSS3DRenderer.js" target="_blank">CSS3D renderer</a>
+which, magically using some very heavy matrix equations, dynamically translates x, y and z
+coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:
 
 {% codeblock %}
 -webkit-transform:
@@ -50,11 +61,14 @@ three.js has a <a title="CSS3D renderer" href="https://raw.github.com/mrdoob/thr
 
 <em>Yick.</em>
 
-For more somewhat understandable info on matrix3d, <a title="matrix3D" href="http://9elements.com/html5demos/matrix3d/" target="_blank">this</a> is probably the best documentation out there.
+For more somewhat understandable info on matrix3d,
+<a title="matrix3D" href="http://9elements.com/html5demos/matrix3d/" target="_blank">this</a>
+is probably the best documentation out there.
 
 So how are you supposed to figure out the position of a camera in real time after you've zoomed into your app?
 
-Say you want an event to fire off when the camera is close to a certain object? Or an event to fire off only if you click on objects located in a certain z-plane coordinate?
+Say you want an event to fire off when the camera is close to a certain object? Or an event to
+fire off only if you click on objects located in a certain z-plane coordinate?
 <h3>Tracking Objects</h3>
 Say you've got an object element with the following css:
 
@@ -69,7 +83,8 @@ Say you've got an object element with the following css:
  );
 {% endcodeblock %}
 
-<strong><em>All you really care about as far as tracking the x, y and z coordinates of the object's element is the 13th, 14th and 15th values: -800, 800, 3500.</em></strong>
+<strong><em>All you really care about as far as tracking the x, y and z coordinates
+            of the object's element is the 13th, 14th and 15th values: -800, 800, 3500.</em></strong>
 
 Here's an image to illustrate this object element:
 {% img {{ root_url }}/images/att-html5-u-verse-poc.png %}
@@ -150,7 +165,8 @@ So the way it works in the three.js library is:
 </ul>
 <strong>AN IMPORTANT NOTE ABOUT TRACKBALL / TOUCH CONTROLS AND THE CAMERA Z POSITION:</strong>
 To facilitate scroll wheel, trackball and touch zoom controls, a three.js utility
-library called <a title="TrackballControls.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js" target="_blank">
+library called
+<a title="TrackballControls.js" href="https://raw.github.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js" target="_blank">
   Trackball Controls</a> can be used.
 Make sure all of your objects have <strong>POSITIVE</strong> z coordinate values.
 If they don't the camera will never reach them as it can only zoom up to
