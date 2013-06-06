@@ -1,9 +1,13 @@
 ---
 layout: post
 title: "three.js object and camera position tracking in real time"
+date: 2013-04-25 5:59
 comments: true
+sharing: true
+footer: true
 categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js]
 ---
+
 <h3>In the "2D" world, you can inspect an element in a browser using the browser's development
     tool (Firebug in Firefox, Chrome IE and Safari have their own) and view / tweak the css
     in realtime to move the element around.</h3>
@@ -29,8 +33,7 @@ An object with coordinates x=0, y=0 and z=0 is smack in the <strong>middle</stro
 
   {% imgcap http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png 3D Grid %}
 
-three.js has a
-<a title="CSS3D renderer" href="https://raw.github.com/mrdoob/three.js/master/examples/js/renderers/CSS3DRenderer.js" target="_blank">CSS3D renderer</a>
+three.js has a [CSS3D renderer](https://raw.github.com/mrdoob/three.js/master/examples/js/renderers/CSS3DRenderer.js)
 which, magically using some very heavy matrix equations, dynamically translates x, y and z
 coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:
 
@@ -48,8 +51,7 @@ coordinates into a css property called -webkit-transform whose values usually lo
 
 <em>Yick.</em>
 
-For more somewhat understandable info on matrix3d,
-<a title="matrix3D" href="http://9elements.com/html5demos/matrix3d/" target="_blank">this</a>
+For more somewhat understandable info on matrix3d, [this](http://9elements.com/html5demos/matrix3d/)
 is probably the best documentation out there.
 
 So how are you supposed to figure out the position of a camera in real time after you've zoomed into your app?
@@ -73,8 +75,7 @@ Say you've got an object element with the following css:
 <strong><em>All you really care about as far as tracking the x, y and z coordinates
             of the object's element is the 13th, 14th and 15th values: -800, 800, 3500.</em></strong>
 
-Here's an image to illustrate this object element:
-{% img {{ root_url }}/images/att-html5-u-verse-poc.png %}
+{% imgcap {{ root_url }}/images/att-html5-u-verse-poc.png Here's an image to illustrate this object element %}
 
 So by viewing these coordinates we know where the object is!
 
@@ -84,9 +85,9 @@ This comes in <strong>VERY </strong>handy when tracking the camera position duri
 I just was honored with a tweet from the great Ricardo Cabello Miguel aka
 <a title="mr.doob" href="http://www.mrdoob.com/" target="_blank">mr.doob</a>,
 creator of three.js, about a better way to get the cameras position in relationship to an object:
-
+<br />
 {% tweet https://twitter.com/mrdoob/status/327555248531050497 align='right' width='350' %}
-
+<br />
 Unfortunately, I can't really use this for realtime results during navigation
 because my camera and object position code is in global variables in a different
 files order to make things more modular. Setting breakpoints in the browser or
@@ -105,7 +106,7 @@ Here's the JavaScript code to illustrate adding a scene to an element container:
 var camera, scene, renderer, controls;
 
 camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 5000);
-// camera is center &amp; 'front' or screen - camera coordinates are opposite to object coordinates
+// camera is center & 'front' or screen - camera coordinates are opposite to object coordinates
 camera.position.z = 5000; // lower the number 'closer' to objects
 camera.position.x = -25; // lower the number more to the right
 camera.position.y = 0; // lower the number the more up
@@ -120,7 +121,7 @@ document.getElementById('video_container').appendChild(renderer.domElement);
 
 Here's the element in the markup, shown in Chrome's Developer Tools:
 
-{% img {{ root_url }}/images/cameraobject.png %}
+{% imgcap {{ root_url }}/images/cameraobject.png Chrome's Developer Tools %}
 
 Here's the CSS matrix3D values:
 

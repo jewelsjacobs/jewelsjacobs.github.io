@@ -1,0 +1,3 @@
+[submodule ".themes/books"]
+	path = .themes/books
+	url = git://github.com/octopress-themes/books.git
