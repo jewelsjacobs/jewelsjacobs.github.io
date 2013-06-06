@@ -221,7 +221,25 @@
 </p>
 
 </footer>
-  
+  <script src = "/javascripts/jquery.fancybox.pack.js" ></script >
+<script type = "text/javascript" >
+(function($) {
+  $('.fancybox').fancybox({
+                            beforeLoad: function() {
+                              var el, id = $(this.element).data('title-id');
+
+                              if (id) {
+                                el = $('#' + id);
+
+                                if (el.length) {
+                                  this.title = el.html();
+                                }
+                              }
+                            }
+                          });
+})(jQuery);
+</script > <!-- Delete or comment this line to disable Fancybox -->
+
 
 
 
