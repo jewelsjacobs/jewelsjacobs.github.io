@@ -19,10 +19,9 @@ For example, if you want to copy an array or an object in the console, you can t
 
   Please note in this example I copied the contents of the clipboard to the console so you can see it.:
 
-  {% imgcap http://html5devgal.files.wordpress.com/2013/05/copyfromconsole.png Copying array in console to clipboard in Chrome%}
+  {% imgcap /images/copyfromconsole.png Copying array in console to clipboard in Chrome %}
 
 There's a whole bunch of other cool console functions as well. Check them out!
 
-<a title="Chrome Command Line API" href="https://developers.google.com/chrome-developer-tools/docs/commandline-api" target="_blank">Chrome Command Line API</a>
-
-<a title="Firebug Command Line API" href="http://getfirebug.com/wiki/index.php/Command_Line_API" target="_blank">Firebug Command Line API</a>
+[Chrome Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api)
+[Firebug Command Line API](http://getfirebug.com/wiki/index.php/Command_Line_API)

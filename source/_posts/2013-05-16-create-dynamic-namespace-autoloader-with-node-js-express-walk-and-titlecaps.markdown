@@ -13,17 +13,17 @@ based on the directory structure of my app.
   <!-- more -->
 
 Here's how:
-<h2>Requirements</h2>
-<ul>
-	<li><a title="node.js" href="http://nodejs.org/" target="_blank">node.js</a></li>
-</ul>
-<h3>Node Modules</h3>
-<ul>
-	<li><a title="express" href="http://expressjs.com/" target="_blank">express</a></li>
-	<li><a title="walk" href="https://github.com/coolaj86/node-walk" target="_blank">walk</a></li>
-</ul>
-<h2>Instructions</h2>
-Download and install a <a title="Download Node.js installer" href="http://nodejs.org/" target="_blank">node.js binary</a>.
+##Requirements
+
+	<li><a title="node.js" href="http://nodejs.org/" target="_blank">node.js</a>
+
+###Node Modules
+
+ * [express](http://expressjs.com/)
+ * [walk](https://github.com/coolaj86/node-walk)
+
+##Instructions
+Download and install a [node.js binary](http://nodejs.org/).
 
 Create a project folder and navigate to it:
 
@@ -36,7 +36,9 @@ Install the npm modules. The -S flag will save the dependency info to your packa
 
 {% codeblock %}npm install express walk -S{% endcodeblock %}
 
-Set up express in your app. If you don't know how to do this, check out the <a title="express guide" href="http://expressjs.com/guide.html" target="_blank">express guide</a> or checkout the <span style="text-decoration:underline;"><b>Using express(1) to generate an app</b></span> section in the guide to auto generate a node.js / express app.
+Set up express in your app. If you don't know how to do this, check out the
+[express guide](http://expressjs.com/guide.html) or checkout the **Using express(1) to generate an
+app** section in the guide to auto generate a node.js / express app.
 
 In your server.js or app.js file (which ever one you've created for express) do the following:
 
@@ -57,11 +59,11 @@ http.createServer(app).listen(app.get('port'), function(){
 {% endcodeblock %}
 
 To auto generate the namespace file when the http server starts, modify the http.createServer code block to look like this. Make sure to replace following variables:
-<ul>
-	<li><strong>startPath</strong> - path where your app directory resides in relation to the server.js / app.js file.</li>
-	<li><strong>appName</strong> - global namespace.</li>
-	<li><strong>filePath</strong> - path of the file you want to write the namespace code to.</li>
-</ul>
+
+ * ***startPath*** - path where your app directory resides in relation to the server.js / app.js file.
+ * ***appName - global namespace.
+ * ***filePath*** - path of the file you want to write the namespace code to.
+
 {% codeblock lang:javascript %}
 http.createServer(app).listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port') + " in " + process.env.NODE_ENV + " mode.");
@@ -143,12 +145,10 @@ poc.Data.Providers.Names.globalmethod = function(){
 {% endcodeblock %}
 
 I got a twitter response from a one of the great JavaScript masters
-<a href="http://www.2ality.com/" title="Dr. Axel Rauschmayer's Blog" target="_blank">
-  Dr. Axel Rauschmayer</a> when asking if his
-<a href="http://www.2ality.com/2011/11/lobrow.html" title="lobrow library" target="_blank">
-  lobrow library</a> could be used to do this only using browser modules.
+[Dr. Axel Rauschmayer](http://www.2ality.com/) when asking if his
+[lobrow library](ttp://www.2ality.com/2011/11/lobrow.html) could be used to do this only using browser modules.
 I wasn't able to do it and wound up with this solution but he gives some tips:
 
-  {% tweet https://twitter.com/rauschma/status/335016533325647872 align='right' width='350' %}
+  {% tweet https://twitter.com/rauschma/status/335016533325647872 %}
 
 I hope someone finds this helpful!

@@ -14,12 +14,11 @@ Here's some tips that will benefit ANY JavaScript developer on their path to suc
 
   <!-- more -->
 
-  <ul>
-	<li>Tip #1 : In a JavaScript interview don't say 'Vanilla JavaScript? What framework is that?'.</li>
-<li>Tip #2 : No motivation to learn that new tech? Go on lots of interviews for jobs you can't do.
-    Can't forget those wrong answers! </li>
-<li>Tip #3 : Don't do phone interviews while going to the bathroom. No matter how nervous you are.
-    That goes for Skype too.</li>
-    </ul>
+ * Tip #1 : In a JavaScript interview don't say 'Vanilla JavaScript? What framework is that?'.
+ * Tip #2 : No motivation to learn that new tech? Go on lots of interviews for jobs you can't do.
+    Can't forget those wrong answers!
+ * Tip #3 : Don't do phone interviews while going to the bathroom. No matter how nervous you are.
+    That goes for Skype too.
+
 
 More to come - feel free to comment on your own!
