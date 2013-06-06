@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: code style | HTML5 Dev Gal]]></title>
+  <link href="http://html5devgal.com//blog/categories/code-style/atom.xml" rel="self"/>
+  <link href="http://html5devgal.com//"/>
+  <updated>2013-06-05T20:23:13-05:00</updated>
+  <id>http://html5devgal.com//</id>
+  <author>
+    <name><![CDATA[Julia Jacobs]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Automatic JavaScript Linting Fixes]]></title>
+    <link href="http://html5devgal.com//blog/2013/06/05/automatic-javascript-linting-fixes/"/>
+    <updated>2013-06-05T20:14:00-05:00</updated>
+    <id>http://html5devgal.com//blog/2013/06/05/automatic-javascript-linting-fixes</id>
+    <content type="html"><![CDATA[<p>I was getting sick of manually fixing <a href="https://developers.google.com/closure/utilities/">closure linter</a> errors one
+by one so I created a shell script to do this recursivley over a directory or with a single file.</p>
+
+<p><!-- more --></p>
+
+<p>Requires <a href="https://developers.google.com/closure/compiler/">closure compiler</a></p>
+
+<p><div><script src='https://gist.github.com/5718645.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

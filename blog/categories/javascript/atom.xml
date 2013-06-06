@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javaScript | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-05T18:03:40-05:00</updated>
+  <updated>2013-06-05T20:23:13-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -14,17 +14,33 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Automatic JavaScript Linting Fixes]]></title>
+    <link href="http://html5devgal.com//blog/2013/06/05/automatic-javascript-linting-fixes/"/>
+    <updated>2013-06-05T20:14:00-05:00</updated>
+    <id>http://html5devgal.com//blog/2013/06/05/automatic-javascript-linting-fixes</id>
+    <content type="html"><![CDATA[<p>I was getting sick of manually fixing <a href="https://developers.google.com/closure/utilities/">closure linter</a> errors one
+by one so I created a shell script to do this recursivley over a directory or with a single file.</p>
+
+<p><!-- more --></p>
+
+<p>Requires <a href="https://developers.google.com/closure/compiler/">closure compiler</a></p>
+
+<p><div><script src='https://gist.github.com/5718645.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Dynamic Namespace Objects Based On Directory Structure and File Names]]></title>
     <link href="http://html5devgal.com//blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names/"/>
-    <updated>2013-05-24T00:00:00-05:00</updated>
+    <updated>2013-05-24T05:59:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names</id>
     <content type="html"><![CDATA[<p>In a <a href="/blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/">previous post</a></p>
 
 <p>I showed how to create a dynamic namespace autoloader with node.js, express, and walk.</p>
 
 <!-- more -->
-
-
 <p>Please check out this article for information on how to set this up, what node modules to install and where to put this code.</p>
 
 <p>In the http.createServer() function, add this code (or something like it):</p>
@@ -168,85 +184,78 @@
 </span><span class='line'><span class="p">});</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Please note this is kind of a mess of arrays so I&rsquo;d be very grateful for any suggestions on how to make this cleaner.</p>
+<p>Please note this is kind of a mess of arrays so I’d be very grateful for any suggestions on how to make this cleaner.</p>
+
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[My Two New jQuery Plugins and One New Node Module]]></title>
     <link href="http://html5devgal.com//blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module/"/>
-    <updated>2013-05-16T00:00:00-05:00</updated>
+    <updated>2013-05-16T05:59:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module</id>
     <content type="html"><![CDATA[<p>On my quest to plugify and properly modulerize my code I created two new jQuery plugins and one new node nodule.</p>
 
-<p>  <!-- more --></p>
+<p><!-- more --></p>
 
-<h1>jQuery plugins</h1>
-
-
-<p><a title="jQuery Prettify" href="https://github.com/jewelsjacobs/jquery.prettify" target="_blank">jQuery Prettify</a>
+<h1 id="jquery-plugins">jQuery plugins</h1>
+<p><a href="https://github.com/jewelsjacobs/jquery.prettify">jQuery Prettify</a>
 jQuery plugin to print an associative array / object in the browser</p>
 
-<p>UPDATE: The a jQuery UI function <a href="http://api.jqueryui.com/position/" target="_blank">position()</a> centers fine so don&rsquo;t even bother with the following plugin.</p>
+<p>UPDATE: The a jQuery UI function <a href="http://api.jqueryui.com/position/">position()</a> centers fine so don’t
+even bother with the following plugin.</p>
 
 <p>My Simple Center Plugin
-<a title="jQuery Simple Center Plugin" href="https://github.com/jewelsjacobs/jquery.simpleCenter" target="_blank">jQuery SimpleCenter</a>
-Simple jQuery plugin to vertically and horizontally center an element within another element.</p>
-
-<h1>Node.js modules</h1>
-
-
-<p><a title="titlecaps Node.js Module" href="https://npmjs.org/package/titlecaps" target="_blank">titlecaps</a>
+<a href="https://github.com/jewelsjacobs/jquery.simpleCenter">jQuery Simple Center Plugin</a>
+Simple jQuery plugin to vertically and horizontally center an element within another element.
+#Node.js modules
+<a href="https://npmjs.org/package/titlecaps">titlecaps Node.js Module</a>
 Node module to capitalize first letter in each word</p>
 
-<p>Please bear in mind that they have not been node unit or qunit tested yet, just jhinted as I&rsquo;m on a tight schedule at work.  I&rsquo;ll make it happen very soon!</p>
+<p>Please bear in mind that they have not been node unit or qunit tested yet, just jhinted as I’m on a tight schedule at work.  
+I’ll make it happen very soon!</p>
 
-<p>UPDATE:  I was &lsquo;schooled&rsquo; by the more experienced dev
-<a href="http://uk.linkedin.com/in/nelsonic/" title="Nelson Kenneth Correia" target="_blank">Nelson Kenneth Correia</a>
+<p>UPDATE:  I was ‘schooled’ by the more experienced dev
+<a href="http://uk.linkedin.com/in/nelsonic/">Nelson Kenneth Correia</a>
 who mentioned these plugins / mod were overkill.
 I thought it prudent to mention his response:</p>
 
-<p>  <blockquote><p></p></p><p><p>@Juila, just had a look at your SimpleCenter Plugin.</p></p><p><p>Firstly I want to applaud your effort to create a JQuery plugin,<br/>and then advise everyone <em>new</em> to javascript to <em>not</em> do this!<br/>Positioning elements on the page/canvas is done with CSS.</p></p><p><p>Here is your JS fiddle without <em>any</em> JavaScript: <a href="http://jsfiddle.net/jewelsjacobs/Nuyc9/">http://jsfiddle.net/jewelsjacobs/Nuyc9/</a></p></p><p><p>Centering an element in a div is <em>easy</em> in CSS and should be done in a stylesheet unless there&rsquo;s a very good reason to do it <em>dynamically</em> in JS.</p></p><p><p>Secondly I don&rsquo;t see how your Prettify is better than the original: <a href="https://code.google.com/p/google-code-prettify/wiki/GettingStarted">https://code.google.com/p/google-code-prettify/wiki/GettingStarted</a></p></p><p><p>And finally Capitalizing the first letter of each word in a string has been done many times and does not require an entire Node Module&hellip;</p></p><p><p>It can be done with a <em>single</em> line of JavaScript:<br/><a href="http://jsfiddle.net/jewelsjacobs/Nuyc9/">http://jsfiddle.net/jewelsjacobs/Nuyc9/</a></p></p><p><p>Once again, I congratulate your efforts!<br/>Especially the fact that you&rsquo;ve written tests and used Travis.com to confirm the build status of your module! :&ndash;)</p></p><p><p>But please pick which Modules and Plugins you share here more carefully.<br/>As developers we need to set a good example to others.<br/>Writing an entire <em>module</em> just to capitalize first letters in a string is like using a bomb to build a sand castle! &hellip; #overkill!</p></p><p><p>And building JQuery plugins when simple CSS will achieve your goal is a good <em>thought</em> exercise, but should <em>never</em> be used in the real world because its a code maintenance nightmare!</p></p><p><p>The last thing I want is my junior developers copy-pasting this kind of code!</p></p><p><p>I look forward to reading your <em>next</em> efforts. :&ndash;)</p><footer><strong>Nelson Kenneth Correia</strong></footer></blockquote></p>
+<p><blockquote><p></p></p><p><p>@Juila, just had a look at your SimpleCenter Plugin.</p></p><p><p>Firstly I want to applaud your effort to create a JQuery plugin, <br/>and then advise everyone <em>new</em> to javascript to <em>not</em> do this! <br/>Positioning elements on the page/canvas is done with CSS. </p></p><p><p>Here is your JS fiddle without <em>any</em> JavaScript: http://jsfiddle.net/jewelsjacobs/Nuyc9/ </p></p><p><p>Centering an element in a div is <em>easy</em> in CSS and should be done in a stylesheet unless there’s a very good reason to do it <em>dynamically</em> in JS. </p></p><p><p>Secondly I don’t see how your Prettify is better than the original: https://code.google.com/p/google-code-prettify/wiki/GettingStarted </p></p><p><p>And finally Capitalizing the first letter of each word in a string has been done many times and does not require an entire Node Module… </p></p><p><p>It can be done with a <em>single</em> line of JavaScript: <br/>http://jsfiddle.net/jewelsjacobs/Nuyc9/ </p></p><p><p>Once again, I congratulate your efforts! <br/>Especially the fact that you’ve written tests and used Travis.com to confirm the build status of your module! :-) </p></p><p><p>But please pick which Modules and Plugins you share here more carefully. <br/>As developers we need to set a good example to others. <br/>Writing an entire <em>module</em> just to capitalize first letters in a string is like using a bomb to build a sand castle! … #overkill! </p></p><p><p>And building JQuery plugins when simple CSS will achieve your goal is a good <em>thought</em> exercise, but should <em>never</em> be used in the real world because its a code maintenance nightmare! </p></p><p><p>The last thing I want is my junior developers copy-pasting this kind of code! </p></p><p><p>I look forward to reading your <em>next</em> efforts. :-)</p><footer><strong>Nelson Kenneth Correia</strong></footer></blockquote></p>
 
-<p>His Caps code worked perfectly but his CSS code has to be changed depending on the sizes of the elements which is not exactly what I wanted to do.  The Prettify code he references doesn&rsquo;t really do what I want either.</p>
+<p>His caps code worked perfectly but his CSS code has to be changed depending on the sizes of the elements which is
+not exactly what I wanted to do.  The Prettify code he references doesn’t really do what I want either.</p>
 
-<p>I made the plugin because I wanted a way to spit out all of the necessary code dynamically without including it in the html file. Basically , just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag. You still have to attach the text to the pre tag or generate the pre tag.</p>
+<p>I made the plugin because I wanted a way to spit out all of the necessary code dynamically without including it in the html file. B
+asically , just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag.
+You still have to attach the text to the pre tag or generate the pre tag.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Create Dynamic Namespace Autoloader With Node.js, Express, and Walk]]></title>
     <link href="http://html5devgal.com//blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/"/>
-    <updated>2013-05-16T00:00:00-05:00</updated>
+    <updated>2013-05-16T05:59:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps</id>
     <content type="html"><![CDATA[<p>I was tired of manually creating namespace objects for my javascript files so I decided to dynamically generate a namespace.js file
 based on the directory structure of my app.</p>
 
-<p>  <!-- more --></p>
+<p><!-- more --></p>
 
-<p>Here&rsquo;s how:</p>
+<p>Here’s how:
+##Requirements</p>
 
-<h2>Requirements</h2>
+<pre><code>&lt;li&gt;&lt;a title="node.js" href="http://nodejs.org/" target="_blank"&gt;node.js&lt;/a&gt;
+</code></pre>
 
-
-<ul>
-    <li><a title="node.js" href="http://nodejs.org/" target="_blank">node.js</a></li>
-</ul>
-
-
-<h3>Node Modules</h3>
-
+<h3 id="node-modules">Node Modules</h3>
 
 <ul>
-    <li><a title="express" href="http://expressjs.com/" target="_blank">express</a></li>
-    <li><a title="walk" href="https://github.com/coolaj86/node-walk" target="_blank">walk</a></li>
+  <li><a href="http://expressjs.com/">express</a></li>
+  <li><a href="https://github.com/coolaj86/node-walk">walk</a></li>
 </ul>
 
-
-<h2>Instructions</h2>
-
-
-<p>Download and install a <a title="Download Node.js installer" href="http://nodejs.org/" target="_blank">node.js binary</a>.</p>
+<h2 id="instructions">Instructions</h2>
+<p>Download and install a <a href="http://nodejs.org/">node.js binary</a>.</p>
 
 <p>Create a project folder and navigate to it:</p>
 
@@ -260,27 +269,21 @@ based on the directory structure of my app.</p>
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>npm install express walk -S</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Set up express in your app. If you don&rsquo;t know how to do this, check out the <a title="express guide" href="http://expressjs.com/guide.html" target="_blank">express guide</a> or checkout the <span style="text-decoration:underline;"><b>Using express(1) to generate an app</b></span> section in the guide to auto generate a node.js / express app.</p>
+<p>Set up express in your app. If you don’t know how to do this, check out the
+<a href="http://expressjs.com/guide.html">express guide</a> or checkout the <strong>Using express(1) to generate an
+app</strong> section in the guide to auto generate a node.js / express app.</p>
 
-<p>In your server.js or app.js file (which ever one you&rsquo;ve created for express) do the following:</p>
+<p>In your server.js or app.js file (which ever one you’ve created for express) do the following:</p>
 
 <p>Make sure you are requiring the nescessary modules. You probably need more but these are just for the code in this example:
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">express</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;),</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">),</span>
-</span><span class='line'><span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">),</span>
-</span><span class='line'><span class="nx">walk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;walk&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">‘</span><span class="nx">express</span><span class="err">’</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">‘</span><span class="nx">http</span><span class="err">’</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">‘</span><span class="nx">fs</span><span class="err">’</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">walk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">‘</span><span class="nx">walk</span><span class="err">’</span><span class="p">);</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>To run the http server in express you probably have something like this in the file:</p>
@@ -288,25 +291,18 @@ based on the directory structure of my app.</p>
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">port</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;),</span> <span class="kd">function</span><span class="p">(){</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">});</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">‘</span><span class="nx">port</span><span class="err">’</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">“</span><span class="nx">Express</span> <span class="nx">server</span> <span class="nx">listening</span> <span class="nx">on</span> <span class="nx">port</span> <span class="err">“</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">‘</span><span class="nx">port</span><span class="err">’</span><span class="p">)</span> <span class="o">+</span> <span class="err">“</span> <span class="k">in</span> <span class="err">“</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="err">“</span> <span class="nx">mode</span><span class="p">.</span><span class="err">”</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>To auto generate the namespace file when the http server starts, modify the http.createServer code block to look like this. Make sure to replace following variables:</p>
 
 <ul>
-    <li><strong>startPath</strong> - path where your app directory resides in relation to the server.js / app.js file.</li>
-    <li><strong>appName</strong> - global namespace.</li>
-    <li><strong>filePath</strong> - path of the file you want to write the namespace code to.</li>
+  <li><strong><em>startPath</em></strong> - path where your app directory resides in relation to the server.js / app.js file.</li>
+  <li>***appName - global namespace.</li>
+  <li><strong><em>filePath</em></strong> - path of the file you want to write the namespace code to.</li>
 </ul>
-
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -348,12 +344,10 @@ based on the directory structure of my app.</p>
 <span class='line-number'>38</span>
 <span class='line-number'>39</span>
 <span class='line-number'>40</span>
-<span class='line-number'>41</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">port</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;),</span> <span class="kd">function</span><span class="p">(){</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">‘</span><span class="nx">port</span><span class="err">’</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">“</span><span class="nx">Express</span> <span class="nx">server</span> <span class="nx">listening</span> <span class="nx">on</span> <span class="nx">port</span> <span class="err">“</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">‘</span><span class="nx">port</span><span class="err">’</span><span class="p">)</span> <span class="o">+</span> <span class="err">“</span> <span class="k">in</span> <span class="err">“</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="err">“</span> <span class="nx">mode</span><span class="p">.</span><span class="err">”</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">emitter</span><span class="p">,</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">emitter</span><span class="p">,</span>
 </span><span class='line'>    <span class="nx">str</span><span class="p">,</span>
 </span><span class='line'>    <span class="nx">startPath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc&quot;</span><span class="p">,</span>
 </span><span class='line'>    <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;poc&quot;</span><span class="p">,</span>
@@ -403,13 +397,13 @@ based on the directory structure of my app.</p>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>poc
-</span><span class='line'>&mdash;data
-</span><span class='line'>&mdash;&mdash;api
-</span><span class='line'>&mdash;&mdash;layout
-</span><span class='line'>&mdash;&mdash;providers
-</span><span class='line'>&mdash;grid
-</span><span class='line'>&mdash;models
-</span><span class='line'>&mdash;&mdash;view</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span><span class='line'>–data
+</span><span class='line'>—-api
+</span><span class='line'>—-layout
+</span><span class='line'>—-providers
+</span><span class='line'>–grid
+</span><span class='line'>–models
+</span><span class='line'>—-view</span></code></pre></td></tr></table></div></figure></notextile></div>
 the autogenerated namespace file looks like this:
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -439,20 +433,19 @@ the autogenerated namespace file looks like this:
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalvar</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">globalvarval</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;;</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalvar</span> <span class="o">=</span> <span class="err">“</span><span class="nx">globalvarval</span><span class="err">”</span><span class="p">;</span>
 </span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalmethod</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
 </span><span class='line'><span class="c1">// awesome code here</span>
 </span><span class='line'><span class="p">};</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>I got a twitter response from a one of the great JavaScript masters
-<a href="http://www.2ality.com/" title="Dr. Axel Rauschmayer's Blog" target="_blank">
-  Dr. Axel Rauschmayer</a> when asking if his
-<a href="http://www.2ality.com/2011/11/lobrow.html" title="lobrow library" target="_blank">
-  lobrow library</a> could be used to do this only using browser modules.
-I wasn&rsquo;t able to do it and wound up with this solution but he gives some tips:</p>
+<a href="http://www.2ality.com/">Dr. Axel Rauschmayer</a> when asking if his
+<a href="ttp://www.2ality.com/2011/11/lobrow.html">lobrow library</a> could be used to do this only using browser modules.
+I wasn’t able to do it and wound up with this solution but he gives some tips:</p>
 
-<p>  <div class='embed tweet'>Tweet could not be processed</div></p>
+<p><div class='embed tweet'><blockquote class="twitter-tweet"><p><a href="https://twitter.com/jewelsjacobs">@jewelsjacobs</a> Have you tried browserify? <a href="http://t.co/nQSytJGunc">http://t.co/nQSytJGunc</a>&#10;Best you can do with files in browsers: <a href="http://t.co/gm7Z7kwB0J">http://t.co/gm7Z7kwB0J</a></p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/statuses/335016533325647872">May 16, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div></p>
 
 <p>I hope someone finds this helpful!</p>
 ]]></content>
@@ -461,12 +454,12 @@ I wasn&rsquo;t able to do it and wound up with this solution but he gives some t
   <entry>
     <title type="html"><![CDATA[Cool Firefox and Chrome Console Functions]]></title>
     <link href="http://html5devgal.com//blog/2013/05/15/cool-firefox-and-chrome-console-functions/"/>
-    <updated>2013-05-15T00:00:00-05:00</updated>
+    <updated>2013-05-15T05:59:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/15/cool-firefox-and-chrome-console-functions</id>
     <content type="html"><![CDATA[<p>When working with JavaScript, CSS and / or HTML we devs love browser development tools.
-It&rsquo;s a little known fact, however that the console in these tools have thier own handy functions.</p>
+It’s a little known fact, however that the console in these tools have thier own handy functions.</p>
 
-<p>  <!-- more --></p>
+<p><!-- more --></p>
 
 <p>For example, if you want to copy an array or an object in the console, you can type</p>
 
@@ -474,38 +467,14 @@ It&rsquo;s a little known fact, however that the console in these tools have thi
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">copy</span><span class="p">(</span><span class="nx">someArrayVariableName</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>  Please note in this example I copied the contents of the clipboard to the console so you can see it.:</p>
+<p> Please note in this example I copied the contents of the clipboard to the console so you can see it.:</p>
 
-<p>  <span class='caption-wrapper'><img class='caption' src='http://html5devgal.files.wordpress.com/2013/05/copyfromconsole.png">http://html5devgal.files.wordpress.com/2013/05/copyfromconsole.png</a>' width='' height='' alt='Copying array in console to clipboard in Chrome' title='Copying array in console to clipboard in Chrome'><span class='caption-text'>Copying array in console to clipboard in Chrome</span></span></p>
+<p><span class='caption-wrapper'><img class='caption' src='/images/copyfromconsole.png' width='' height='' alt='Copying array in console to clipboard in Chrome' title='Copying array in console to clipboard in Chrome'><span class='caption-text'>Copying array in console to clipboard in Chrome</span></span></p>
 
-<p>There&rsquo;s a whole bunch of other cool console functions as well. Check them out!</p>
+<p>There’s a whole bunch of other cool console functions as well. Check them out!</p>
 
-<p><a title="Chrome Command Line API" href="https://developers.google.com/chrome-developer-tools/docs/commandline-api" target="_blank">Chrome Command Line API</a></p>
-
-<p><a title="Firebug Command Line API" href="http://getfirebug.com/wiki/index.php/Command_Line_API" target="_blank">Firebug Command Line API</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Absolutely awesome article on plugin development, testing, and CI with grunt]]></title>
-    <link href="http://html5devgal.com//blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt/"/>
-    <updated>2013-05-12T00:00:00-05:00</updated>
-    <id>http://html5devgal.com//blog/2013/05/12/absolutely-awesome-article-on-plugin-development-testing-and-ci-with-grunt</id>
-    <content type="html"><![CDATA[<p>I had one of those &lsquo;Boy this would make an awesome jquery plugin&rsquo; moments so I decided to roll my own.</p>
-
-<p>  <!-- more --></p>
-
-<p>I also decided I needed to do it right so I could contribute it to the open source community without shame.</p>
-
-<p>I did some some google-ing to find some best practices info and ran into this awesome <a href="http://markdalgleish.com/2013/01/testing-jquery-plugins-cross-version-with-grunt/">article</a>.</p>
-
-<p>I thought I would pass it along.</p>
-
-<p>Along with some other great <a href="http://learn.jquery.com/plugins/?rdfrom=http%3A%2F%2Fdocs.jquery.com%2Fmw%2Findex.php%3Ftitle%3DPlugins%2FAuthoring%26redirect%3Dno">articles</a> about jquery plugin best practices I was able to dive right in.</p>
-
-<p><a href="https://github.com/jewelsjacobs/jquery.simpleCenter">Here&rsquo;s</a> what I&rsquo;ve got so far (a work in progress).</p>
-
-<p>If your new to testing, CI, plugin development or just want to see a good way to design good open source JavaScript apps, I highly recommend reading this stuff.</p>
+<p><a href="https://developers.google.com/chrome-developer-tools/docs/commandline-api">Chrome Command Line API</a>
+<a href="http://getfirebug.com/wiki/index.php/Command_Line_API">Firebug Command Line API</a></p>
 ]]></content>
   </entry>
   
