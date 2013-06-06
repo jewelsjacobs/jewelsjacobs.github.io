@@ -298,22 +298,23 @@ great <a href="http://lnkd.in/Wtidi7">discussion</a> I had with <a href="www.lin
 </p>
 
 </footer>
-  <script src = "/javascripts/jquery.fancybox.pack.js" ></script >
-<script type = "text/javascript" >
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js" ></script>
+<script src="/javascripts/jquery.fancybox.pack.js" ></script >
+<script type="text/javascript" >
 (function($) {
   $('.fancybox').fancybox({
-                            beforeLoad: function() {
-                              var el, id = $(this.element).data('title-id');
+    beforeLoad: function() {
+        var el, id = $(this.element).data('title-id');
 
-                              if (id) {
-                                el = $('#' + id);
+        if (id) {
+          el = $('#' + id);
 
-                                if (el.length) {
-                                  this.title = el.html();
-                                }
-                              }
-                            }
-                          });
+          if (el.length) {
+            this.title = el.html();
+          }
+        }
+      }
+    });
 })(jQuery);
 </script > <!-- Delete or comment this line to disable Fancybox -->
 
