@@ -126,215 +126,232 @@ based on the &hellip;">
 <div class="entry-content"><p>I was tired of manually creating namespace objects for my javascript files so I decided to dynamically generate a namespace.js file
 based on the directory structure of my app.</p>
 
-<p><!-- more --></p>
+<p>  <!-- more --></p>
 
-<p>Here’s how:
-##Requirements</p>
+<p>Here&rsquo;s how:</p>
+
+<h2>Requirements</h2>
 
 <pre><code>&lt;li&gt;&lt;a title="node.js" href="http://nodejs.org/" target="_blank"&gt;node.js&lt;/a&gt;
 </code></pre>
 
-<h3 id="node-modules">Node Modules</h3>
+<h3>Node Modules</h3>
 
 <ul>
-  <li><a href="http://expressjs.com/">express</a></li>
-  <li><a href="https://github.com/coolaj86/node-walk">walk</a></li>
+<li><a href="http://expressjs.com/">express</a></li>
+<li><a href="https://github.com/coolaj86/node-walk">walk</a></li>
 </ul>
 
-<h2 id="instructions">Instructions</h2>
+
+<h2>Instructions</h2>
+
 <p>Download and install a <a href="http://nodejs.org/">node.js binary</a>.</p>
 
 <p>Create a project folder and navigate to it:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">mkdir app
-</span><span class="line">cd app</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir app
+</span><span class='line'>cd app</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Install the npm modules. The -S flag will save the dependency info to your package.json file:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">npm install express walk -S</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>npm install express walk -S</span></code></pre></td></tr></table></div></figure>
 
-<p>Set up express in your app. If you don’t know how to do this, check out the
+
+<p>Set up express in your app. If you don&rsquo;t know how to do this, check out the
 <a href="http://expressjs.com/guide.html">express guide</a> or checkout the <strong>Using express(1) to generate an
 app</strong> section in the guide to auto generate a node.js / express app.</p>
 
-<p>In your server.js or app.js file (which ever one you’ve created for express) do the following:</p>
+<p>In your server.js or app.js file (which ever one you&rsquo;ve created for express) do the following:</p>
 
 <p>Make sure you are requiring the nescessary modules. You probably need more but these are just for the code in this example:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">),</span>
-</span><span class="line">    <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">),</span>
-</span><span class="line">    <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">),</span>
-</span><span class="line">    <span class="nx">walk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;walk&#39;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">walk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;walk&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>To run the http server in express you probably have something like this in the file:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
-</span><span class="line">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
-</span><span class="line"><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>To auto generate the namespace file when the http server starts, modify the http.createServer code block to look like this. Make sure to replace following variables:</p>
 
 <ul>
-  <li><strong><em>startPath</em></strong> - path where your app directory resides in relation to the server.js / app.js file.</li>
-  <li>***appName - global namespace.</li>
-  <li><strong><em>filePath</em></strong> - path of the file you want to write the namespace code to.</li>
+<li><strong><em>startPath</em></strong> &ndash; path where your app directory resides in relation to the server.js / app.js file.</li>
+<li>***appName &ndash; global namespace.</li>
+<li><strong><em>filePath</em></strong> &ndash; path of the file you want to write the namespace code to.</li>
 </ul>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-<span class="line-number">31</span>
-<span class="line-number">32</span>
-<span class="line-number">33</span>
-<span class="line-number">34</span>
-<span class="line-number">35</span>
-<span class="line-number">36</span>
-<span class="line-number">37</span>
-<span class="line-number">38</span>
-<span class="line-number">39</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
-</span><span class="line">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
-</span><span class="line">
-</span><span class="line">    <span class="kd">var</span> <span class="nx">emitter</span><span class="p">,</span>
-</span><span class="line">        <span class="nx">str</span><span class="p">,</span>
-</span><span class="line">        <span class="nx">startPath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc&quot;</span><span class="p">,</span>
-</span><span class="line">        <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;poc&quot;</span><span class="p">,</span>
-</span><span class="line">        <span class="nx">filePath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc/namespace.js&quot;</span><span class="p">;</span>
-</span><span class="line">
-</span><span class="line">    <span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;flags&#39;</span><span class="o">:</span> <span class="s1">&#39;w&#39;</span><span class="p">});</span>
-</span><span class="line">    <span class="kd">var</span> <span class="nx">spacedStartPath</span> <span class="o">=</span> <span class="nx">startPath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
-</span><span class="line">
-</span><span class="line">    <span class="kd">function</span> <span class="nx">upperCaseMe</span> <span class="p">(</span><span class="nx">txt</span><span class="p">){</span>
-</span><span class="line">        <span class="k">return</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
-</span><span class="line">    <span class="p">}</span>
-</span><span class="line">
-</span><span class="line">    <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;window.&quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot; = {} || &quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot;;\r\n&quot;</span><span class="p">;</span>
-</span><span class="line">    <span class="nx">emitter</span> <span class="o">=</span> <span class="nx">walk</span><span class="p">.</span><span class="nx">walk</span><span class="p">(</span><span class="nx">startPath</span><span class="p">);</span>
-</span><span class="line">
-</span><span class="line">    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;directory&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">stat</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">dirpath</span> <span class="o">=</span>  <span class="p">[</span><span class="nx">path</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">stat</span><span class="p">.</span><span class="nx">name</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-</span><span class="line">
-</span><span class="line">        <span class="kd">var</span> <span class="nx">noSlash</span> <span class="o">=</span>  <span class="nx">dirpath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">strip</span> <span class="o">=</span>  <span class="nx">noSlash</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">spacedStartPath</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">strip</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\w\S*/g</span><span class="p">,</span> <span class="nx">upperCaseMe</span><span class="p">);</span>
-</span><span class="line">        <span class="k">if</span> <span class="p">(</span><span class="nx">uppercase</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">            <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">uppercase</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ /g</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">);</span>
-</span><span class="line">        <span class="p">};</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="s2">&quot; = {};\r\n&quot;</span>
-</span><span class="line">        <span class="nx">str</span> <span class="o">+=</span> <span class="nx">appName</span> <span class="o">+</span> <span class="nx">uppercase</span> <span class="o">+</span> <span class="nx">end</span><span class="p">;</span>
-</span><span class="line">
-</span><span class="line">        <span class="nx">next</span><span class="p">();</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line">
-</span><span class="line">    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class="line">        <span class="nx">log</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line">
-</span><span class="line"><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">emitter</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">str</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">startPath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;poc&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">filePath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc/namespace.js&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;flags&#39;</span><span class="o">:</span> <span class="s1">&#39;w&#39;</span><span class="p">});</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">spacedStartPath</span> <span class="o">=</span> <span class="nx">startPath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">upperCaseMe</span> <span class="p">(</span><span class="nx">txt</span><span class="p">){</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;window.&quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot; = {} || &quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot;;\r\n&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="nx">emitter</span> <span class="o">=</span> <span class="nx">walk</span><span class="p">.</span><span class="nx">walk</span><span class="p">(</span><span class="nx">startPath</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;directory&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">stat</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">dirpath</span> <span class="o">=</span>  <span class="p">[</span><span class="nx">path</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">stat</span><span class="p">.</span><span class="nx">name</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">noSlash</span> <span class="o">=</span>  <span class="nx">dirpath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">strip</span> <span class="o">=</span>  <span class="nx">noSlash</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">spacedStartPath</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">strip</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\w\S*/g</span><span class="p">,</span> <span class="nx">upperCaseMe</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">uppercase</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">uppercase</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ /g</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">};</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="s2">&quot; = {};\r\n&quot;</span>
+</span><span class='line'>        <span class="nx">str</span> <span class="o">+=</span> <span class="nx">appName</span> <span class="o">+</span> <span class="nx">uppercase</span> <span class="o">+</span> <span class="nx">end</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">next</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">log</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>With this example and this app directory structure</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">poc
-</span><span class="line">--data
-</span><span class="line">----api
-</span><span class="line">----layout
-</span><span class="line">----providers
-</span><span class="line">--grid
-</span><span class="line">--models
-</span><span class="line">----view</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>poc
+</span><span class='line'>--data
+</span><span class='line'>----api
+</span><span class='line'>----layout
+</span><span class='line'>----providers
+</span><span class='line'>--grid
+</span><span class='line'>--models
+</span><span class='line'>----view</span></code></pre></td></tr></table></div></figure>
+
 
 <p>the autogenerated namespace file looks like this:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nb">window</span><span class="p">.</span><span class="nx">poc</span> <span class="o">=</span> <span class="p">{}</span> <span class="o">||</span> <span class="nx">poc</span><span class="p">;</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Grid</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Models</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Models</span><span class="p">.</span><span class="nx">View</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Api</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Layout</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span> <span class="o">=</span> <span class="p">{};</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">poc</span> <span class="o">=</span> <span class="p">{}</span> <span class="o">||</span> <span class="nx">poc</span><span class="p">;</span>
+</span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Grid</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Models</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Models</span><span class="p">.</span><span class="nx">View</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Api</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Layout</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span> <span class="o">=</span> <span class="p">{};</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>This way I can take the following file:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">poc/data/providers/names.js</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>poc/data/providers/names.js</span></code></pre></td></tr></table></div></figure>
+
 
 <p>and use the following namespace / naming convention code to define a global method / object:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalvar</span> <span class="o">=</span> <span class="s2">&quot;globalvarval&quot;</span><span class="p">;</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalmethod</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-</span><span class="line"><span class="c1">// awesome code here</span>
-</span><span class="line"><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalvar</span> <span class="o">=</span> <span class="s2">&quot;globalvarval&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalmethod</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'><span class="c1">// awesome code here</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>I got a twitter response from a one of the great JavaScript masters
 <a href="http://www.2ality.com/">Dr. Axel Rauschmayer</a> when asking if his
 <a href="ttp://www.2ality.com/2011/11/lobrow.html">lobrow library</a> could be used to do this only using browser modules.
-I wasn’t able to do it and wound up with this solution but he gives some tips:</p>
+I wasn&rsquo;t able to do it and wound up with this solution but he gives some tips:</p>
 
-<div class="embed tweet"><blockquote class="twitter-tweet"><p><a href="https://twitter.com/jewelsjacobs">@jewelsjacobs</a> Have you tried browserify? <a href="http://t.co/nQSytJGunc">http://t.co/nQSytJGunc</a>&#10;Best you can do with files in browsers: <a href="http://t.co/gm7Z7kwB0J">http://t.co/gm7Z7kwB0J</a></p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/statuses/335016533325647872">May 16, 2013</a></blockquote>
-<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<p>  <div class='embed tweet'><blockquote class="twitter-tweet"><p><a href="https://twitter.com/jewelsjacobs">@jewelsjacobs</a> Have you tried browserify? <a href="http://t.co/nQSytJGunc"><a href="http://t.co/nQSytJGunc">http://t.co/nQSytJGunc</a></a>&#10;Best you can do with files in browsers: <a href="http://t.co/gm7Z7kwB0J"><a href="http://t.co/gm7Z7kwB0J">http://t.co/gm7Z7kwB0J</a></a></p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/statuses/335016533325647872">May 16, 2013</a></blockquote></p>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p></div></p>
 
 <p>I hope someone finds this helpful!</p>
 </div>
@@ -422,6 +439,10 @@ I wasn’t able to do it and wound up with this solution but he gives some tips:
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/08/octopress-toc-and-coderay-codeblocks/">Octopress TOC and codeblock Codeblocks</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/05/automatic-javascript-linting-fixes/">Automatic JavaScript Linting Fixes</a>
       </li>
     
@@ -435,10 +456,6 @@ I wasn’t able to do it and wound up with this solution but he gives some tips:
     
       <li class="post">
         <a href="/blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module/">My Two New jQuery Plugins and One New Node Module</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/">Create Dynamic Namespace Autoloader With Node.js, Express, and Walk</a>
       </li>
     
   </ul>

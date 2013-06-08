@@ -4,7 +4,7 @@
   <title><![CDATA[Category: shell | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/shell/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-05T23:59:19-05:00</updated>
+  <updated>2013-06-08T11:04:26-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<p>I was getting sick of manually fixing <a href="https://developers.google.com/closure/utilities/">closure linter</a> errors one
 by one so I created a shell script to do this recursivley over a directory or with a single file.</p>
 
-<p><!-- more --></p>
+<p>  <!-- more --></p>
 
 <p>Requires <a href="https://developers.google.com/closure/compiler/">closure compiler</a></p>
 

@@ -9,7 +9,7 @@
   <meta name="author" content="Julia Jacobs">
 
   
-  <meta name="description" content="Here’s a tip on how to get the z plane camera position in chrome’s console. In this example my render DOM element container has an id of ‘ &hellip;">
+  <meta name="description" content="Here&rsquo;s a tip on how to get the z plane camera position in chrome&rsquo;s console. In this example my render DOM element container has an id of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -122,58 +122,59 @@
   </header>
 
 
-<div class="entry-content"><p>Here’s a tip on how to get the z plane camera position in chrome’s console.</p>
+<div class="entry-content"><p>Here&rsquo;s a tip on how to get the z plane camera position in chrome&rsquo;s console.</p>
 
-<p><!-- more --></p>
+<p>  <!-- more --></p>
 
-<p>In this example my render DOM element container has an id of ‘video_container’.
-Just replace it with yours. Also I’m using jquery so you will need to have that included in your app.</p>
+<p>In this example my render DOM element container has an id of &lsquo;video_container&rsquo;.
+Just replace it with yours. Also I&rsquo;m using jquery so you will need to have that included in your app.</p>
 
-<p>I attached this to a global variable (poc is the global namespace of my app) so I can just enter “poc.DebugData()” in the console.</p>
+<p>I attached this to a global variable (poc is the global namespace of my app) so I can just enter &ldquo;poc.DebugData()&rdquo; in the console.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">DebugData</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class="line">     <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">         <span class="k">return</span> <span class="p">{</span>
-</span><span class="line">             <span class="s2">&quot;window height&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
-</span><span class="line">             <span class="s2">&quot;window width&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
-</span><span class="line">             <span class="s2">&quot;camera z pos&quot;</span> <span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span>
-</span><span class="line">                 <span class="nb">parseInt</span><span class="p">(</span>
-</span><span class="line">                     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">)</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">children</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">nodeValue</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;: &#39;</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;) &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">14</span><span class="p">]</span>
-</span><span class="line">                 <span class="p">)</span>
-</span><span class="line">             <span class="p">)</span>
-</span><span class="line">         <span class="p">};</span>
-</span><span class="line">     <span class="p">}</span>
-</span><span class="line"> <span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">DebugData</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>     <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>         <span class="k">return</span> <span class="p">{</span>
+</span><span class='line'>             <span class="s2">&quot;window height&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
+</span><span class='line'>             <span class="s2">&quot;window width&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
+</span><span class='line'>             <span class="s2">&quot;camera z pos&quot;</span> <span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span>
+</span><span class='line'>                 <span class="nb">parseInt</span><span class="p">(</span>
+</span><span class='line'>                     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">)</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">children</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">nodeValue</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;: &#39;</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;) &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">14</span><span class="p">]</span>
+</span><span class='line'>                 <span class="p">)</span>
+</span><span class='line'>             <span class="p">)</span>
+</span><span class='line'>         <span class="p">};</span>
+</span><span class='line'>     <span class="p">}</span>
+</span><span class='line'> <span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>There’s probably a cleaner way to do this but this is what I’ve got!</p>
+
+<p>There&rsquo;s probably a cleaner way to do this but this is what I&rsquo;ve got!</p>
 </div>
 
 
@@ -259,6 +260,10 @@ Just replace it with yours. Also I’m using jquery so you will need to have tha
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/08/octopress-toc-and-coderay-codeblocks/">Octopress TOC and codeblock Codeblocks</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/05/automatic-javascript-linting-fixes/">Automatic JavaScript Linting Fixes</a>
       </li>
     
@@ -272,10 +277,6 @@ Just replace it with yours. Also I’m using jquery so you will need to have tha
     
       <li class="post">
         <a href="/blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module/">My Two New jQuery Plugins and One New Node Module</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/">Create Dynamic Namespace Autoloader With Node.js, Express, and Walk</a>
       </li>
     
   </ul>
