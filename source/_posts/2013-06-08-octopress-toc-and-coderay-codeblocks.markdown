@@ -39,7 +39,7 @@ in my Octopress blog but I keep getting this error when running
 I don't know if the problem is the blog / pages syntax or my _config.yaml file
 
 I tried installing [this plugin](https://github.com/codebykat/blog/blob/2f6c9615c02869dca5f52921ac5eb7e0b35a6427/plugins/code_ray_block.rb) and
-following the instructions in [this blog post](http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-codeblock/)
+following the instructions in [this blog post](http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/)
  but no joy.
 
 I have installed the kramdown and codeblock gems and made the following changes to my _config.yml:
