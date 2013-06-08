@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-08T11:04:26-05:00</updated>
+  <updated>2013-06-08T11:13:45-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -19,7 +19,9 @@
     <updated>2013-06-08T10:19:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/06/08/octopress-toc-and-coderay-codeblocks</id>
     <content type="html"><![CDATA[<p>I&rsquo;m trying to create a table of contents in my Octopress blog with kramdown.
- I&rsquo;m having some issues.</p>
+I&rsquo;m having some issues.</p>
+
+<p>  <!-- more --></p>
 
 <p>I want to use kramdown tags with &lsquo;:&rsquo; in them, ie.
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -42,10 +44,10 @@
 </span><span class='line'>  parse: (&lt;unknown>): could not find expected &lsquo;:&rsquo;
 </span><span class='line'>  while scanning a simple key at line 8 column 1 (Psych::SyntaxError)</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>I&rsquo;ve managed to solve my codeblock code block issues thanks to [this plugin]
-(<a href="https://github.com/codebykat/blog/blob">https://github.com/codebykat/blog/blob</a>
-/2f6c9615c02869dca5f52921ac5eb7e0b35a6427/plugins/code_ray_block.rb) and
-following the instructions in <a href="http://blog.codebykat%0A.com/2013/05/23/gorgeous-octopress-codeblocks-with-codeblock/">this blog post</a></p>
+<p>I don&rsquo;t know if the problem is the blog / pages syntax or my _config.yaml file</p>
+
+<p>I tried installing <a href="https://github.com/codebykat/blog/blob/2f6c9615c02869dca5f52921ac5eb7e0b35a6427/plugins/code_ray_block.rb">this plugin</a> and
+following the instructions in <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-codeblock/">this blog post</a></p>
 
 <p>I have installed the kramdown and codeblock gems and made the following changes to my _config.yml:</p>
 
@@ -131,7 +133,11 @@ following the instructions in <a href="http://blog.codebykat%0A.com/2013/05/23/g
 </ul>
 
 
-<p>Without the : tags the site generates fine.</p>
+<p>The only way I could get rid of the errors was to get rid of the kramdown and
+coderay tags, uninstall coderay, get rid of that coderay plugin and revert my _config.yml
+to use rdiscount and get rid of the kramdown / coderay fields and keys.</p>
+
+<p>It stinks to not be able to use the cool coderay / kramdown features.</p>
 
 <p>I&rsquo;m trying to get some help on this.  I&rsquo;ll update this post when I get a
 working solution.</p>
