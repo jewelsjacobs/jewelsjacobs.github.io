@@ -10,10 +10,7 @@
 
   
   <meta name="description" content="Here’s the code to determine if the current browser is a SmartTV - requires
-Modernizr 1
-2
-3
-function isSmartTV() { return Modernizr.websockets === &hellip;">
+Modernizr Using Modernizr function isSmartTV() { return Modernizr. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -132,13 +129,15 @@ function isSmartTV() { return Modernizr.websockets === &hellip;">
 
 <p><!-- more --></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">isSmartTV</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="line">    <span class="k">return</span> <span class="nx">Modernizr</span><span class="p">.</span><span class="nx">websockets</span> <span class="o">===</span> <span class="kc">false</span><span class="p">;</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Using Modernizr </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="keyword">function</span> <span class="function">isSmartTV</span>() {
+    <span class="keyword">return</span> Modernizr.websockets === <span class="predefined-constant">false</span>;
+}
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>This works because the Samsung SmartTV does not support Web Sockets which I find out by running the
 <a href="http://modernizr.github.io/Modernizr/test/index.html">Modernizr Test Suite</a> on the SmartTV.</p>
@@ -146,13 +145,15 @@ function isSmartTV() { return Modernizr.websockets === &hellip;">
 <p>UPDATE: Actually I wound up changing this to use User-Agent sniffing based on a
 great <a href="http://lnkd.in/Wtidi7">discussion</a> I had with <a href="www.linkedin.com/in/dmikey">Derek Anderson</a></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class="line">    <span class="k">return</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/TV/i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>User-Agent Sniffing </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="keyword">function</span> () {
+    <span class="keyword">return</span> navigator.userAgent.search(<span class="regexp"><span class="delimiter">/</span><span class="content">TV</span><span class="delimiter">/</span><span class="modifier">i</span></span>) &gt;= <span class="integer">0</span>;
+}
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 </div>
 
@@ -239,7 +240,7 @@ great <a href="http://lnkd.in/Wtidi7">discussion</a> I had with <a href="www.lin
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/06/08/octopress-toc-and-coderay-codeblocks/">Octopress TOC and codeblock Codeblocks</a>
+        <a href="/blog/2013/06/08/octopress-toc-and-coderay-codeblocks/">Octopress TOC and coderay Codeblocks</a>
       </li>
     
       <li class="post">

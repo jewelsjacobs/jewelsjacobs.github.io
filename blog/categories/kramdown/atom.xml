@@ -4,7 +4,7 @@
   <title><![CDATA[Category: kramdown | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/kramdown/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-08T12:33:24-05:00</updated>
+  <updated>2013-06-08T13:44:08-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Octopress TOC and codeblock Codeblocks]]></title>
+    <title type="html"><![CDATA[Octopress TOC and coderay Codeblocks]]></title>
     <link href="http://html5devgal.com//blog/2013/06/08/octopress-toc-and-coderay-codeblocks/"/>
     <updated>2013-06-08T10:19:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/06/08/octopress-toc-and-coderay-codeblocks</id>
@@ -25,7 +25,35 @@ Turns out I was creating the TOC wrong.  Check out this <a href="http://stackove
 
 <p>If your having TOC issues, you can take a look at my <a href="https://raw.github.com/jewelsjacobs/jewelsjacobs.github.io/source/source/resources/index.markdown">markdown source</a> for guidance.</p>
 
-<p>Now on to coderay codeblocks!</p>
+<p>Also got the coderay stuff working following <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">this excellent article</a>.</p>
+
+<p>I wound up wrapping code lines by changing his .CodeRay pre block in</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="CodeRay">
+  <div class="code"><pre>
+sass/custom/_styles.scss
+</pre></div>
+</div>
+ </figure></notextile></div></p>
+
+<p>to:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="CodeRay">
+  <div class="code"><pre>
+<span class="class">.CodeRay</span> <span class="type">pre</span> {
+  <span class="key">background</span>: <span class="value">none</span>;
+  <span class="key">color</span>: <span class="color">#000</span>;
+  <span class="comment">/* added */</span>
+  <span class="key">overflow</span>: <span class="value">auto</span>;
+  <span class="key">white-space</span>: <span class="value">pre</span>;
+  <span class="key">word-wrap</span>: <span class="value">break-word</span>;
+  <span class="key">word-break</span>: <span class="value">normal</span>;
+}
+</pre></div>
+</div>
+ </figure></notextile></div></p>
+
+<p>If you get stuck on any of this feel free to take a peek at my source code</p>
 ]]></content>
   </entry>
   

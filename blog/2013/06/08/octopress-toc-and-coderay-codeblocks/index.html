@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress TOC and codeblock Codeblocks - HTML5 Dev Gal</title>
+  <title>Octopress TOC and coderay Codeblocks - HTML5 Dev Gal</title>
   <meta name="author" content="Julia Jacobs">
 
   
@@ -100,7 +100,7 @@
   
   <header>
     
-      <h1 class="entry-title">Octopress TOC and Codeblock Codeblocks</h1>
+      <h1 class="entry-title">Octopress TOC and Coderay Codeblocks</h1>
     
     
       <p class="meta">
@@ -130,7 +130,35 @@ Turns out I was creating the TOC wrong.  Check out this <a href="http://stackove
 
 <p>If your having TOC issues, you can take a look at my <a href="https://raw.github.com/jewelsjacobs/jewelsjacobs.github.io/source/source/resources/index.markdown">markdown source</a> for guidance.</p>
 
-<p>Now on to coderay codeblocks!</p>
+<p>Also got the coderay stuff working following <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">this excellent article</a>.</p>
+
+<p>I wound up wrapping code lines by changing his .CodeRay pre block in</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+sass/custom/_styles.scss
+</pre></div>
+</div>
+ </figure></notextile></div>
+
+<p>to:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+<span class="class">.CodeRay</span> <span class="type">pre</span> {
+  <span class="key">background</span>: <span class="value">none</span>;
+  <span class="key">color</span>: <span class="color">#000</span>;
+  <span class="comment">/* added */</span>
+  <span class="key">overflow</span>: <span class="value">auto</span>;
+  <span class="key">white-space</span>: <span class="value">pre</span>;
+  <span class="key">word-wrap</span>: <span class="value">break-word</span>;
+  <span class="key">word-break</span>: <span class="value">normal</span>;
+}
+</pre></div>
+</div>
+ </figure></notextile></div>
+
+<p>If you get stuck on any of this feel free to take a peek at my source code</p>
 </div>
 
 
@@ -158,7 +186,7 @@ Turns out I was creating the TOC wrong.  Check out this <a href="http://stackove
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/codeblock/'>codeblock</a>, <a class='category' href='/blog/categories/kramdown/'>kramdown</a>
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/coderay/'>coderay</a>, <a class='category' href='/blog/categories/kramdown/'>kramdown</a>
   
 </span>
 
@@ -214,7 +242,7 @@ Turns out I was creating the TOC wrong.  Check out this <a href="http://stackove
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/06/08/octopress-toc-and-coderay-codeblocks/">Octopress TOC and codeblock Codeblocks</a>
+        <a href="/blog/2013/06/08/octopress-toc-and-coderay-codeblocks/">Octopress TOC and coderay Codeblocks</a>
       </li>
     
       <li class="post">

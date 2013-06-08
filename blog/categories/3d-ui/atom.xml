@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 3D UI | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/3d-ui/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-08T12:33:24-05:00</updated>
+  <updated>2013-06-08T13:44:08-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -27,47 +27,32 @@ Just replace it with yours. Also I’m using jquery so you will need to have tha
 
 <p>I attached this to a global variable (poc is the global namespace of my app) so I can just enter “poc.DebugData()” in the console.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">DebugData</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>     <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="err">“#</span><span class="nx">video_container</span><span class="err">”</span><span class="p">).</span><span class="nx">length</span> <span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>         <span class="k">return</span> <span class="p">{</span>
-</span><span class='line'>             <span class="err">“</span><span class="nb">window</span> <span class="nx">height</span><span class="err">”</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
-</span><span class='line'>             <span class="err">“</span><span class="nb">window</span> <span class="nx">width</span><span class="err">”</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
-</span><span class='line'>             <span class="err">“</span><span class="nx">camera</span> <span class="nx">z</span> <span class="nx">pos</span><span class="err">”</span> <span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span>
-</span><span class='line'>                 <span class="nb">parseInt</span><span class="p">(</span>
-</span><span class='line'>                     <span class="nx">$</span><span class="p">(</span><span class="err">“#</span><span class="nx">video_container</span><span class="err">”</span><span class="p">)</span>
-</span><span class='line'>                         <span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="err">“</span><span class="nx">div</span><span class="err">”</span><span class="p">)</span>
-</span><span class='line'>                         <span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'>                         <span class="p">.</span><span class="nx">children</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>                         <span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">nodeValue</span>
-</span><span class='line'>                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="err">‘</span><span class="o">:</span> <span class="err">‘</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
-</span><span class='line'>                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="err">‘</span><span class="p">)</span> <span class="err">‘</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="err">‘</span><span class="p">,</span> <span class="err">‘</span><span class="p">)[</span><span class="mi">14</span><span class="p">]</span>
-</span><span class='line'>                 <span class="p">)</span>
-</span><span class='line'>             <span class="p">)</span>
-</span><span class='line'>         <span class="p">};</span>
-</span><span class='line'>     <span class="p">}</span>
-</span><span class='line'> <span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption class='code-header' style='margin-bottom:-5px;'><span>Debug Code </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+poc.<span class="function">DebugData</span> = <span class="keyword">function</span> () {
+     <span class="keyword">if</span> (<span class="predefined">$</span>(<span class="error">“</span><span class="error">#</span>video_container<span class="error">”</span>).length &amp;gt; <span class="integer">0</span>) {
+         <span class="keyword">return</span> {
+             <span class="error">“</span>window height<span class="error">”</span> : window.innerHeight,
+             <span class="error">“</span>window width<span class="error">”</span> : window.innerWidth,
+             <span class="error">“</span>camera z pos<span class="error">”</span> : Math.abs(
+                 parseInt(
+                     <span class="predefined">$</span>(<span class="error">“</span><span class="error">#</span>video_container<span class="error">”</span>)
+                         .children(<span class="error">“</span>div<span class="error">”</span>)
+                         .eq(<span class="integer">0</span>)
+                         .children()[<span class="integer">0</span>]
+                         .attributes.style.nodeValue
+                         .split(<span class="error">‘</span>: <span class="error">‘</span>)[<span class="integer">4</span>]
+                         .split(<span class="error">‘</span>) <span class="error">‘</span>)[<span class="integer">1</span>]
+                         .split(<span class="error">‘</span>, <span class="error">‘</span>)[<span class="integer">14</span>]
+                 )
+             )
+         };
+     }
+ };
+</pre></div>
+</div>
+ </figure></notextile></div></p>
 
 <p>There’s probably a cleaner way to do this but this is what I’ve got!</p>
 ]]></content>
@@ -105,24 +90,21 @@ with x, y, and z coordinates.</p>
 which, magically using some very heavy matrix equations, dynamically translates x, y and z
 coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>-webkit-transform:
-</span><span class='line'>   translate3d(0px, 0px, 473.7224230277783px)
-</span><span class='line'>   matrix3d(
-</span><span class='line'>      0.9999499917030334, 0, -0.009999499656260014, 0,
-</span><span class='line'>      0, -1, 0, 0,
-</span><span class='line'>      0.009999499656260014, 0, 0.9999499917030334, 0,
-</span><span class='line'>      0.000002216018401668407, 0, -4987.5380859375, 1
-</span><span class='line'>   )
-</span><span class='line'>   translate3d(747.5px, 363.5px, 0px);</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption class='code-header' style='margin-bottom:-5px;'><span>Crazy transforms </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="type">-webkit-transform</span>:
+   <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0px</span>, <span class="float">0px</span>, <span class="float">473.7224230277783px</span>)
+   <span class="error">m</span><span class="error">a</span><span class="error">t</span><span class="error">r</span><span class="error">i</span><span class="error">x</span><span class="float">3</span><span class="error">d</span>(
+      <span class="float">0</span><span class="class">.9999499917030334</span>, <span class="float">0</span>, <span class="float">-0</span><span class="class">.009999499656260014</span>, <span class="float">0</span>,
+      <span class="float">0</span>, <span class="float">-1</span>, <span class="float">0</span>, <span class="float">0</span>,
+      <span class="float">0</span><span class="class">.009999499656260014</span>, <span class="float">0</span>, <span class="float">0</span><span class="class">.9999499917030334</span>, <span class="float">0</span>,
+      <span class="float">0</span><span class="class">.000002216018401668407</span>, <span class="float">0</span>, <span class="float">-4987</span><span class="class">.5380859375</span>, <span class="float">1</span>
+   )
+   <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">747.5px</span>, <span class="float">363.5px</span>, <span class="float">0px</span>);
+</pre></div>
+</div>
+ </figure></notextile></div></p>
 
 <p>Yick.</p>
 
@@ -132,26 +114,25 @@ is probably the best documentation out there.</p>
 <p>So how are you supposed to figure out the position of a camera in real time after you’ve zoomed into your app?</p>
 
 <p>Say you want an event to fire off when the camera is close to a certain object? Or an event to
-fire off only if you click on objects located in a certain z-plane coordinate?
-###Tracking Objects
-Say you’ve got an object element with the following css:</p>
+fire off only if you click on objects located in a certain z-plane coordinate?.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>-webkit-transform:
-</span><span class='line'> translate3d(-50%, -50%, 0px)
-</span><span class='line'> matrix3d(
-</span><span class='line'> 1, 0, 0, 0,
-</span><span class='line'> 0, -1, 0, 0,
-</span><span class='line'> 0, 0, 1, 0,
-</span><span class='line'> -800, 800, 3500, 1
-</span><span class='line'> );</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<h3 id="tracking-objects">Tracking Objects</h3>
+<p>Say you’ve got an object element with the following css:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption class='code-header' style='margin-bottom:-5px;'><span>Tranform Example </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="type">-webkit-transform</span>:
+ <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">-50%</span>, <span class="float">-50%</span>, <span class="float">0px</span>)
+ <span class="error">m</span><span class="error">a</span><span class="error">t</span><span class="error">r</span><span class="error">i</span><span class="error">x</span><span class="float">3</span><span class="error">d</span>(
+ <span class="float">1</span>, <span class="float">0</span>, <span class="float">0</span>, <span class="float">0</span>,
+ <span class="float">0</span>, <span class="float">-1</span>, <span class="float">0</span>, <span class="float">0</span>,
+ <span class="float">0</span>, <span class="float">0</span>, <span class="float">1</span>, <span class="float">0</span>,
+ <span class="float">-800</span>, <span class="float">800</span>, <span class="float">3500</span>, <span class="float">1</span>
+ );
+</pre></div>
+</div>
+ </figure></notextile></div></p>
 
 <p><strong><em>All you really care about as far as tracking the x, y and z coordinates
             of the object’s element is the 13th, 14th and 15th values: -800, 800, 3500.</em></strong></p>
@@ -169,35 +150,26 @@ Say you’ve got an object element with the following css:</p>
 
 <p>Here’s the JavaScript code to illustrate adding a scene to an element container:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">camera</span><span class="p">,</span> <span class="nx">scene</span><span class="p">,</span> <span class="nx">renderer</span><span class="p">,</span> <span class="nx">controls</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
-</span><span class='line'><span class="c1">// camera is center &amp;amp; ‘front’ or screen - camera coordinates are opposite to object coordinates</span>
-</span><span class='line'><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span> <span class="c1">// lower the number ‘closer’ to objects</span>
-</span><span class='line'><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25</span><span class="p">;</span> <span class="c1">// lower the number more to the right</span>
-</span><span class='line'><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// lower the number the more up</span>
-</span><span class='line'><span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
-</span><span class='line'><span class="c1">// CSS3D renderer</span>
-</span><span class='line'><span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">CSS3DRenderer</span><span class="p">();</span>
-</span><span class='line'><span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
-</span><span class='line'><span class="nx">renderer</span><span class="p">.</span><span class="nx">domElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="err">‘</span><span class="nx">absolute</span><span class="err">’</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="err">‘</span><span class="nx">video_container</span><span class="err">’</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">domElement</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption class='code-header' style='margin-bottom:-5px;'><span>Scene to Element Container </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="keyword">var</span> camera, scene, renderer, controls;&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">p&gt;
+
+&lt;p&gt;camera = new THREE.PerspectiveCamera(75, window.innerWidth </span><span class="delimiter">/</span></span> window.innerHeight, <span class="float">0.1</span>, <span class="integer">5000</span>);
+<span class="comment">// camera is center &amp;amp; ‘front’ or screen - camera coordinates are opposite to object coordinates</span>
+camera.position.z = <span class="integer">5000</span>; <span class="comment">// lower the number ‘closer’ to objects</span>
+camera.position.x = -<span class="integer">25</span>; <span class="comment">// lower the number more to the right</span>
+camera.position.y = <span class="integer">0</span>; <span class="comment">// lower the number the more up</span>
+scene = <span class="keyword">new</span> THREE.Scene();
+<span class="comment">// CSS3D renderer</span>
+renderer = <span class="keyword">new</span> THREE.CSS3DRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.domElement.style.position = <span class="error">‘</span>absolute<span class="error">’</span>;&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">p&gt;
+
+&lt;p&gt;document.getElementById(‘video_container’).appendChild(renderer.domElement);
+</span></span></pre></div>
+</div>
+ </figure></notextile></div></p>
 
 <p>Here’s the element in the markup, shown in Chrome’s Developer Tools:</p>
 
@@ -205,26 +177,22 @@ Say you’ve got an object element with the following css:</p>
 
 <p>Here’s the CSS matrix3D values:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>-webkit-transform:
-</span><span class='line'>   translate3d(0px, 0px, 445.70307751169236px)
-</span><span class='line'>   matrix3d(
-</span><span class='line'>      0.9999875426292419, 0, -0.004999937489628792,
-</span><span class='line'>      0, 0, -1,
-</span><span class='line'>      0, 0, 0.004999937489628792,
-</span><span class='line'>      0, 0.9999875426292419, 0,
-</span><span class='line'>      0, 0, -5000.0625, 1
-</span><span class='line'>   )
-</span><span class='line'>   translate3d(747.5px, 342px, 0px);</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption class='code-header' style='margin-bottom:-5px;'><span>3D Transforms Example </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="type">-webkit-transform</span>:
+   <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0px</span>, <span class="float">0px</span>, <span class="float">445.70307751169236px</span>)
+   <span class="error">m</span><span class="error">a</span><span class="error">t</span><span class="error">r</span><span class="error">i</span><span class="error">x</span><span class="float">3</span><span class="error">d</span>(
+      <span class="float">0</span><span class="class">.9999875426292419</span>, <span class="float">0</span>, <span class="float">-0</span><span class="class">.004999937489628792</span>,
+      <span class="float">0</span>, <span class="float">0</span>, <span class="float">-1</span>,
+      <span class="float">0</span>, <span class="float">0</span>, <span class="float">0</span><span class="class">.004999937489628792</span>,
+      <span class="float">0</span>, <span class="float">0</span><span class="class">.9999875426292419</span>, <span class="float">0</span>,
+      <span class="float">0</span>, <span class="float">0</span>, <span class="float">-5000</span><span class="class">.0625</span>, <span class="float">1</span>
+   )
+   <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">747.5px</span>, <span class="float">342px</span>, <span class="float">0px</span>);
+</pre></div>
+</div>
+ </figure></notextile></div></p>
 
 <p>As you can see the camera coordinates in the JavaScript code shows z = 5000,
 but in the css z = -5000.0625, a <strong><em>NEGATIVE</em></strong> value.</p>

@@ -132,47 +132,32 @@ Just replace it with yours. Also I’m using jquery so you will need to have tha
 
 <p>I attached this to a global variable (poc is the global namespace of my app) so I can just enter “poc.DebugData()” in the console.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">DebugData</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class="line">     <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">         <span class="k">return</span> <span class="p">{</span>
-</span><span class="line">             <span class="s2">&quot;window height&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
-</span><span class="line">             <span class="s2">&quot;window width&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
-</span><span class="line">             <span class="s2">&quot;camera z pos&quot;</span> <span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span>
-</span><span class="line">                 <span class="nb">parseInt</span><span class="p">(</span>
-</span><span class="line">                     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">)</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">children</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">nodeValue</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;: &#39;</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;) &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">14</span><span class="p">]</span>
-</span><span class="line">                 <span class="p">)</span>
-</span><span class="line">             <span class="p">)</span>
-</span><span class="line">         <span class="p">};</span>
-</span><span class="line">     <span class="p">}</span>
-</span><span class="line"> <span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Debug Code </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+poc.<span class="function">DebugData</span> = <span class="keyword">function</span> () {
+     <span class="keyword">if</span> (<span class="predefined">$</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">#video_container</span><span class="delimiter">&quot;</span></span>).length &gt; <span class="integer">0</span>) {
+         <span class="keyword">return</span> {
+             <span class="key"><span class="delimiter">&quot;</span><span class="content">window height</span><span class="delimiter">&quot;</span></span> : window.innerHeight,
+             <span class="key"><span class="delimiter">&quot;</span><span class="content">window width</span><span class="delimiter">&quot;</span></span> : window.innerWidth,
+             <span class="key"><span class="delimiter">&quot;</span><span class="content">camera z pos</span><span class="delimiter">&quot;</span></span> : Math.abs(
+                 parseInt(
+                     <span class="predefined">$</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">#video_container</span><span class="delimiter">&quot;</span></span>)
+                         .children(<span class="string"><span class="delimiter">&quot;</span><span class="content">div</span><span class="delimiter">&quot;</span></span>)
+                         .eq(<span class="integer">0</span>)
+                         .children()[<span class="integer">0</span>]
+                         .attributes.style.nodeValue
+                         .split(<span class="string"><span class="delimiter">'</span><span class="content">: </span><span class="delimiter">'</span></span>)[<span class="integer">4</span>]
+                         .split(<span class="string"><span class="delimiter">'</span><span class="content">) </span><span class="delimiter">'</span></span>)[<span class="integer">1</span>]
+                         .split(<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>)[<span class="integer">14</span>]
+                 )
+             )
+         };
+     }
+ };
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>There’s probably a cleaner way to do this but this is what I’ve got!</p>
 </div>
@@ -260,7 +245,7 @@ Just replace it with yours. Also I’m using jquery so you will need to have tha
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/06/08/octopress-toc-and-coderay-codeblocks/">Octopress TOC and codeblock Codeblocks</a>
+        <a href="/blog/2013/06/08/octopress-toc-and-coderay-codeblocks/">Octopress TOC and coderay Codeblocks</a>
       </li>
     
       <li class="post">

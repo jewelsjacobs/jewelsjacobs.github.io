@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-08T12:33:24-05:00</updated>
+  <updated>2013-06-08T13:44:08-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Octopress TOC and codeblock Codeblocks]]></title>
+    <title type="html"><![CDATA[Octopress TOC and coderay Codeblocks]]></title>
     <link href="http://html5devgal.com//blog/2013/06/08/octopress-toc-and-coderay-codeblocks/"/>
     <updated>2013-06-08T10:19:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/06/08/octopress-toc-and-coderay-codeblocks</id>
@@ -25,7 +25,35 @@ Turns out I was creating the TOC wrong.  Check out this <a href="http://stackove
 
 <p>If your having TOC issues, you can take a look at my <a href="https://raw.github.com/jewelsjacobs/jewelsjacobs.github.io/source/source/resources/index.markdown">markdown source</a> for guidance.</p>
 
-<p>Now on to coderay codeblocks!</p>
+<p>Also got the coderay stuff working following <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">this excellent article</a>.</p>
+
+<p>I wound up wrapping code lines by changing his .CodeRay pre block in</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+sass/custom/_styles.scss
+</pre></div>
+</div>
+ </figure></notextile></div>
+
+<p>to:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+<span class="class">.CodeRay</span> <span class="type">pre</span> {
+  <span class="key">background</span>: <span class="value">none</span>;
+  <span class="key">color</span>: <span class="color">#000</span>;
+  <span class="comment">/* added */</span>
+  <span class="key">overflow</span>: <span class="value">auto</span>;
+  <span class="key">white-space</span>: <span class="value">pre</span>;
+  <span class="key">word-wrap</span>: <span class="value">break-word</span>;
+  <span class="key">word-break</span>: <span class="value">normal</span>;
+}
+</pre></div>
+</div>
+ </figure></notextile></div>
+
+<p>If you get stuck on any of this feel free to take a peek at my source code</p>
 ]]></content>
   </entry>
   
@@ -320,15 +348,20 @@ based on the directory structure of my app.</p>
 
 <p>Create a project folder and navigate to it:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">mkdir app
-</span><span class="line">cd app</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+mkdir app
+cd app
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>Install the npm modules. The -S flag will save the dependency info to your package.json file:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">npm install express walk -S</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>npm install express walk -S</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>Set up express in your app. If you don’t know how to do this, check out the
 <a href="http://expressjs.com/guide.html">express guide</a> or checkout the <strong>Using express(1) to generate an
@@ -338,25 +371,28 @@ app</strong> section in the guide to auto generate a node.js / express app.</p>
 
 <p>Make sure you are requiring the nescessary modules. You probably need more but these are just for the code in this example:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">),</span>
-</span><span class="line">    <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">),</span>
-</span><span class="line">    <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">),</span>
-</span><span class="line">    <span class="nx">walk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;walk&#39;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Modules Required </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="keyword">var</span> express = require(<span class="string"><span class="delimiter">'</span><span class="content">express</span><span class="delimiter">'</span></span>),
+    http = require(<span class="string"><span class="delimiter">'</span><span class="content">http</span><span class="delimiter">'</span></span>),
+    fs = require(<span class="string"><span class="delimiter">'</span><span class="content">fs</span><span class="delimiter">'</span></span>),
+    walk = require(<span class="string"><span class="delimiter">'</span><span class="content">walk</span><span class="delimiter">'</span></span>);
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>To run the http server in express you probably have something like this in the file:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
-</span><span class="line">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
-</span><span class="line"><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>http.createServer function </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+http.createServer(app).listen(app.get(<span class="string"><span class="delimiter">'</span><span class="content">port</span><span class="delimiter">'</span></span>), <span class="keyword">function</span>(){
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Express server listening on port </span><span class="delimiter">&quot;</span></span> + app.get(<span class="string"><span class="delimiter">'</span><span class="content">port</span><span class="delimiter">'</span></span>) + <span class="string"><span class="delimiter">&quot;</span><span class="content"> in </span><span class="delimiter">&quot;</span></span> + process.env.NODE_ENV + <span class="string"><span class="delimiter">&quot;</span><span class="content"> mode.</span><span class="delimiter">&quot;</span></span>);
+});
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>To auto generate the namespace file when the http server starts, modify the http.createServer code block to look like this. Make sure to replace following variables:</p>
 
@@ -366,141 +402,106 @@ app</strong> section in the guide to auto generate a node.js / express app.</p>
   <li><strong><em>filePath</em></strong> - path of the file you want to write the namespace code to.</li>
 </ul>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-<span class="line-number">31</span>
-<span class="line-number">32</span>
-<span class="line-number">33</span>
-<span class="line-number">34</span>
-<span class="line-number">35</span>
-<span class="line-number">36</span>
-<span class="line-number">37</span>
-<span class="line-number">38</span>
-<span class="line-number">39</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
-</span><span class="line">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
-</span><span class="line">
-</span><span class="line">    <span class="kd">var</span> <span class="nx">emitter</span><span class="p">,</span>
-</span><span class="line">        <span class="nx">str</span><span class="p">,</span>
-</span><span class="line">        <span class="nx">startPath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc&quot;</span><span class="p">,</span>
-</span><span class="line">        <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;poc&quot;</span><span class="p">,</span>
-</span><span class="line">        <span class="nx">filePath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc/namespace.js&quot;</span><span class="p">;</span>
-</span><span class="line">
-</span><span class="line">    <span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;flags&#39;</span><span class="o">:</span> <span class="s1">&#39;w&#39;</span><span class="p">});</span>
-</span><span class="line">    <span class="kd">var</span> <span class="nx">spacedStartPath</span> <span class="o">=</span> <span class="nx">startPath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
-</span><span class="line">
-</span><span class="line">    <span class="kd">function</span> <span class="nx">upperCaseMe</span> <span class="p">(</span><span class="nx">txt</span><span class="p">){</span>
-</span><span class="line">        <span class="k">return</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
-</span><span class="line">    <span class="p">}</span>
-</span><span class="line">
-</span><span class="line">    <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;window.&quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot; = {} || &quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot;;\r\n&quot;</span><span class="p">;</span>
-</span><span class="line">    <span class="nx">emitter</span> <span class="o">=</span> <span class="nx">walk</span><span class="p">.</span><span class="nx">walk</span><span class="p">(</span><span class="nx">startPath</span><span class="p">);</span>
-</span><span class="line">
-</span><span class="line">    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;directory&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">stat</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">dirpath</span> <span class="o">=</span>  <span class="p">[</span><span class="nx">path</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">stat</span><span class="p">.</span><span class="nx">name</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-</span><span class="line">
-</span><span class="line">        <span class="kd">var</span> <span class="nx">noSlash</span> <span class="o">=</span>  <span class="nx">dirpath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">strip</span> <span class="o">=</span>  <span class="nx">noSlash</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">spacedStartPath</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">strip</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\w\S*/g</span><span class="p">,</span> <span class="nx">upperCaseMe</span><span class="p">);</span>
-</span><span class="line">        <span class="k">if</span> <span class="p">(</span><span class="nx">uppercase</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">            <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">uppercase</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ /g</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">);</span>
-</span><span class="line">        <span class="p">};</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="s2">&quot; = {};\r\n&quot;</span>
-</span><span class="line">        <span class="nx">str</span> <span class="o">+=</span> <span class="nx">appName</span> <span class="o">+</span> <span class="nx">uppercase</span> <span class="o">+</span> <span class="nx">end</span><span class="p">;</span>
-</span><span class="line">
-</span><span class="line">        <span class="nx">next</span><span class="p">();</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line">
-</span><span class="line">    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class="line">        <span class="nx">log</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line">
-</span><span class="line"><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Code to Add </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+http.createServer(app).listen(app.get(<span class="string"><span class="delimiter">'</span><span class="content">port</span><span class="delimiter">'</span></span>), <span class="keyword">function</span>(){
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Express server listening on port </span><span class="delimiter">&quot;</span></span> + app.get(<span class="string"><span class="delimiter">'</span><span class="content">port</span><span class="delimiter">'</span></span>) + <span class="string"><span class="delimiter">&quot;</span><span class="content"> in </span><span class="delimiter">&quot;</span></span> + process.env.NODE_ENV + <span class="string"><span class="delimiter">&quot;</span><span class="content"> mode.</span><span class="delimiter">&quot;</span></span>);
+
+    <span class="keyword">var</span> emitter,
+        str,
+        startPath = <span class="string"><span class="delimiter">&quot;</span><span class="content">public/javascripts/poc</span><span class="delimiter">&quot;</span></span>,
+        appName = <span class="string"><span class="delimiter">&quot;</span><span class="content">poc</span><span class="delimiter">&quot;</span></span>,
+        filePath = <span class="string"><span class="delimiter">&quot;</span><span class="content">public/javascripts/poc/namespace.js</span><span class="delimiter">&quot;</span></span>;
+
+    <span class="keyword">var</span> log = fs.createWriteStream(filePath, {<span class="key"><span class="delimiter">'</span><span class="content">flags</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">w</span><span class="delimiter">'</span></span>});
+    <span class="keyword">var</span> spacedStartPath = startPath.replace(<span class="regexp"><span class="delimiter">/</span><span class="content">\/</span><span class="delimiter">/</span><span class="modifier">g</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>);
+
+    <span class="keyword">function</span> <span class="function">upperCaseMe</span> (txt){
+        <span class="keyword">return</span> txt.charAt(<span class="integer">0</span>).toUpperCase() + txt.substr(<span class="integer">1</span>).toLowerCase();
+    }
+
+    str = <span class="string"><span class="delimiter">&quot;</span><span class="content">window.</span><span class="delimiter">&quot;</span></span> + appName + <span class="string"><span class="delimiter">&quot;</span><span class="content"> = {} || </span><span class="delimiter">&quot;</span></span> + appName + <span class="string"><span class="delimiter">&quot;</span><span class="content">;</span><span class="char">\r</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>;
+    emitter = walk.walk(startPath);
+
+    emitter.on(<span class="string"><span class="delimiter">'</span><span class="content">directory</span><span class="delimiter">'</span></span>, <span class="keyword">function</span> (path, stat, next) {
+        <span class="keyword">var</span> dirpath =  [path, <span class="string"><span class="delimiter">'</span><span class="content">/</span><span class="delimiter">'</span></span>, stat.name].join(<span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>);
+
+        <span class="keyword">var</span> noSlash =  dirpath.replace(<span class="regexp"><span class="delimiter">/</span><span class="content">\/</span><span class="delimiter">/</span><span class="modifier">g</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>);
+        <span class="keyword">var</span> strip =  noSlash.replace(spacedStartPath,<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>);
+        <span class="keyword">var</span> uppercase = strip.replace(<span class="regexp"><span class="delimiter">/</span><span class="char">\w</span><span class="char">\S</span><span class="content">*</span><span class="delimiter">/</span><span class="modifier">g</span></span>, upperCaseMe);
+        <span class="keyword">if</span> (uppercase.indexOf(<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>) != -<span class="integer">1</span>) {
+            uppercase = uppercase.replace(<span class="regexp"><span class="delimiter">/</span><span class="content"> </span><span class="delimiter">/</span><span class="modifier">g</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>);
+        };
+        <span class="keyword">var</span> end = <span class="string"><span class="delimiter">&quot;</span><span class="content"> = {};</span><span class="char">\r</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>
+        str += appName + uppercase + end;
+
+        next();
+    });
+
+    emitter.on(<span class="string"><span class="delimiter">'</span><span class="content">end</span><span class="delimiter">'</span></span>, <span class="keyword">function</span> () {
+        log.write(str);
+    });
+
+});
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>With this example and this app directory structure</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">poc
-</span><span class="line">--data
-</span><span class="line">----api
-</span><span class="line">----layout
-</span><span class="line">----providers
-</span><span class="line">--grid
-</span><span class="line">--models
-</span><span class="line">----view</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+poc
+--data
+----api
+----layout
+----providers
+--grid
+--models
+----view
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>the autogenerated namespace file looks like this:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nb">window</span><span class="p">.</span><span class="nx">poc</span> <span class="o">=</span> <span class="p">{}</span> <span class="o">||</span> <span class="nx">poc</span><span class="p">;</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Grid</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Models</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Models</span><span class="p">.</span><span class="nx">View</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Api</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Layout</span> <span class="o">=</span> <span class="p">{};</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span> <span class="o">=</span> <span class="p">{};</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>namespace.js </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+window.poc = {} || poc;
+poc.Data = {};
+poc.Grid = {};
+poc.Models = {};
+poc.Models.View = {};
+poc.Data.Api = {};
+poc.Data.Layout = {};
+poc.Data.Providers = {};
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>This way I can take the following file:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">poc/data/providers/names.js</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+poc/data/providers/names.js
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>and use the following namespace / naming convention code to define a global method / object:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalvar</span> <span class="o">=</span> <span class="s2">&quot;globalvarval&quot;</span><span class="p">;</span>
-</span><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalmethod</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-</span><span class="line"><span class="c1">// awesome code here</span>
-</span><span class="line"><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Example Method </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+poc.Data.Providers.Names.globalvar = <span class="string"><span class="delimiter">&quot;</span><span class="content">globalvarval</span><span class="delimiter">&quot;</span></span>;
+poc.Data.Providers.Names.<span class="function">globalmethod</span> = <span class="keyword">function</span>(){
+<span class="comment">// awesome code here</span>
+};
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>I got a twitter response from a one of the great JavaScript masters
 <a href="http://www.2ality.com/">Dr. Axel Rauschmayer</a> when asking if his
@@ -526,9 +527,10 @@ It’s a little known fact, however that the console in these tools have thier o
 
 <p>For example, if you want to copy an array or an object in the console, you can type</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">copy</span><span class="p">(</span><span class="nx">someArrayVariableName</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>copy(someArrayVariableName)</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p> Please note in this example I copied the contents of the clipboard to the console so you can see it.:</p>
 
@@ -595,47 +597,32 @@ Just replace it with yours. Also I’m using jquery so you will need to have tha
 
 <p>I attached this to a global variable (poc is the global namespace of my app) so I can just enter “poc.DebugData()” in the console.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">poc</span><span class="p">.</span><span class="nx">DebugData</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class="line">     <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">         <span class="k">return</span> <span class="p">{</span>
-</span><span class="line">             <span class="s2">&quot;window height&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
-</span><span class="line">             <span class="s2">&quot;window width&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
-</span><span class="line">             <span class="s2">&quot;camera z pos&quot;</span> <span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span>
-</span><span class="line">                 <span class="nb">parseInt</span><span class="p">(</span>
-</span><span class="line">                     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#video_container&quot;</span><span class="p">)</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">children</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">nodeValue</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;: &#39;</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;) &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class="line">                         <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">14</span><span class="p">]</span>
-</span><span class="line">                 <span class="p">)</span>
-</span><span class="line">             <span class="p">)</span>
-</span><span class="line">         <span class="p">};</span>
-</span><span class="line">     <span class="p">}</span>
-</span><span class="line"> <span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Debug Code </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+poc.<span class="function">DebugData</span> = <span class="keyword">function</span> () {
+     <span class="keyword">if</span> (<span class="predefined">$</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">#video_container</span><span class="delimiter">&quot;</span></span>).length &gt; <span class="integer">0</span>) {
+         <span class="keyword">return</span> {
+             <span class="key"><span class="delimiter">&quot;</span><span class="content">window height</span><span class="delimiter">&quot;</span></span> : window.innerHeight,
+             <span class="key"><span class="delimiter">&quot;</span><span class="content">window width</span><span class="delimiter">&quot;</span></span> : window.innerWidth,
+             <span class="key"><span class="delimiter">&quot;</span><span class="content">camera z pos</span><span class="delimiter">&quot;</span></span> : Math.abs(
+                 parseInt(
+                     <span class="predefined">$</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">#video_container</span><span class="delimiter">&quot;</span></span>)
+                         .children(<span class="string"><span class="delimiter">&quot;</span><span class="content">div</span><span class="delimiter">&quot;</span></span>)
+                         .eq(<span class="integer">0</span>)
+                         .children()[<span class="integer">0</span>]
+                         .attributes.style.nodeValue
+                         .split(<span class="string"><span class="delimiter">'</span><span class="content">: </span><span class="delimiter">'</span></span>)[<span class="integer">4</span>]
+                         .split(<span class="string"><span class="delimiter">'</span><span class="content">) </span><span class="delimiter">'</span></span>)[<span class="integer">1</span>]
+                         .split(<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>)[<span class="integer">14</span>]
+                 )
+             )
+         };
+     }
+ };
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>There’s probably a cleaner way to do this but this is what I’ve got!</p>
 ]]></content>
@@ -651,13 +638,15 @@ Just replace it with yours. Also I’m using jquery so you will need to have tha
 
 <p><!-- more --></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">isSmartTV</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="line">    <span class="k">return</span> <span class="nx">Modernizr</span><span class="p">.</span><span class="nx">websockets</span> <span class="o">===</span> <span class="kc">false</span><span class="p">;</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Using Modernizr </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="keyword">function</span> <span class="function">isSmartTV</span>() {
+    <span class="keyword">return</span> Modernizr.websockets === <span class="predefined-constant">false</span>;
+}
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>This works because the Samsung SmartTV does not support Web Sockets which I find out by running the
 <a href="http://modernizr.github.io/Modernizr/test/index.html">Modernizr Test Suite</a> on the SmartTV.</p>
@@ -665,13 +654,15 @@ Just replace it with yours. Also I’m using jquery so you will need to have tha
 <p>UPDATE: Actually I wound up changing this to use User-Agent sniffing based on a
 great <a href="http://lnkd.in/Wtidi7">discussion</a> I had with <a href="www.linkedin.com/in/dmikey">Derek Anderson</a></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class="line">    <span class="k">return</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/TV/i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>User-Agent Sniffing </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="keyword">function</span> () {
+    <span class="keyword">return</span> navigator.userAgent.search(<span class="regexp"><span class="delimiter">/</span><span class="content">TV</span><span class="delimiter">/</span><span class="modifier">i</span></span>) &gt;= <span class="integer">0</span>;
+}
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 ]]></content>
   </entry>
@@ -731,24 +722,21 @@ with x, y, and z coordinates.</p>
 which, magically using some very heavy matrix equations, dynamically translates x, y and z
 coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">-webkit-transform:
-</span><span class="line">   translate3d(0px, 0px, 473.7224230277783px)
-</span><span class="line">   matrix3d(
-</span><span class="line">      0.9999499917030334, 0, -0.009999499656260014, 0,
-</span><span class="line">      0, -1, 0, 0,
-</span><span class="line">      0.009999499656260014, 0, 0.9999499917030334, 0,
-</span><span class="line">      0.000002216018401668407, 0, -4987.5380859375, 1
-</span><span class="line">   )
-</span><span class="line">   translate3d(747.5px, 363.5px, 0px);</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Crazy transforms </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="type">-webkit-transform</span>:
+   <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0px</span>, <span class="float">0px</span>, <span class="float">473.7224230277783px</span>)
+   <span class="error">m</span><span class="error">a</span><span class="error">t</span><span class="error">r</span><span class="error">i</span><span class="error">x</span><span class="float">3</span><span class="error">d</span>(
+      <span class="float">0</span><span class="class">.9999499917030334</span>, <span class="float">0</span>, <span class="float">-0</span><span class="class">.009999499656260014</span>, <span class="float">0</span>,
+      <span class="float">0</span>, <span class="float">-1</span>, <span class="float">0</span>, <span class="float">0</span>,
+      <span class="float">0</span><span class="class">.009999499656260014</span>, <span class="float">0</span>, <span class="float">0</span><span class="class">.9999499917030334</span>, <span class="float">0</span>,
+      <span class="float">0</span><span class="class">.000002216018401668407</span>, <span class="float">0</span>, <span class="float">-4987</span><span class="class">.5380859375</span>, <span class="float">1</span>
+   )
+   <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">747.5px</span>, <span class="float">363.5px</span>, <span class="float">0px</span>);
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>Yick.</p>
 
@@ -758,26 +746,25 @@ is probably the best documentation out there.</p>
 <p>So how are you supposed to figure out the position of a camera in real time after you’ve zoomed into your app?</p>
 
 <p>Say you want an event to fire off when the camera is close to a certain object? Or an event to
-fire off only if you click on objects located in a certain z-plane coordinate?
-###Tracking Objects
-Say you’ve got an object element with the following css:</p>
+fire off only if you click on objects located in a certain z-plane coordinate?.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">-webkit-transform:
-</span><span class="line"> translate3d(-50%, -50%, 0px)
-</span><span class="line"> matrix3d(
-</span><span class="line"> 1, 0, 0, 0,
-</span><span class="line"> 0, -1, 0, 0,
-</span><span class="line"> 0, 0, 1, 0,
-</span><span class="line"> -800, 800, 3500, 1
-</span><span class="line"> );</span></code></pre></td></tr></table></div></figure></notextile></div>
+<h3 id="tracking-objects">Tracking Objects</h3>
+<p>Say you’ve got an object element with the following css:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Tranform Example </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="type">-webkit-transform</span>:
+ <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">-50%</span>, <span class="float">-50%</span>, <span class="float">0px</span>)
+ <span class="error">m</span><span class="error">a</span><span class="error">t</span><span class="error">r</span><span class="error">i</span><span class="error">x</span><span class="float">3</span><span class="error">d</span>(
+ <span class="float">1</span>, <span class="float">0</span>, <span class="float">0</span>, <span class="float">0</span>,
+ <span class="float">0</span>, <span class="float">-1</span>, <span class="float">0</span>, <span class="float">0</span>,
+ <span class="float">0</span>, <span class="float">0</span>, <span class="float">1</span>, <span class="float">0</span>,
+ <span class="float">-800</span>, <span class="float">800</span>, <span class="float">3500</span>, <span class="float">1</span>
+ );
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p><strong><em>All you really care about as far as tracking the x, y and z coordinates
             of the object’s element is the 13th, 14th and 15th values: -800, 800, 3500.</em></strong></p>
@@ -795,35 +782,26 @@ Say you’ve got an object element with the following css:</p>
 
 <p>Here’s the JavaScript code to illustrate adding a scene to an element container:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">camera</span><span class="p">,</span> <span class="nx">scene</span><span class="p">,</span> <span class="nx">renderer</span><span class="p">,</span> <span class="nx">controls</span><span class="p">;</span>
-</span><span class="line">
-</span><span class="line"><span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
-</span><span class="line"><span class="c1">// camera is center &amp; &#39;front&#39; or screen - camera coordinates are opposite to object coordinates</span>
-</span><span class="line"><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span> <span class="c1">// lower the number &#39;closer&#39; to objects</span>
-</span><span class="line"><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25</span><span class="p">;</span> <span class="c1">// lower the number more to the right</span>
-</span><span class="line"><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// lower the number the more up</span>
-</span><span class="line"><span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
-</span><span class="line"><span class="c1">// CSS3D renderer</span>
-</span><span class="line"><span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">CSS3DRenderer</span><span class="p">();</span>
-</span><span class="line"><span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
-</span><span class="line"><span class="nx">renderer</span><span class="p">.</span><span class="nx">domElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="s1">&#39;absolute&#39;</span><span class="p">;</span>
-</span><span class="line">
-</span><span class="line"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;video_container&#39;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">domElement</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Scene to Element Container </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="keyword">var</span> camera, scene, renderer, controls;
+
+camera = <span class="keyword">new</span> THREE.PerspectiveCamera(<span class="integer">75</span>, window.innerWidth / window.innerHeight, <span class="float">0.1</span>, <span class="integer">5000</span>);
+<span class="comment">// camera is center &amp; 'front' or screen - camera coordinates are opposite to object coordinates</span>
+camera.position.z = <span class="integer">5000</span>; <span class="comment">// lower the number 'closer' to objects</span>
+camera.position.x = -<span class="integer">25</span>; <span class="comment">// lower the number more to the right</span>
+camera.position.y = <span class="integer">0</span>; <span class="comment">// lower the number the more up</span>
+scene = <span class="keyword">new</span> THREE.Scene();
+<span class="comment">// CSS3D renderer</span>
+renderer = <span class="keyword">new</span> THREE.CSS3DRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.domElement.style.position = <span class="string"><span class="delimiter">'</span><span class="content">absolute</span><span class="delimiter">'</span></span>;
+
+document.getElementById(<span class="string"><span class="delimiter">'</span><span class="content">video_container</span><span class="delimiter">'</span></span>).appendChild(renderer.domElement);
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>Here’s the element in the markup, shown in Chrome’s Developer Tools:</p>
 
@@ -831,26 +809,22 @@ Say you’ve got an object element with the following css:</p>
 
 <p>Here’s the CSS matrix3D values:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">-webkit-transform:
-</span><span class="line">   translate3d(0px, 0px, 445.70307751169236px)
-</span><span class="line">   matrix3d(
-</span><span class="line">      0.9999875426292419, 0, -0.004999937489628792,
-</span><span class="line">      0, 0, -1,
-</span><span class="line">      0, 0, 0.004999937489628792,
-</span><span class="line">      0, 0.9999875426292419, 0,
-</span><span class="line">      0, 0, -5000.0625, 1
-</span><span class="line">   )
-</span><span class="line">   translate3d(747.5px, 342px, 0px);</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>3D Transforms Example </span></figcaption>
+ <div class="CodeRay">
+  <div class="code"><pre>
+<span class="type">-webkit-transform</span>:
+   <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0px</span>, <span class="float">0px</span>, <span class="float">445.70307751169236px</span>)
+   <span class="error">m</span><span class="error">a</span><span class="error">t</span><span class="error">r</span><span class="error">i</span><span class="error">x</span><span class="float">3</span><span class="error">d</span>(
+      <span class="float">0</span><span class="class">.9999875426292419</span>, <span class="float">0</span>, <span class="float">-0</span><span class="class">.004999937489628792</span>,
+      <span class="float">0</span>, <span class="float">0</span>, <span class="float">-1</span>,
+      <span class="float">0</span>, <span class="float">0</span>, <span class="float">0</span><span class="class">.004999937489628792</span>,
+      <span class="float">0</span>, <span class="float">0</span><span class="class">.9999875426292419</span>, <span class="float">0</span>,
+      <span class="float">0</span>, <span class="float">0</span>, <span class="float">-5000</span><span class="class">.0625</span>, <span class="float">1</span>
+   )
+   <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">747.5px</span>, <span class="float">342px</span>, <span class="float">0px</span>);
+</pre></div>
+</div>
+ </figure></notextile></div>
 
 <p>As you can see the camera coordinates in the JavaScript code shows z = 5000,
 but in the css z = -5000.0625, a <strong><em>NEGATIVE</em></strong> value.</p>
