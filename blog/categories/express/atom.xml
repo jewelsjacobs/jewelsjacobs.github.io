@@ -4,7 +4,7 @@
   <title><![CDATA[Category: express | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/express/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-08T11:17:49-05:00</updated>
+  <updated>2013-06-08T11:30:19-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -21,25 +21,22 @@
     <content type="html"><![CDATA[<p>I was tired of manually creating namespace objects for my javascript files so I decided to dynamically generate a namespace.js file
 based on the directory structure of my app.</p>
 
-<p>  <!-- more --></p>
+<p><!-- more --></p>
 
-<p>Here&rsquo;s how:</p>
-
-<h2>Requirements</h2>
+<p>Here’s how:
+##Requirements</p>
 
 <pre><code>&lt;li&gt;&lt;a title="node.js" href="http://nodejs.org/" target="_blank"&gt;node.js&lt;/a&gt;
 </code></pre>
 
-<h3>Node Modules</h3>
+<h3 id="node-modules">Node Modules</h3>
 
 <ul>
-<li><a href="http://expressjs.com/">express</a></li>
-<li><a href="https://github.com/coolaj86/node-walk">walk</a></li>
+  <li><a href="http://expressjs.com/">express</a></li>
+  <li><a href="https://github.com/coolaj86/node-walk">walk</a></li>
 </ul>
 
-
-<h2>Instructions</h2>
-
+<h2 id="instructions">Instructions</h2>
 <p>Download and install a <a href="http://nodejs.org/">node.js binary</a>.</p>
 
 <p>Create a project folder and navigate to it:</p>
@@ -54,29 +51,21 @@ based on the directory structure of my app.</p>
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>npm install express walk -S</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Set up express in your app. If you don&rsquo;t know how to do this, check out the
+<p>Set up express in your app. If you don’t know how to do this, check out the
 <a href="http://expressjs.com/guide.html">express guide</a> or checkout the <strong>Using express(1) to generate an
 app</strong> section in the guide to auto generate a node.js / express app.</p>
 
-<p>In your server.js or app.js file (which ever one you&rsquo;ve created for express) do the following:</p>
+<p>In your server.js or app.js file (which ever one you’ve created for express) do the following:</p>
 
 <p>Make sure you are requiring the nescessary modules. You probably need more but these are just for the code in this example:
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">express</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;),</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">),</span>
-</span><span class='line'><span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">),</span>
-</span><span class='line'><span class="nx">walk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;walk&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">‘</span><span class="nx">express</span><span class="err">’</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">‘</span><span class="nx">http</span><span class="err">’</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">‘</span><span class="nx">fs</span><span class="err">’</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">walk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">‘</span><span class="nx">walk</span><span class="err">’</span><span class="p">);</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>To run the http server in express you probably have something like this in the file:</p>
@@ -84,25 +73,18 @@ app</strong> section in the guide to auto generate a node.js / express app.</p>
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">port</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;),</span> <span class="kd">function</span><span class="p">(){</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">});</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">‘</span><span class="nx">port</span><span class="err">’</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">“</span><span class="nx">Express</span> <span class="nx">server</span> <span class="nx">listening</span> <span class="nx">on</span> <span class="nx">port</span> <span class="err">“</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">‘</span><span class="nx">port</span><span class="err">’</span><span class="p">)</span> <span class="o">+</span> <span class="err">“</span> <span class="k">in</span> <span class="err">“</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="err">“</span> <span class="nx">mode</span><span class="p">.</span><span class="err">”</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>To auto generate the namespace file when the http server starts, modify the http.createServer code block to look like this. Make sure to replace following variables:</p>
 
 <ul>
-<li><strong><em>startPath</em></strong> &ndash; path where your app directory resides in relation to the server.js / app.js file.</li>
-<li>***appName &ndash; global namespace.</li>
-<li><strong><em>filePath</em></strong> &ndash; path of the file you want to write the namespace code to.</li>
+  <li><strong><em>startPath</em></strong> - path where your app directory resides in relation to the server.js / app.js file.</li>
+  <li>***appName - global namespace.</li>
+  <li><strong><em>filePath</em></strong> - path of the file you want to write the namespace code to.</li>
 </ul>
-
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -144,12 +126,10 @@ app</strong> section in the guide to auto generate a node.js / express app.</p>
 <span class='line-number'>38</span>
 <span class='line-number'>39</span>
 <span class='line-number'>40</span>
-<span class='line-number'>41</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">port</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;),</span> <span class="kd">function</span><span class="p">(){</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">‘</span><span class="nx">port</span><span class="err">’</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">“</span><span class="nx">Express</span> <span class="nx">server</span> <span class="nx">listening</span> <span class="nx">on</span> <span class="nx">port</span> <span class="err">“</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">‘</span><span class="nx">port</span><span class="err">’</span><span class="p">)</span> <span class="o">+</span> <span class="err">“</span> <span class="k">in</span> <span class="err">“</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="err">“</span> <span class="nx">mode</span><span class="p">.</span><span class="err">”</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">emitter</span><span class="p">,</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">emitter</span><span class="p">,</span>
 </span><span class='line'>    <span class="nx">str</span><span class="p">,</span>
 </span><span class='line'>    <span class="nx">startPath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc&quot;</span><span class="p">,</span>
 </span><span class='line'>    <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;poc&quot;</span><span class="p">,</span>
@@ -199,13 +179,13 @@ app</strong> section in the guide to auto generate a node.js / express app.</p>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>poc
-</span><span class='line'>&mdash;data
-</span><span class='line'>&mdash;&mdash;api
-</span><span class='line'>&mdash;&mdash;layout
-</span><span class='line'>&mdash;&mdash;providers
-</span><span class='line'>&mdash;grid
-</span><span class='line'>&mdash;models
-</span><span class='line'>&mdash;&mdash;view</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span><span class='line'>–data
+</span><span class='line'>—-api
+</span><span class='line'>—-layout
+</span><span class='line'>—-providers
+</span><span class='line'>–grid
+</span><span class='line'>–models
+</span><span class='line'>—-view</span></code></pre></td></tr></table></div></figure></notextile></div>
 the autogenerated namespace file looks like this:
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -235,7 +215,7 @@ the autogenerated namespace file looks like this:
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalvar</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">globalvarval</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;;</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalvar</span> <span class="o">=</span> <span class="err">“</span><span class="nx">globalvarval</span><span class="err">”</span><span class="p">;</span>
 </span><span class='line'><span class="nx">poc</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Providers</span><span class="p">.</span><span class="nx">Names</span><span class="p">.</span><span class="nx">globalmethod</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
 </span><span class='line'><span class="c1">// awesome code here</span>
 </span><span class='line'><span class="p">};</span>
@@ -244,9 +224,10 @@ the autogenerated namespace file looks like this:
 <p>I got a twitter response from a one of the great JavaScript masters
 <a href="http://www.2ality.com/">Dr. Axel Rauschmayer</a> when asking if his
 <a href="ttp://www.2ality.com/2011/11/lobrow.html">lobrow library</a> could be used to do this only using browser modules.
-I wasn&rsquo;t able to do it and wound up with this solution but he gives some tips:</p>
+I wasn’t able to do it and wound up with this solution but he gives some tips:</p>
 
-<p>  <div class='embed tweet'>Tweet could not be processed</div></p>
+<p><div class='embed tweet'><blockquote class="twitter-tweet"><p><a href="https://twitter.com/jewelsjacobs">@jewelsjacobs</a> Have you tried browserify? <a href="http://t.co/nQSytJGunc">http://t.co/nQSytJGunc</a>&#10;Best you can do with files in browsers: <a href="http://t.co/gm7Z7kwB0J">http://t.co/gm7Z7kwB0J</a></p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/statuses/335016533325647872">May 16, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div></p>
 
 <p>I hope someone finds this helpful!</p>
 ]]></content>

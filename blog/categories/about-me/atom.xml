@@ -4,7 +4,7 @@
   <title><![CDATA[Category: About Me | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/about-me/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-08T11:17:49-05:00</updated>
+  <updated>2013-06-08T11:30:19-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -20,37 +20,34 @@
     <id>http://html5devgal.com//blog/2013/05/16/my-two-new-jquery-plugins-and-one-new-node-module</id>
     <content type="html"><![CDATA[<p>On my quest to plugify and properly modulerize my code I created two new jQuery plugins and one new node nodule.</p>
 
-<p>  <!-- more --></p>
+<p><!-- more --></p>
 
-<h1>jQuery plugins</h1>
-
+<h1 id="jquery-plugins">jQuery plugins</h1>
 <p><a href="https://github.com/jewelsjacobs/jquery.prettify">jQuery Prettify</a>
 jQuery plugin to print an associative array / object in the browser</p>
 
-<p>UPDATE: The a jQuery UI function <a href="http://api.jqueryui.com/position/">position()</a> centers fine so don&rsquo;t
+<p>UPDATE: The a jQuery UI function <a href="http://api.jqueryui.com/position/">position()</a> centers fine so don’t
 even bother with the following plugin.</p>
 
 <p>My Simple Center Plugin
 <a href="https://github.com/jewelsjacobs/jquery.simpleCenter">jQuery Simple Center Plugin</a>
-Simple jQuery plugin to vertically and horizontally center an element within another element.</p>
-
-<h1>Node.js modules</h1>
-
-<p><a href="https://npmjs.org/package/titlecaps">titlecaps Node.js Module</a>
+Simple jQuery plugin to vertically and horizontally center an element within another element.
+#Node.js modules
+<a href="https://npmjs.org/package/titlecaps">titlecaps Node.js Module</a>
 Node module to capitalize first letter in each word</p>
 
-<p>Please bear in mind that they have not been node unit or qunit tested yet, just jhinted as I&rsquo;m on a tight schedule at work.  
-I&rsquo;ll make it happen very soon!</p>
+<p>Please bear in mind that they have not been node unit or qunit tested yet, just jhinted as I’m on a tight schedule at work.  
+I’ll make it happen very soon!</p>
 
-<p>UPDATE:  I was &lsquo;schooled&rsquo; by the more experienced dev
+<p>UPDATE:  I was ‘schooled’ by the more experienced dev
 <a href="http://uk.linkedin.com/in/nelsonic/">Nelson Kenneth Correia</a>
 who mentioned these plugins / mod were overkill.
 I thought it prudent to mention his response:</p>
 
-<p>  <blockquote><p></p></p><p><p>@Juila, just had a look at your SimpleCenter Plugin.</p></p><p><p>Firstly I want to applaud your effort to create a JQuery plugin,<br/>and then advise everyone <em>new</em> to javascript to <em>not</em> do this!<br/>Positioning elements on the page/canvas is done with CSS.</p></p><p><p>Here is your JS fiddle without <em>any</em> JavaScript: <a href="http://jsfiddle.net/jewelsjacobs/Nuyc9/">http://jsfiddle.net/jewelsjacobs/Nuyc9/</a></p></p><p><p>Centering an element in a div is <em>easy</em> in CSS and should be done in a stylesheet unless there&rsquo;s a very good reason to do it <em>dynamically</em> in JS.</p></p><p><p>Secondly I don&rsquo;t see how your Prettify is better than the original: <a href="https://code.google.com/p/google-code-prettify/wiki/GettingStarted">https://code.google.com/p/google-code-prettify/wiki/GettingStarted</a></p></p><p><p>And finally Capitalizing the first letter of each word in a string has been done many times and does not require an entire Node Module&hellip;</p></p><p><p>It can be done with a <em>single</em> line of JavaScript:<br/><a href="http://jsfiddle.net/jewelsjacobs/Nuyc9/">http://jsfiddle.net/jewelsjacobs/Nuyc9/</a></p></p><p><p>Once again, I congratulate your efforts!<br/>Especially the fact that you&rsquo;ve written tests and used Travis.com to confirm the build status of your module! :&ndash;)</p></p><p><p>But please pick which Modules and Plugins you share here more carefully.<br/>As developers we need to set a good example to others.<br/>Writing an entire <em>module</em> just to capitalize first letters in a string is like using a bomb to build a sand castle! &hellip; #overkill!</p></p><p><p>And building JQuery plugins when simple CSS will achieve your goal is a good <em>thought</em> exercise, but should <em>never</em> be used in the real world because its a code maintenance nightmare!</p></p><p><p>The last thing I want is my junior developers copy-pasting this kind of code!</p></p><p><p>I look forward to reading your <em>next</em> efforts. :&ndash;)</p><footer><strong>Nelson Kenneth Correia</strong></footer></blockquote></p>
+<p><blockquote><p></p></p><p><p>@Juila, just had a look at your SimpleCenter Plugin.</p></p><p><p>Firstly I want to applaud your effort to create a JQuery plugin, <br/>and then advise everyone <em>new</em> to javascript to <em>not</em> do this! <br/>Positioning elements on the page/canvas is done with CSS. </p></p><p><p>Here is your JS fiddle without <em>any</em> JavaScript: http://jsfiddle.net/jewelsjacobs/Nuyc9/ </p></p><p><p>Centering an element in a div is <em>easy</em> in CSS and should be done in a stylesheet unless there’s a very good reason to do it <em>dynamically</em> in JS. </p></p><p><p>Secondly I don’t see how your Prettify is better than the original: https://code.google.com/p/google-code-prettify/wiki/GettingStarted </p></p><p><p>And finally Capitalizing the first letter of each word in a string has been done many times and does not require an entire Node Module… </p></p><p><p>It can be done with a <em>single</em> line of JavaScript: <br/>http://jsfiddle.net/jewelsjacobs/Nuyc9/ </p></p><p><p>Once again, I congratulate your efforts! <br/>Especially the fact that you’ve written tests and used Travis.com to confirm the build status of your module! :-) </p></p><p><p>But please pick which Modules and Plugins you share here more carefully. <br/>As developers we need to set a good example to others. <br/>Writing an entire <em>module</em> just to capitalize first letters in a string is like using a bomb to build a sand castle! … #overkill! </p></p><p><p>And building JQuery plugins when simple CSS will achieve your goal is a good <em>thought</em> exercise, but should <em>never</em> be used in the real world because its a code maintenance nightmare! </p></p><p><p>The last thing I want is my junior developers copy-pasting this kind of code! </p></p><p><p>I look forward to reading your <em>next</em> efforts. :-)</p><footer><strong>Nelson Kenneth Correia</strong></footer></blockquote></p>
 
 <p>His caps code worked perfectly but his CSS code has to be changed depending on the sizes of the elements which is
-not exactly what I wanted to do.  The Prettify code he references doesn&rsquo;t really do what I want either.</p>
+not exactly what I wanted to do.  The Prettify code he references doesn’t really do what I want either.</p>
 
 <p>I made the plugin because I wanted a way to spit out all of the necessary code dynamically without including it in the html file. B
 asically , just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag.
@@ -63,22 +60,21 @@ You still have to attach the text to the pre tag or generate the pre tag.</p>
     <link href="http://html5devgal.com//blog/2013/05/01/career-tips-for-javascript-developers/"/>
     <updated>2013-05-01T05:59:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/01/career-tips-for-javascript-developers</id>
-    <content type="html"><![CDATA[<p>  <span class='caption-wrapper'><img class='caption' src='http://s3.amazonaws.com/rapgenius/1291131680_two-thumbs-up.jpg">http://s3.amazonaws.com/rapgenius/1291131680_two-thumbs-up.jpg</a>' width='' height='' alt='I am very much success in my jobs!' title='I am very much success in my jobs!'><span class='caption-text'>I am very much success in my jobs!</span></span></p>
+    <content type="html"><![CDATA[<p><span class='caption-wrapper'><img class='caption' src='http://s3.amazonaws.com/rapgenius/1291131680_two-thumbs-up.jpg' width='' height='' alt='I am very much success in my jobs!' title='I am very much success in my jobs!'><span class='caption-text'>I am very much success in my jobs!</span></span></p>
 
-<p>Here&rsquo;s some tips that will benefit ANY JavaScript developer on their path to success:</p>
+<p>Here’s some tips that will benefit ANY JavaScript developer on their path to success:</p>
 
-<p>  <!-- more --></p>
+<p><!-- more --></p>
 
 <ul>
-<li>Tip #1 : In a JavaScript interview don&rsquo;t say &lsquo;Vanilla JavaScript? What framework is that?&rsquo;.</li>
-<li>Tip #2 : No motivation to learn that new tech? Go on lots of interviews for jobs you can&rsquo;t do.
- Can&rsquo;t forget those wrong answers!</li>
-<li>Tip #3 : Don&rsquo;t do phone interviews while going to the bathroom. No matter how nervous you are.
+  <li>Tip #1 : In a JavaScript interview don’t say ‘Vanilla JavaScript? What framework is that?’.</li>
+  <li>Tip #2 : No motivation to learn that new tech? Go on lots of interviews for jobs you can’t do.
+ Can’t forget those wrong answers!</li>
+  <li>Tip #3 : Don’t do phone interviews while going to the bathroom. No matter how nervous you are.
  That goes for Skype too.</li>
 </ul>
 
-
-<p>More to come &ndash; feel free to comment on your own!</p>
+<p>More to come - feel free to comment on your own!</p>
 ]]></content>
   </entry>
   

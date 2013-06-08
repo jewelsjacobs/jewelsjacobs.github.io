@@ -9,8 +9,8 @@
   <meta name="author" content="Julia Jacobs">
 
   
-  <meta name="description" content="I&rsquo;m trying to create a table of contents in my Octopress blog with kramdown.
-I&rsquo;m having some issues. I want to use kramdown tags with & &hellip;">
+  <meta name="description" content="I’m trying to create a table of contents in my Octopress blog with kramdown.
+I’m having some issues. I want to use kramdown tags with ‘:’ in them, ie &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,7 @@ I&rsquo;m having some issues. I want to use kramdown tags with & &hellip;">
 </form>
   
 <ul class="main-navigation">
+    <li><a href="/resources">Resources</a></li>
   <li><a href="/portfolio.html">Portfolio</a></li>
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
@@ -123,40 +124,34 @@ I&rsquo;m having some issues. I want to use kramdown tags with & &hellip;">
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;m trying to create a table of contents in my Octopress blog with kramdown.
-I&rsquo;m having some issues.</p>
+<div class="entry-content"><p>I’m trying to create a table of contents in my Octopress blog with kramdown.
+I’m having some issues.</p>
 
-<p>  <!-- more --></p>
+<p><!-- more --></p>
 
-<p>I want to use kramdown tags with &lsquo;:&rsquo; in them, ie.</p>
+<p>I want to use kramdown tags with ‘:’ in them, ie.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{:toc}</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">{:toc}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>and codeblock code blocks</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{:ang="javascript"}</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">{:ang="javascript"}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>in my Octopress blog but I keep getting this error when running</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">rake generate</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">[my user dir]/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/psych.rb:203:in
+</span><span class="line">  parse: (&lt;unknown&gt;): could not find expected ':'
+</span><span class="line">  while scanning a simple key at line 8 column 1 (Psych::SyntaxError)</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[my user dir]/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/psych.rb:203:in
-</span><span class='line'>  parse: (&lt;unknown>): could not find expected ':'
-</span><span class='line'>  while scanning a simple key at line 8 column 1 (Psych::SyntaxError)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I don&rsquo;t know if the problem is the blog / pages syntax or my _config.yaml file</p>
+<p>I don’t know if the problem is the blog / pages syntax or my _config.yaml file</p>
 
 <p>I tried installing <a href="https://github.com/codebykat/blog/blob/2f6c9615c02869dca5f52921ac5eb7e0b35a6427/plugins/code_ray_block.rb">this plugin</a> and
 following the instructions in <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">this blog post</a>
@@ -164,65 +159,63 @@ following the instructions in <a href="http://blog.codebykat.com/2013/05/23/gorg
 
 <p>I have installed the kramdown and codeblock gems and made the following changes to my _config.yml:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>markdown: kramdown
-</span><span class='line'>kramdown:
-</span><span class='line'>   auto_ids: true
-</span><span class='line'>   use_codeblock: true
-</span><span class='line'>     codeblock:
-</span><span class='line'>       codeblock_line_numbers: nil
-</span><span class='line'>       codeblock_css: class</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">markdown: kramdown
+</span><span class="line">kramdown:
+</span><span class="line">   auto_ids: true
+</span><span class="line">   use_codeblock: true
+</span><span class="line">     codeblock:
+</span><span class="line">       codeblock_line_numbers: nil
+</span><span class="line">       codeblock_css: class</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>My blogpost toc code looks like this:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>---
-</span><span class='line'>layout: page
-</span><span class='line'>title: "resources"
-</span><span class='line'>date: 2013-06-06 10:45
-</span><span class='line'>comments: true
-</span><span class='line'>sharing: true
-</span><span class='line'>footer: true
-</span><span class='line'>categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js,
-</span><span class='line'>smart tv, grunt, jQuery, node.js, bootstrap, css,
-</span><span class='line'>responsive design, api, learning, backbone.js, knockout.js]
-</span><span class='line'>---
-</span><span class='line'>#Resources
-</span><span class='line'>{:toc}
-</span><span class='line'>## **Performance and Caching**
-</span><span class='line'>* [Varnish](https://www.varnish-cache.org/)
-</span><span class='line'>{:toc}
-</span><span class='line'>## **SmartTV**
-</span><span class='line'>* [Samsung Development Guide](http://www.samsungdforum.com/Guide/)
-</span><span class='line'>* [Basic SmartTV Node App Server](https://github.com/rposbo/basic-smart-tv-app-server)
-</span><span class='line'>{:toc} [ .. snip .. ]</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">---
+</span><span class="line">layout: page
+</span><span class="line">title: "resources"
+</span><span class="line">date: 2013-06-06 10:45
+</span><span class="line">comments: true
+</span><span class="line">sharing: true
+</span><span class="line">footer: true
+</span><span class="line">categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js,
+</span><span class="line">smart tv, grunt, jQuery, node.js, bootstrap, css,
+</span><span class="line">responsive design, api, learning, backbone.js, knockout.js]
+</span><span class="line">---
+</span><span class="line">#Resources
+</span><span class="line">{:toc}
+</span><span class="line">## **Performance and Caching**
+</span><span class="line">* [Varnish](https://www.varnish-cache.org/)
+</span><span class="line">{:toc}
+</span><span class="line">## **SmartTV**
+</span><span class="line">* [Samsung Development Guide](http://www.samsungdforum.com/Guide/)
+</span><span class="line">* [Basic SmartTV Node App Server](https://github.com/rposbo/basic-smart-tv-app-server)
+</span><span class="line">{:toc} [ .. snip .. ]</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>The only way I could get rid of the errors was to get rid of the kramdown and
 coderay tags, uninstall coderay, get rid of that coderay plugin and revert my _config.yml
@@ -230,7 +223,7 @@ to use rdiscount and get rid of the kramdown / coderay fields and keys.</p>
 
 <p>It stinks to not be able to use the cool coderay / kramdown features.</p>
 
-<p>I&rsquo;m trying to get some help on this.  I&rsquo;ll update this post when I get a
+<p>I’m trying to get some help on this.  I’ll update this post when I get a
 working solution.</p>
 </div>
 

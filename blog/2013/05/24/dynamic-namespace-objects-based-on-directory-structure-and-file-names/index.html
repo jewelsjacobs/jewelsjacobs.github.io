@@ -86,6 +86,7 @@
 </form>
   
 <ul class="main-navigation">
+    <li><a href="/resources">Resources</a></li>
   <li><a href="/portfolio.html">Portfolio</a></li>
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
@@ -127,153 +128,151 @@
 <p>I showed how to create a dynamic namespace autoloader with node.js, express, and walk.</p>
 
 <!-- more -->
-
-
 <p>Please check out this article for information on how to set this up, what node modules to install and where to put this code.</p>
 
 <p>In the http.createServer() function, add this code (or something like it):</p>
 
-<figure class='code'><figcaption><span> (dynamicNamespaceObjectsFilenames.js)</span> <a href='/downloads/code/dynamicNamespaceObjectsFilenames.js'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
-</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">emitter</span><span class="p">,</span>
-</span><span class='line'>        <span class="nx">str</span><span class="p">,</span>
-</span><span class='line'>        <span class="nx">iter</span> <span class="o">=</span> <span class="p">[],</span>
-</span><span class='line'>        <span class="nx">startPath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;poc&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="nx">filePath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc/namespace.js&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;flags&#39;</span><span class="o">:</span> <span class="s1">&#39;w&#39;</span><span class="p">});</span>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">spacedStartPath</span> <span class="o">=</span> <span class="nx">startPath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
-</span><span class='line'>    <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;window.&quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot; = {} || &quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot;;\r\n&quot;</span><span class="p">;</span>
-</span><span class='line'>    <span class="nx">emitter</span> <span class="o">=</span> <span class="nx">walk</span><span class="p">.</span><span class="nx">walk</span><span class="p">(</span><span class="nx">startPath</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">function</span> <span class="nx">upperCaseMe</span> <span class="p">(</span><span class="nx">txt</span><span class="p">){</span>
-</span><span class='line'>        <span class="k">return</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">stat</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">stat</span><span class="p">.</span><span class="nx">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>            <span class="kd">var</span> <span class="nx">filepath</span> <span class="o">=</span>  <span class="p">[</span><span class="nx">path</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">stat</span><span class="p">.</span><span class="nx">name</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-</span><span class='line'>            <span class="kd">var</span> <span class="nx">noSlash</span> <span class="o">=</span>  <span class="nx">filepath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
-</span><span class='line'>            <span class="kd">var</span> <span class="nx">stripStartPath</span> <span class="o">=</span>  <span class="nx">noSlash</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">spacedStartPath</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
-</span><span class='line'>            <span class="kd">var</span> <span class="nx">stripJs</span> <span class="o">=</span>  <span class="nx">stripStartPath</span><span class="p">.</span><span class="nx">replace</span> <span class="p">(</span><span class="s1">&#39;.js&#39;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
-</span><span class='line'>            <span class="kd">var</span> <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">stripJs</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\w\S*/g</span><span class="p">,</span> <span class="nx">upperCaseMe</span><span class="p">);</span>
-</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="nx">uppercase</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">uppercase</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ /g</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">);</span>
-</span><span class='line'>            <span class="p">};</span>
-</span><span class='line'>            <span class="kd">var</span> <span class="nx">pathArr</span> <span class="o">=</span> <span class="nx">uppercase</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">);</span>
-</span><span class='line'>            <span class="kd">var</span> <span class="nx">joined</span> <span class="o">=</span> <span class="p">[];</span>
-</span><span class='line'>            <span class="kd">var</span> <span class="nx">joinedStr</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-</span><span class='line'>            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">pathArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                <span class="nx">joined</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">pathArr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-</span><span class='line'>                <span class="nx">joinedStr</span> <span class="o">+=</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="nx">joined</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; = {};\r\n&quot;</span><span class="p">;</span>
-</span><span class='line'>            <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>            <span class="nx">iter</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">joinedStr</span><span class="p">);</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="nx">next</span><span class="p">();</span>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">uniquePaths</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'>        <span class="p">,</span> <span class="nx">uniqueEntries</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'>        <span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="s2">&quot;\r\n&quot;</span>
-</span><span class='line'>        <span class="p">,</span> <span class="nx">finalJoinedString</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">iter</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="nx">uniquePaths</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">iter</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                <span class="nx">uniquePaths</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">iter</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-</span><span class='line'>                <span class="nx">str</span> <span class="o">+=</span> <span class="nx">iter</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-</span><span class='line'>            <span class="p">}</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">strArray</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">end</span><span class="p">);</span>
-</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">strArray</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="nx">uniqueEntries</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">strArray</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                <span class="nx">uniqueEntries</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">strArray</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-</span><span class='line'>                <span class="nx">finalJoinedString</span> <span class="o">+=</span> <span class="nx">strArray</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">end</span><span class="p">;</span>
-</span><span class='line'>            <span class="p">}</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="nx">log</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">finalJoinedString</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span> (dynamicNamespaceObjectsFilenames.js)</span> <a href="/downloads/code/dynamicNamespaceObjectsFilenames.js">download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+<span class="line-number">62</span>
+<span class="line-number">63</span>
+<span class="line-number">64</span>
+<span class="line-number">65</span>
+<span class="line-number">66</span>
+<span class="line-number">67</span>
+<span class="line-number">68</span>
+</pre></td><td class="code"><pre><code class="js"><span class="line"><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class="line">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">+</span> <span class="s2">&quot; mode.&quot;</span><span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="kd">var</span> <span class="nx">emitter</span><span class="p">,</span>
+</span><span class="line">        <span class="nx">str</span><span class="p">,</span>
+</span><span class="line">        <span class="nx">iter</span> <span class="o">=</span> <span class="p">[],</span>
+</span><span class="line">        <span class="nx">startPath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc&quot;</span><span class="p">,</span>
+</span><span class="line">        <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;poc&quot;</span><span class="p">,</span>
+</span><span class="line">        <span class="nx">filePath</span> <span class="o">=</span> <span class="s2">&quot;public/javascripts/poc/namespace.js&quot;</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;flags&#39;</span><span class="o">:</span> <span class="s1">&#39;w&#39;</span><span class="p">});</span>
+</span><span class="line">    <span class="kd">var</span> <span class="nx">spacedStartPath</span> <span class="o">=</span> <span class="nx">startPath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
+</span><span class="line">    <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;window.&quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot; = {} || &quot;</span> <span class="o">+</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s2">&quot;;\r\n&quot;</span><span class="p">;</span>
+</span><span class="line">    <span class="nx">emitter</span> <span class="o">=</span> <span class="nx">walk</span><span class="p">.</span><span class="nx">walk</span><span class="p">(</span><span class="nx">startPath</span><span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="kd">function</span> <span class="nx">upperCaseMe</span> <span class="p">(</span><span class="nx">txt</span><span class="p">){</span>
+</span><span class="line">        <span class="k">return</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">stat</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">        <span class="k">if</span> <span class="p">(</span><span class="nx">stat</span><span class="p">.</span><span class="nx">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">            <span class="kd">var</span> <span class="nx">filepath</span> <span class="o">=</span>  <span class="p">[</span><span class="nx">path</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">stat</span><span class="p">.</span><span class="nx">name</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span><span class="line">            <span class="kd">var</span> <span class="nx">noSlash</span> <span class="o">=</span>  <span class="nx">filepath</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
+</span><span class="line">            <span class="kd">var</span> <span class="nx">stripStartPath</span> <span class="o">=</span>  <span class="nx">noSlash</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">spacedStartPath</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span class="line">            <span class="kd">var</span> <span class="nx">stripJs</span> <span class="o">=</span>  <span class="nx">stripStartPath</span><span class="p">.</span><span class="nx">replace</span> <span class="p">(</span><span class="s1">&#39;.js&#39;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span class="line">            <span class="kd">var</span> <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">stripJs</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\w\S*/g</span><span class="p">,</span> <span class="nx">upperCaseMe</span><span class="p">);</span>
+</span><span class="line">            <span class="k">if</span> <span class="p">(</span><span class="nx">uppercase</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">                <span class="nx">uppercase</span> <span class="o">=</span> <span class="nx">uppercase</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ /g</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">);</span>
+</span><span class="line">            <span class="p">};</span>
+</span><span class="line">            <span class="kd">var</span> <span class="nx">pathArr</span> <span class="o">=</span> <span class="nx">uppercase</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">);</span>
+</span><span class="line">            <span class="kd">var</span> <span class="nx">joined</span> <span class="o">=</span> <span class="p">[];</span>
+</span><span class="line">            <span class="kd">var</span> <span class="nx">joinedStr</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span><span class="line">            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">pathArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">                <span class="nx">joined</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">pathArr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+</span><span class="line">                <span class="nx">joinedStr</span> <span class="o">+=</span> <span class="nx">appName</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="nx">joined</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; = {};\r\n&quot;</span><span class="p">;</span>
+</span><span class="line">            <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">            <span class="nx">iter</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">joinedStr</span><span class="p">);</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">        <span class="nx">next</span><span class="p">();</span>
+</span><span class="line">    <span class="p">});</span>
+</span><span class="line">
+</span><span class="line">    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class="line">        <span class="kd">var</span> <span class="nx">uniquePaths</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class="line">        <span class="p">,</span> <span class="nx">uniqueEntries</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class="line">        <span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="s2">&quot;\r\n&quot;</span>
+</span><span class="line">        <span class="p">,</span> <span class="nx">finalJoinedString</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">iter</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">            <span class="k">if</span> <span class="p">(</span><span class="nx">uniquePaths</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">iter</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">                <span class="nx">uniquePaths</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">iter</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+</span><span class="line">                <span class="nx">str</span> <span class="o">+=</span> <span class="nx">iter</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span><span class="line">            <span class="p">}</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">        <span class="kd">var</span> <span class="nx">strArray</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">end</span><span class="p">);</span>
+</span><span class="line">        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">strArray</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">            <span class="k">if</span> <span class="p">(</span><span class="nx">uniqueEntries</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">strArray</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">                <span class="nx">uniqueEntries</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">strArray</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+</span><span class="line">                <span class="nx">finalJoinedString</span> <span class="o">+=</span> <span class="nx">strArray</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">end</span><span class="p">;</span>
+</span><span class="line">            <span class="p">}</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">        <span class="nx">log</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">finalJoinedString</span><span class="p">);</span>
+</span><span class="line">    <span class="p">});</span>
+</span><span class="line">
+</span><span class="line"><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>Please note this is kind of a mess of arrays so I’d be very grateful for any suggestions on how to make this cleaner.</p>
 
-<p>Please note this is kind of a mess of arrays so I&rsquo;d be very grateful for any suggestions on how to make this cleaner.</p>
 </div>
 
 
