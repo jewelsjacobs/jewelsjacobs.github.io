@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javaScript | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-08T14:20:10-05:00</updated>
+  <updated>2013-06-08T14:36:45-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -446,8 +446,9 @@ It’s a little known fact, however that the console in these tools have thier o
 
 <p>There’s a whole bunch of other cool console functions as well. Check them out!</p>
 
-<p><a href="https://developers.google.com/chrome-developer-tools/docs/commandline-api">Chrome Command Line API</a>
-<a href="http://getfirebug.com/wiki/index.php/Command_Line_API">Firebug Command Line API</a></p>
+<p><a href="https://developers.google.com/chrome-developer-tools/docs/commandline-api">Chrome Command Line API</a></p>
+
+<p><a href="http://getfirebug.com/wiki/index.php/Command_Line_API">Firebug Command Line API</a></p>
 ]]></content>
   </entry>
   
