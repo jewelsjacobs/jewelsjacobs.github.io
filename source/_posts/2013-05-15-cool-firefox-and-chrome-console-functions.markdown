@@ -15,7 +15,7 @@ It's a little known fact, however that the console in these tools have thier own
 
 For example, if you want to copy an array or an object in the console, you can type
 
-{% codeblock lang:javascript %}copy(someArrayVariableName){% endcodeblock %}
+{% coderay lang:javascript %}copy(someArrayVariableName){% endcoderay %}
 
   Please note in this example I copied the contents of the clipboard to the console so you can see it.:
 

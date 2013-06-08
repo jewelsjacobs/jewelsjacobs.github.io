@@ -16,7 +16,7 @@ Just replace it with yours. Also I'm using jquery so you will need to have that 
 
 I attached this to a global variable (poc is the global namespace of my app) so I can just enter "poc.DebugData()" in the console.
 
-{% codeblock lang:javascript %}
+{% coderay lang:javascript Debug Code %}
 poc.DebugData = function () {
      if ($("#video_container").length > 0) {
          return {
@@ -37,6 +37,6 @@ poc.DebugData = function () {
          };
      }
  };
-{% endcodeblock %}
+{% endcoderay %}
 
 There's probably a cleaner way to do this but this is what I've got!

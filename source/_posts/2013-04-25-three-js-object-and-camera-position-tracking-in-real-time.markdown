@@ -35,7 +35,7 @@ three.js has a [CSS3D renderer](https://raw.github.com/mrdoob/three.js/master/ex
 which, magically using some very heavy matrix equations, dynamically translates x, y and z
 coordinates into a css property called -webkit-transform whose values usually look like this monstrosity:
 
-{% codeblock %}
+{% coderay lang:css Crazy transforms %}
 -webkit-transform:
    translate3d(0px, 0px, 473.7224230277783px)
    matrix3d(
@@ -45,7 +45,7 @@ coordinates into a css property called -webkit-transform whose values usually lo
       0.000002216018401668407, 0, -4987.5380859375, 1
    )
    translate3d(747.5px, 363.5px, 0px);
-{% endcodeblock %}
+{% endcoderay %}
 
 Yick.
 
@@ -55,11 +55,12 @@ is probably the best documentation out there.
 So how are you supposed to figure out the position of a camera in real time after you've zoomed into your app?
 
 Say you want an event to fire off when the camera is close to a certain object? Or an event to
-fire off only if you click on objects located in a certain z-plane coordinate?
+fire off only if you click on objects located in a certain z-plane coordinate?.
+
 ###Tracking Objects
 Say you've got an object element with the following css:
 
-{% codeblock %}
+{% coderay lang:css Tranform Example %}
 -webkit-transform:
  translate3d(-50%, -50%, 0px)
  matrix3d(
@@ -68,7 +69,7 @@ Say you've got an object element with the following css:
  0, 0, 1, 0,
  -800, 800, 3500, 1
  );
-{% endcodeblock %}
+{% endcoderay %}
 
 ***All you really care about as far as tracking the x, y and z coordinates
             of the object's element is the 13th, 14th and 15th values: -800, 800, 3500.***
@@ -86,7 +87,7 @@ In this example this element has an id of 'video_container'.
 
 Here's the JavaScript code to illustrate adding a scene to an element container:
 
-{% codeblock lang:javascript %}
+{% coderay lang:javascript Scene to Element Container %}
 var camera, scene, renderer, controls;
 
 camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 5000);
@@ -101,7 +102,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.domElement.style.position = 'absolute';
 
 document.getElementById('video_container').appendChild(renderer.domElement);
-{% endcodeblock %}
+{% endcoderay %}
 
 Here's the element in the markup, shown in Chrome's Developer Tools:
 
@@ -109,7 +110,7 @@ Here's the element in the markup, shown in Chrome's Developer Tools:
 
 Here's the CSS matrix3D values:
 
-{% codeblock %}
+{% coderay lang:css 3D Transforms Example %}
 -webkit-transform:
    translate3d(0px, 0px, 445.70307751169236px)
    matrix3d(
@@ -120,7 +121,7 @@ Here's the CSS matrix3D values:
       0, 0, -5000.0625, 1
    )
    translate3d(747.5px, 342px, 0px);
-{% endcodeblock %}
+{% endcoderay %}
 
 As you can see the camera coordinates in the JavaScript code shows z = 5000,
 but in the css z = -5000.0625, a ***NEGATIVE*** value.

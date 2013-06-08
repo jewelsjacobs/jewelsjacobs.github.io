@@ -13,11 +13,11 @@ Here's the code to determine if the current browser is a SmartTV - requires
 
   <!-- more -->
 
-{% codeblock lang:javascript %}
+{% coderay lang:javascript Using Modernizr %}
 function isSmartTV() {
     return Modernizr.websockets === false;
 }
-{% endcodeblock %}
+{% endcoderay %}
 
 This works because the Samsung SmartTV does not support Web Sockets which I find out by running the
 [Modernizr Test Suite](http://modernizr.github.io/Modernizr/test/index.html) on the SmartTV.
@@ -25,8 +25,8 @@ This works because the Samsung SmartTV does not support Web Sockets which I find
 UPDATE: Actually I wound up changing this to use User-Agent sniffing based on a
 great [discussion](http://lnkd.in/Wtidi7) I had with [Derek Anderson](www.linkedin.com/in/dmikey)
 
-{% codeblock lang:javascript %}
+{% coderay lang:javascript User-Agent Sniffing %}
 function () {
     return navigator.userAgent.search(/TV/i) >= 0;
 }
-{% endcodeblock %}
+{% endcoderay %}
