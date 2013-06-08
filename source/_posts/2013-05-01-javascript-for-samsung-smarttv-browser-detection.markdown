@@ -8,6 +8,10 @@ footer: true
 categories: [javaScript]
 ---
 
+**UPDATE**
+This is better achieved with a Modernizr plugin called [Detectizr](https://github.com/barisaydinoglu/Detectizr).
+Use that instead.  I'll keep the rest of this info for reference.
+
 Here's the code to determine if the current browser is a SmartTV - requires
 [Modernizr](http://modernizr.com/)
 

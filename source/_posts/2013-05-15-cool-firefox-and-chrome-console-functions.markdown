@@ -24,4 +24,5 @@ For example, if you want to copy an array or an object in the console, you can t
 There's a whole bunch of other cool console functions as well. Check them out!
 
 [Chrome Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api)
+
 [Firebug Command Line API](http://getfirebug.com/wiki/index.php/Command_Line_API)
