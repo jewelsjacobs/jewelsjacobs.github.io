@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-08T11:15:48-05:00</updated>
+  <updated>2013-06-08T11:17:49-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -54,7 +54,7 @@ I&rsquo;m having some issues.</p>
 <p>I don&rsquo;t know if the problem is the blog / pages syntax or my _config.yaml file</p>
 
 <p>I tried installing <a href="https://github.com/codebykat/blog/blob/2f6c9615c02869dca5f52921ac5eb7e0b35a6427/plugins/code_ray_block.rb">this plugin</a> and
-following the instructions in <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-codeblock/">this blog post</a>
+following the instructions in <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">this blog post</a>
  but no joy.</p>
 
 <p>I have installed the kramdown and codeblock gems and made the following changes to my _config.yml:</p>
