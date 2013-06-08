@@ -31,7 +31,7 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQ
  * [Centering Things](http://www.w3.org/Style/Examples/007/center.en.html)
  * [IE Fix: Bicubic Scaling for Images](http://css-tricks.com/ie-fix-bicubic-scaling-for-images/)
 
-###**LESS** - a framework which adds additional features to CSS like mixins and variables**
+###**LESS - a framework which adds additional features to CSS like mixins and variables**
  * [LESS](http://lesscss.org/)
  * [LESS Media Queries](http://www.vanseodesign.com/css/media-queries/)
 

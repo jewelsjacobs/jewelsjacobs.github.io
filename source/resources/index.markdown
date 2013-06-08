@@ -5,40 +5,39 @@ date: 2013-06-06 10:45
 comments: true
 sharing: true
 footer: true
-categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt,
- jQuery, node.js, bootstrap, css, responsive design, api, learning, backbone.js, knockout.js]
+categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQuery, node.js, bootstrap, css, responsive design, api, learning, backbone.js, knockout.js]
 ---
 
 * a random unordered list with only one item
 {:toc}
 
-## **Performance and Caching**
+##**Performance and Caching**
  * [Varnish](https://www.varnish-cache.org/)
 
-## **SmartTV**
+##**SmartTV**
  * [Samsung Development Guide](http://www.samsungdforum.com/Guide/)
  * [Basic SmartTV Node App Server](https://github.com/rposbo/basic-smart-tv-app-server)
 
-## **Node.js - a JavaScript Server**
+##**Node.js - a JavaScript Server**
  * [node.js](http://nodejs.org/)
  * [Compiling Node Modules Built with node-gyp for Windows](https://github.com/TooTallNate/node-gyp/wiki/Visual-Studio-2010-Setup)
 
-## **AT&T**
+##**AT&T**
  * [AT&T Assets (requires registration)](https://brand.att.com/att/scripts/login/login.aspx)
 
-## **Responsive Design - creating websites for all devices and browser sizes**
+##**Responsive Design - creating websites for all devices and browser sizes**
  * [Media Queries For All Devices](http://nmsdvid.com/snippets/)
  * [Detectizr - Modernizr Device Info Detection Plugin](https://github.com/barisaydinoglu/Detectizr)
  * [Flexbox for centering stuff - doesn't work in IE](http://infrequently.org/2009/08/css-3-progress/)
  * [Responsive Design for TV](http://www.slideshare.net/gerbille/rga-mayo-2012)
  * [Optimizing websites for iPhone and Android](http://www.rkblog.rk.edu.pl/w/p/optimizing-websites-iphone-and-android/)
 
-## **APIs**
+##**APIs**
  * [Embedly - api endpoint for LOTS of services](http://embed.ly/)
  * [Webshell](http://webshell.io/)
  * [Generic API to search for movies or TV shows across Netflix, Hulu, iTunes, and Amazon Video on Demand - written in Ruby](https://github.com/dacort/mwhich)
 
-### YouTube
+###YouTube
  * [Getting Started with the YouTube Data API](https://developers.google.com/youtube/v3/getting-started)
  * [Implementing OAuth 2.0 Authentication](https://developers.google.com/youtube/v3/guides/authentication#OAuth2_Calling_a_Google_API)
  * [Sample Data API Feed](http://gdata.youtube.com/feeds/api/videos?q=cat&format=5&max-results=5&v=2&alt=jsonc)
@@ -60,7 +59,7 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt,
  * [Sublime Text - the worlds best text editor for coding - **free**](http://www.sublimetext.com/)
  * [WebStorm JavaScript IDE **commercial**](http://www.jetbrains.com/webstorm/)
  * [Can I use... Support tables for HTML5, CSS3, etc](http://caniuse.com/)
- * [LiveReload - awesome reloader that automatically updates your browser every time you save a file - no refreshing or deleting cache **commercial but Windows beta is free right now**](http://livereload.com/)
+ * [LiveReload - awesome reloader **commercial but Windows beta is free right now**](http://livereload.com/)
  * [livejs **free**](http://livejs.com/) alternative to LiveReload. Runs in browser.
  * [Chrome Web Developer Extension with Responsive Design Browser Resize](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=en)
  * [How to convert any video file to an animated GIF - references **free** Windows tools](http://www.freewaregenius.com/how-to-convert-any-video-file-to-an-animated-gif/)

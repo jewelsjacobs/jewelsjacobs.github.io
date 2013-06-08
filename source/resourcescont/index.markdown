@@ -5,7 +5,7 @@ date: 2013-06-06 10:49
 comments: true
 sharing: true
 footer: true
-[3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQuery, node.js, bootstrap, css, responsive design, api, learning, backbone.js, knockout.js]
+categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQuery, node.js, bootstrap, css, responsive design, api, learning, backbone.js, knockout.js]
 ---
 
 * a random unordered list with only one item
