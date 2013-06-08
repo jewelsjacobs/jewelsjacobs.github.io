@@ -9,7 +9,9 @@ categories: [codeblock, Octopress, kramdown]
 ---
 
 I'm trying to create a table of contents in my Octopress blog with kramdown.
- I'm having some issues.
+I'm having some issues.
+
+  <!-- more -->
 
 I want to use kramdown tags with ':' in them, ie.
 {% codeblock %}
@@ -34,11 +36,10 @@ in my Octopress blog but I keep getting this error when running
   while scanning a simple key at line 8 column 1 (Psych::SyntaxError)
 {% endcodeblock %}
 
-I've managed to solve my codeblock code block issues thanks to [this plugin]
-(https://github.com/codebykat/blog/blob
-/2f6c9615c02869dca5f52921ac5eb7e0b35a6427/plugins/code_ray_block.rb) and
-following the instructions in [this blog post](http://blog.codebykat
-.com/2013/05/23/gorgeous-octopress-codeblocks-with-codeblock/)
+I don't know if the problem is the blog / pages syntax or my _config.yaml file
+
+I tried installing [this plugin](https://github.com/codebykat/blog/blob/2f6c9615c02869dca5f52921ac5eb7e0b35a6427/plugins/code_ray_block.rb) and
+following the instructions in [this blog post](http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-codeblock/)
 
 I have installed the kramdown and codeblock gems and made the following changes to my _config.yml:
 
@@ -77,7 +78,11 @@ responsive design, api, learning, backbone.js, knockout.js]
 {:toc} [ .. snip .. ]
 {% endcodeblock %}
 
-Without the : tags the site generates fine.
+The only way I could get rid of the errors was to get rid of the kramdown and
+coderay tags, uninstall coderay, get rid of that coderay plugin and revert my _config.yml
+to use rdiscount and get rid of the kramdown / coderay fields and keys.
+
+It stinks to not be able to use the cool coderay / kramdown features.
 
 I'm trying to get some help on this.  I'll update this post when I get a
 working solution.
