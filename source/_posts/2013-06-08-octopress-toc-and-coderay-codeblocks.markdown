@@ -17,7 +17,7 @@ If your having TOC issues, you can take a look at my [markdown source](https://r
 
 Also got the coderay stuff working following [this excellent article](http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/).
 
-I wound up wrapping code lines by changing his .CodeRay pre block in
+I wound up wrapping code lines by changing her {% coderay %}.CodeRay pre {% endcoderay %} block in
 
 {% coderay %}
 sass/custom/_styles.scss
