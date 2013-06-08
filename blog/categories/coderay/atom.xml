@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coderay | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/coderay/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-08T14:01:57-05:00</updated>
+  <updated>2013-06-08T14:20:10-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -27,7 +27,16 @@ Turns out I was creating the TOC wrong.  Check out this <a href="http://stackove
 
 <p>Also got the coderay stuff working following <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">this excellent article</a>.</p>
 
-<p>I wound up wrapping code lines by changing his .CodeRay pre block in</p>
+<p>I wound up wrapping code lines by changing her</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="CodeRay">
+  <div class="code"><pre>
+.CodeRay pre
+</pre></div>
+</div>
+ </figure></notextile></div></p>
+
+<p>block in</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="CodeRay">
   <div class="code"><pre>
@@ -53,7 +62,17 @@ sass/custom/_styles.scss
 </div>
  </figure></notextile></div></p>
 
-<p>If you get stuck on any of this feel free to take a peek at my source code</p>
+<p>If you get stuck on any of this feel free to take a peek at my source code that I
+had to change to make this work.  Please note I also installed her <a href="https://github.com/codebykat/blog/blob/2f6c9615c02869dca5f52921ac5eb7e0b35a6427/plugins/code_ray_block.rb">awesome coderay Octopress plugin</a>.</p>
+
+<ul>
+  <li><a href="https://raw.github.com/jewelsjacobs/jewelsjacobs.github.io/source/sass/custom/_coderay.scss">sass/custom/_coderay.scss</a></li>
+  <li><a href="https://raw.github.com/jewelsjacobs/jewelsjacobs.github.io/source/sass/custom/_styles.scss">sass/custom/_styles.scss</a></li>
+  <li><a href="https://raw.github.com/jewelsjacobs/jewelsjacobs.github.io/source/sass/partials/_syntax.scss">sass/partials/_syntax.scss</a></li>
+  <li><a href="https://raw.github.com/jewelsjacobs/jewelsjacobs.github.io/source/_config.yml">_config.yml</a></li>
+  <li><a href="https://raw.github.com/jewelsjacobs/jewelsjacobs.github.io/source/source/resources/index.markdown">sample markdown toc</a></li>
+  <li><a href="https://raw.github.com/jewelsjacobs/jewelsjacobs.github.io/source/source/_posts/2013-05-01-trick-to-get-three-js-camera-z-plane-value-in-browser-development-tools-console.markdown">sample markdown coderay</a></li>
+</ul>
 ]]></content>
   </entry>
   
