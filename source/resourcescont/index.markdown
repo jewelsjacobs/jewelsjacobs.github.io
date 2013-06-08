@@ -33,8 +33,8 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQ
  * [jamuhl/express-backbone-boilerplate · GitHub](https://github.com/jamuhl/express-backbone-boilerplate)
  * [Rendering Views in Backbone.js Isn't Always Simple by Ian Storm Taylor](http://ianstormtaylor.com/rendering-views-in-backbonejs-isnt-always-simple/)
  * [rotundasoftware/backbone.subviews · GitHub](https://github.com/rotundasoftware/backbone.subviews)
- * [Tutorial: Nested views using Backbone Marionette's CompositeView | Bridging the geek-suit divide](http://davidsulc.com/blog/2013/02/03/tutorial-nested-views-using-backbone-marionettes-compositeview/)
- * [The Pragmatic Bookshelf | Hands-on Backbone.js](http://pragprog.com/screencasts/v-dback/hands-on-backbone-js?tab=tab-links)
+ * [Tutorial: Nested views using Backbone Marionette's CompositeView - Bridging the geek-suit divide](http://davidsulc.com/blog/2013/02/03/tutorial-nested-views-using-backbone-marionettes-compositeview/)
+ * [The Pragmatic Bookshelf - Hands-on Backbone.js](http://pragprog.com/screencasts/v-dback/hands-on-backbone-js?tab=tab-links)
 
 ####**backbone.marionette - View management for backbone**
  * [extended front end backbone boilerplate with support for backbone.marionette](https://github.com/jamuhl/bmq-tmpl)
@@ -46,7 +46,7 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQ
  * [Backbone Marionette AMD Boilerplate](https://github.com/t2k/backbone.marionette-RequireJS)
 
 ###**Video**
- * [Fullscreen Video Slideshow with BigVideo.js | Codrops](http://tympanus.net/codrops/2012/09/19/fullscreen-video-slideshow-with-bigvideo-js/)
+ * [Fullscreen Video Slideshow with BigVideo.js - Codrops](http://tympanus.net/codrops/2012/09/19/fullscreen-video-slideshow-with-bigvideo-js/)
  * [video-js/docs/api.md at master · zencoder/video-js · GitHub](https://github.com/zencoder/video-js/blob/master/docs/api.md)
  * [MediaElement.js - HTML5 video player and audio player with Flash and Silverlight shims](http://mediaelementjs.com/#howitworks)
 
@@ -67,7 +67,7 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQ
 ###**requirejs - used for managing JavaScript module dependencies**
  * [RequireJS](http://requirejs.org/)
  * [Ender the no-library JavaScript library](http://ender.jit.su/#docs)
- * [PreloadJS | A Javascript library that lets you manage and co-ordinate the loading of assets.](http://www.createjs.com/#!/PreloadJS)
+ * [PreloadJS - A Javascript library that lets you manage and co-ordinate the loading of assets.](http://www.createjs.com/#!/PreloadJS)
  * [millermedeiros/requirejs-plugins · GitHub](https://github.com/millermedeiros/requirejs-plugins)
  * [Plugins jrburke/requirejs Wiki](https://github.com/jrburke/requirejs/wiki/Plugins)
 
