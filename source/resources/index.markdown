@@ -135,4 +135,4 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt,
  * [video-js/docs/api.md at master · zencoder/video-js · GitHub](https://github.com/zencoder/video-js/blob/master/docs/api.md)
  * [MediaElement.js - HTML5 video player and audio player with Flash and Silverlight shims](http://mediaelementjs.com/#howitworks)
 
-. . . . [more](/resourcescont/)
+[more](/resourcescont/)
