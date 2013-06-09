@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "more resources"
+title: "More Resources"
 date: 2013-06-08 11:56
 comments: true
 sharing: true
@@ -39,3 +39,5 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQ
  * [Gaëtan Renaudeau - cool web technologies including HTML5 3D](http://blog.greweb.fr/)
  * [John Bender from jQuery Mobile](http://johnbender.us/)
  * [Good John Bender presentation on perils of developing with HTML5](http://www.youtube.com/watch?v=mEivOr3fcMs)
+
+ [more](/additinal-resources/)
