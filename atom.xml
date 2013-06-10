@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-09T17:15:07-05:00</updated>
+  <updated>2013-06-10T15:27:41-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -12,6 +12,134 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Finally Got JSdocs Working With My Node App]]></title>
+    <link href="http://html5devgal.com//blog/2013/06/10/finally-got-jsdocs-working-with-node-app/"/>
+    <updated>2013-06-10T14:40:00-05:00</updated>
+    <id>http://html5devgal.com//blog/2013/06/10/finally-got-jsdocs-working-with-node-app</id>
+    <content type="html"><![CDATA[<p>Man was that a pain in the butt!
+Read on for my adventures in javascript API documentation.</p>
+
+<p><!-- more --></p>
+
+<ul id="markdown-toc">
+  <li><a href="#jsdoc">JSDoc</a></li>
+  <li><a href="#docco">Docco</a></li>
+  <li><a href="#dox">Dox</a></li>
+  <li><a href="#my-solution">My Solution</a>    <ul>
+      <li><a href="#node-jsdoc-toolkit-module">Node JSDoc Toolkit Module</a>        <ul>
+          <li><a href="#configuration">Configuration</a></li>
+          <li><a href="#automate-with-shell-script">Automate With Shell Script</a></li>
+          <li><a href="#grunt-ify-shell-script">Grunt-ify Shell Script</a>            <ul>
+              <li><a href="#gruntfilejs-configuration">Gruntfile.js Configuration</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="jsdoc">JSDoc</h2>
+<p>I wanted to create API documentation for my app so I took a look at <a href="http://usejsdoc.org/about-getting-started.html">jsdoc</a>.</p>
+
+<h2 id="docco">Docco</h2>
+<p>For some reason which I don’t remember, I wound up getting sidetracked with <a href="http://jashkenas.github.io/docco/">docco</a>
+but by the time I got there I had already created jsdoc formatted dockblocks which don’t play well with docco.</p>
+
+<h2 id="dox">Dox</h2>
+<p>So I read about <a href="https://github.com/visionmedia/dox">dox</a> which is supposed to allow you to use
+jsdoc formatted dockblocks to generate docco type documentation.
+Being a huge fan of grunt automation I figured I’d use the <a href="https://github.com/punkave/grunt-dox">grunt-dox plugin</a></p>
+
+<p>That was a total <a href="http://stackoverflow.com/questions/17003930/grunt-dox-generating-html-file-with-only-title">cluster</a> so I gave up.</p>
+
+<h2 id="my-solution">My Solution</h2>
+<p>I finaly crawled back to jsdoc and came up with this psuedo automated solution.</p>
+
+<h3 id="node-jsdoc-toolkit-module">Node JSDoc Toolkit Module</h3>
+<p>I installed <a href="https://github.com/p120ph37/node-jsdoc-toolkit">node-jsdoc-toolkit</a>:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+npm install jsdoc-toolkit --save-dev
+</pre></div>
+</div>
+ </figure></notextile></div>
+
+<h4 id="configuration">Configuration</h4>
+<p>Then I created a config file and put it in the jsdoc-toolkit node module conf directory, ie:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+$APP_DIR/node_modules/jsdoc-toolkit/conf/thisconffile.conf
+</pre></div>
+</div>
+ </figure></notextile></div>
+
+<p>Here’s an example of what my configuration file, which I named looks jsdoc.conf,
+looks like:</p>
+
+<div><script src="https://gist.github.com/5751795.js"></script>
+<noscript><pre><code /></pre></noscript></div>
+
+<h4 id="automate-with-shell-script">Automate With Shell Script</h4>
+<p>Then to automate running the jsdoc command with the conf file I created a super simple shell script.
+<strong>Please note its referring to my configuration file named <code>jsdoc.conf</code>. Replace that with the name of
+your configuration file.</strong></p>
+
+<div><script src="https://gist.github.com/5751839.js"></script>
+<noscript><pre><code /></pre></noscript></div>
+
+<p>I placed this shell script in my application directory.</p>
+
+<h4 id="grunt-ify-shell-script">Grunt-ify Shell Script</h4>
+<p>Then to grunt-ify this shell script I installed <a href="https://github.com/sindresorhus/grunt-shell">grunt-shell</a></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+npm install grunt-shell --save-dev
+</pre></div>
+</div>
+ </figure></notextile></div>
+
+<h5 id="gruntfilejs-configuration">Gruntfile.js Configuration</h5>
+<p>If your not used to using grunt or configuring grunt tasks, you might want to check out
+<a href="https://github.com/gruntjs/grunt/wiki/Getting-started">the Grunt Getting Started guide</a>.</p>
+
+<p>For information on the specific grunt-shell options,
+take a look at the <a href="https://github.com/sindresorhus/grunt-shell/blob/master/readme.md">documentation</a>.</p>
+
+<p>For my purposes I set up the Gruntfile.js grunt-shell options like this:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+shell: {
+  docs : {
+    command: './docs.sh'
+  }
+}
+</pre></div>
+</div>
+ </figure></notextile></div>
+
+<p>I added the <code>shell</code> task to my grunt <code>test</code> task so when I run</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+grunt test
+</pre></div>
+</div>
+ </figure></notextile></div>
+
+<p>in the console my documentation gets created.</p>
+
+<p>As usual I’m sure there’s a much better way to do this but this is what worked for me
+after hours of pain.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress TOC and coderay Codeblocks]]></title>
