@@ -40,7 +40,9 @@ cross browser / cross platform apps.
 
 ## What You Need
 
- * A laptop - PC or Mac, I haven't prepaired anything for Linux or any other *nix OS
+ * A laptop - The directions are pretty specific to the Windows 7 OS
+  but if you know your way around your OS, it should be pretty easy to follow.
+  All of the applications you need to install are available for Mac OS X or *nix as well.
  * An internt connection
  * At least a slight curiousity / interest in the subject
  * Ability to copy, paste and type
