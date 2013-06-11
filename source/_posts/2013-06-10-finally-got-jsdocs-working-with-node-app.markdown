@@ -90,6 +90,26 @@ grunt test
 
 in the console my documentation gets created.
 
+## Windows
+
+I have a co-worker running a Windows 7 PC who I wanted to be able to update docs.  I couldn't
+figure out how to do this using the node js-toolkit module or grunt-shell.
+
+I had to dowload the [jsdoc-toolkit source](https://code.google.com/p/jsdoc-toolkit/downloads/list)
+and create a batch file.
+
+Here's the batch file I created:
+
+{% gist 5758434 %}
+
+To run this you need to:
+
+* Have JRE.  If you don't have it, download it [here](http://www.java.com/en/)
+* Be able to run `java` command in a command prompt.  For this you'll need to:
+  * Set your `JAVA_HOME` environment variable (I’ve got `.;C:\Program Files (x86)\Java\jre7` as the value)
+  * Add `;%JAVA_HOME%\bin` to the PATH environment variable.
+ More details on this can be found [here](http://www.robertsindall.co.uk/blog/setting-java-home-variable-in-windows/)
+
 As usual I'm sure there's a much better way to do this but this is what worked for me
 after hours of pain.
 
