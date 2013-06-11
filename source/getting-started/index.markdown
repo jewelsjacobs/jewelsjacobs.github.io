@@ -20,9 +20,7 @@ Download the following:
 
  {% imgcap /images/Sublime_Text_Logo.png Sublime Text %}
 
- You can uninstall this afterwords since its a trial copy.
-
-Install your new stuff
+Then install your new stuff.
 
 ## Setting Up Your Application Environment
 
