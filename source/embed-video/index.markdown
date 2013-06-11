@@ -36,7 +36,7 @@ Otherwise the express web server will complain.
 
 It should look like this:
 
-{% gist 5759336 %}
+{% gist 5760251 %}
 
 If you can't get it right, just copy and paste that full code into your `index.jade` file and save it.
 
