@@ -50,7 +50,7 @@ This file needs to reside in your `app directory`.
 
  A lot of permission errors occur because of public / private key craziness.
  If you run into any `Permission denied (publickey)` errors during this process,
- get with me and I will help.  If your looking for ways to fix it yourself,
+ get with me and I will help.  If you're looking for ways to fix it yourself,
  check out this Heroku Guide [Managing Your SSH Keys](https://devcenter.heroku.com/articles/keys)
 
 ## Deploy Your App To Heroku
