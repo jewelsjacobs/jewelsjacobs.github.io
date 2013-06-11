@@ -22,6 +22,8 @@ host our sites.
 
 ## Configuring Your App For Heroku
 
+### Creating The Procfile
+
  1. Sign Up for a free Heroku account by going to [the site](https://www.heroku.com/)
   and clicking the  'Sign Up' button. {% imgcap /images/signup.png Sign Up Button %}
  2. Follow the instructions to confirm your account and create a password.
@@ -36,14 +38,16 @@ This file needs to reside in your `app directory`.
   - Procfile
     {% endcoderay %}
 
- 4. Navigate to your `app` directory in your terminal / command window
+### Heroku Toolbelt
+
+ 1. Navigate to your `app` directory in your terminal / command window
  if your not there already.
- 5. Download and install [Heroku Toolbelt](https://toolbelt.heroku.com/windows).
- 6. In the command window type:
+ 2. Download and install [Heroku Toolbelt](https://toolbelt.heroku.com/windows).
+ 3. In the command window type:
    {% coderay %}
   heroku login
     {% endcoderay %}
- 7. Enter the email and password of your new Heroku account and then allow Heroku to
+ 4. Enter the email and password of your new Heroku account and then allow Heroku to
  generate a public key.
 
  **NOTE**
