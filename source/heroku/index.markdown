@@ -51,11 +51,12 @@ This file needs to reside in your `app directory`.
  A lot of permission errors occur because of public / private key craziness.
  If you run into any `Permission denied (publickey)` errors during this process,
  get with me and I will help.  If you're looking for ways to fix it yourself,
- check out this Heroku Guide [Managing Your SSH Keys](https://devcenter.heroku.com/articles/keys)
+ check out this [Managing Your SSH Keys](https://devcenter.heroku.com/articles/keys)
+ Heroku Guide.
 
 ## Deploy Your App To Heroku
 
-Heroku manages your application in its own Git repository.  Git is a version control system
+Heroku manages your application in it's own Git repository.  Git is a version control system
 like Subversion or Perforce.  If you want to know more about Git
 [check out this site](http://git-scm.com/). If you want to know more about working with
 Heroku's git repository [take a look here](https://devcenter.heroku.com/articles/git#tracking-your-app-in-git).
@@ -68,7 +69,7 @@ includes it.
 
  1. Navigate to your `app` directory in your terminal / command window
  if your not there already.
- 2. Make sure you are logged into heroku.  If not in the command window type:
+ 2. Make sure you are logged into heroku.  If not, in the command window type:
 
    {% coderay %}
   heroku login
