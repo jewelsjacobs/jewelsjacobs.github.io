@@ -55,7 +55,7 @@ Then install your new stuff.
 
  Don't be too intimitated with all of the files and folders.
  For those of you who are interested in learning more about this application structure, I'd be happy to
- explane it afterwords.
+ explain it afterwords.
 
 ## Making Your Site Pretty With A Bootstrap Template
 
