@@ -25,7 +25,7 @@ host our sites.
  1. Sign Up for a free Heroku account by going to [the site](https://www.heroku.com/)
   and clicking the  'Sign Up' button. {% imgcap /images/signup.png Sign Up Button %}
  2. Follow the instructions to confirm your account and create a password.
- 3. Create a new text file called `Procfile` with the code:
+ 3. Create a new text file called `Procfile` - no `.txt` extension - with the code:
  {% coderay %}
 web: node app.js
 {% endcoderay %}
