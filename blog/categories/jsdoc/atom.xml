@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jsdoc | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/jsdoc/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-10T15:27:41-05:00</updated>
+  <updated>2013-06-11T11:59:20-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -39,6 +39,7 @@ Read on for my adventures in javascript API documentation.</p>
       </li>
     </ul>
   </li>
+  <li><a href="#windows">Windows</a></li>
 </ul>
 
 <h2 id="jsdoc">JSDoc</h2>
@@ -135,6 +136,33 @@ grunt test
  </figure></notextile></div></p>
 
 <p>in the console my documentation gets created.</p>
+
+<h2 id="windows">Windows</h2>
+
+<p>I have a co-worker running a Windows 7 PC who I wanted to be able to update docs.  I couldn’t
+figure out how to do this using the node js-toolkit module or grunt-shell.</p>
+
+<p>I had to dowload the <a href="https://code.google.com/p/jsdoc-toolkit/downloads/list">jsdoc-toolkit source</a>
+and create a batch file.</p>
+
+<p>Here’s the batch file I created:</p>
+
+<p><div><script src='https://gist.github.com/5758434.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<p>To run this you need to:</p>
+
+<ul>
+  <li>Have JRE.  If you don’t have it, download it <a href="http://www.java.com/en/">here</a></li>
+  <li>Be able to run <code>java</code> command in a command prompt.  For this you’ll need to:
+    <ul>
+      <li>Set your <code>JAVA_HOME</code> environment variable (I’ve got <code>.;C:\Program Files (x86)\Java\jre7</code> as the value)</li>
+      <li>Add <code>;%JAVA_HOME%\bin</code> to the PATH environment variable.
+ More details on this can be found <a href="http://www.robertsindall.co.uk/blog/setting-java-home-variable-in-windows/">here</a></li>
+    </ul>
+  </li>
+</ul>
 
 <p>As usual I’m sure there’s a much better way to do this but this is what worked for me
 after hours of pain.</p>
