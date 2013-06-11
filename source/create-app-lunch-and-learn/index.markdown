@@ -38,19 +38,19 @@ cross browser / cross platform apps.
 
  {% imgcap /images/jade.png Jade %}
 
-## What You Need To Do This
+## What You Need
 
  * A laptop - PC or Mac, I haven't prepaired anything for Linux or any other *nix OS
  * An internt connection
  * At least a slight curiousity / interest in the subject
  * Ability to copy, paste and type
 
-## What You Don't Need To Do This
+## What You Don't Need
 
  * Web development knowledge of any kind
  * A mastery of web development buzzwords - I will explain terms like responsive design
 
-## What You Will Have At The End Of This
+## What You'll Get
 
  * A cool freely hosted website with embedded video you can view on any device and mess with at any time.
  It'll look exactly like [this](http://lit-ocean-2531.herokuapp.com/).
