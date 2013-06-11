@@ -47,7 +47,8 @@ This file needs to reside in your `app directory`.
    {% coderay %}
   heroku login
     {% endcoderay %}
- 4. Enter the email and password of your new Heroku account and then allow Heroku to
+
+ Enter the email and password of your new Heroku account and then allow Heroku to
  generate a public key.
 
  **NOTE**
