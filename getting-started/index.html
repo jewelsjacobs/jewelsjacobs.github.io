@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Getting Started - HTML5 Dev Gal</title>
+  <meta name="author" content="Julia Jacobs">
+
+  
+  <meta name="description" content="Getting Started Jun 11th, 2013 Downloading And Installing Stuff Setting Up Your Application Environment Running Some Commands in The Command Window &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://html5devgal.com//getting-started/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="/javascripts/modernizr-latest.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="HTML5 Dev Gal" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="/javascripts/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="/javascripts/fancybox/source/jquery.fancybox.js?v=2.1.4"></script>
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/source/jquery.fancybox.css?v=2.1.4" media="screen" />
+
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="/javascripts/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="/javascripts/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="/javascripts/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41440187-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">HTML5 Dev Gal</a></h1>
+  
+    <h2>Messing with HTML5, CSS3 and JavaScript.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:html5devgal.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/resources">Resources</a></li>
+  <li><a href="/portfolio.html">Portfolio</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/create-app-lunch-and-learn">Lunch And Learn</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Getting Started</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-11T13:58:00-05:00" pubdate data-updated="true">Jun 11<span>th</span>, 2013</time></p>
+  </header>
+  
+  <ul id="markdown-toc">
+  <li><a href="#downloading-and-installing-stuff">Downloading And Installing Stuff</a></li>
+  <li><a href="#setting-up-your-application-environment">Setting Up Your Application Environment</a></li>
+  <li><a href="#running-some-commands-in-the-command-window">Running Some Commands in The Command Window</a></li>
+  <li><a href="#create-a-project-in-sublime-text">Create A Project In Sublime Text</a></li>
+  <li><a href="#making-your-site-pretty-with-a-bootstrap-template">Making Your Site Pretty With A Bootstrap Template</a></li>
+  <li><a href="#admiring-the-fruits-of-your-labor">Admiring The Fruits Of Your Labor</a></li>
+</ul>
+
+<h2 id="downloading-and-installing-stuff">Downloading And Installing Stuff</h2>
+
+<p>Download the following:</p>
+
+<ul>
+  <li><a href="http://nodejs.org/">node.js installer</a></li>
+  <li><a href="http://www.sublimetext.com/">A cool coding tool - IDE called Sublime Text</a></li>
+</ul>
+
+<p><span class="caption-wrapper"><img class="caption" src="/images/Sublime_Text_Logo.png" width="" height="" alt="Sublime Text" title="Sublime Text" /><span class="caption-text">Sublime Text</span></span></p>
+
+<p>You can uninstall this afterwords since its a trial copy.</p>
+
+<p>Install your new stuff</p>
+
+<h2 id="setting-up-your-application-environment">Setting Up Your Application Environment</h2>
+
+<ol>
+  <li>Go to your Documents folder.</li>
+  <li>Create a directory called <code>app</code> in Windows Explorer.</li>
+</ol>
+
+<h2 id="running-some-commands-in-the-command-window">Running Some Commands in The Command Window</h2>
+
+<ol>
+  <li>In Windows Explorer, simply hold the Shift key and right-click on the <code>app</code> folder.</li>
+  <li>Choose Open Command Window here</li>
+</ol>
+
+<p><span class="caption-wrapper"><img class="caption" src="/images/openCommandWindow.png" width="" height="" alt="Shift + Right-Click on folder" title="Shift + Right-Click on folder" /><span class="caption-text">Shift + Right-Click on folder</span></span></p>
+
+<ol>
+  <li>In the new Command Window type the following.  Make sure to press the enter key after every line.</li>
+</ol>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+      npm install -g express –S
+      express
+      npm install
+      node app
+    </pre></div>
+</div>
+ </figure></notextile></div>
+
+<ol>
+  <li>Open up a browser and visit <a href="http://localhost:3000/">http://localhost:3000/</a> to see your bare bones, node.js, express website.</li>
+</ol>
+
+<h2 id="create-a-project-in-sublime-text">Create A Project In Sublime Text</h2>
+
+<ol>
+  <li>Open up the Sublime Text program.</li>
+  <li>In the top menu choose <code>Project -&gt; Add Folder to Project . . .</code>.</li>
+</ol>
+
+<p><span class="caption-wrapper"><img class="caption" src="/images/SublimeTextAddFoldersToProject.png" width="" height="" alt="Add Folders To Project" title="Add Folders To Project" /><span class="caption-text">Add Folders To Project</span></span></p>
+
+<ol>
+  <li>Navigate to the application directory.  This will be the <code>app</code> directory you created in Documents. You’ll see all of the files express installed
+ to create your app.</li>
+</ol>
+
+<p>Don’t be too intimitated with all of the files and folders.
+ For those of you who are interested in learning more about this application structure, I’d be happy to
+ explane it afterwords.</p>
+
+<h2 id="making-your-site-pretty-with-a-bootstrap-template">Making Your Site Pretty With A Bootstrap Template</h2>
+
+<ol>
+  <li>In Sublime text open up the <code>layout.jade</code> file in</li>
+</ol>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+- app
+  - views
+    </pre></div>
+</div>
+ </figure></notextile></div>
+
+<ol>
+  <li>Copy and paste this code into that file:</li>
+</ol>
+
+<div><script src="https://gist.github.com/5759325.js"></script>
+<noscript><pre><code /></pre></noscript></div>
+
+<ol>
+  <li>
+    <p>In Sublime text open up the <code>index.jade</code> file in the same <code>views</code> directory.</p>
+
+    <p><span class="caption-wrapper"><img class="caption" src="/images/layoutJade.png" width="" height="" alt="layout.jade" title="layout.jade" /><span class="caption-text">layout.jade</span></span></p>
+  </li>
+  <li>
+    <p>Copy and paste this code into that file:</p>
+  </li>
+</ol>
+
+<div><script src="https://gist.github.com/5759336.js"></script>
+<noscript><pre><code /></pre></noscript></div>
+
+<p>I know jade looks like weirded out HTML for those of you that are familiar with HTML.</p>
+
+<p>Anyone freaked out by the jade syntax and used to HTML syntax can use <a href="http://html2jade.aaron-powell.com/">this handy HTML to Jade converter</a>.</p>
+
+<p>Apps like this tend to use an HTML template parser like jade because it’s easy to integrate dynamic server side data.</p>
+
+<h2 id="admiring-the-fruits-of-your-labor">Admiring The Fruits Of Your Labor</h2>
+
+<p>Now go back to <a href="http://localhost:3000/">http://localhost:3000/</a> and refresh the page.  Fabulous!</p>
+
+<p><a href="/embed-video/">Let’s Embed Some Video . . </a></p>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-11T13:58:00-05:00" pubdate data-updated="true">Jun 11<span>th</span>, 2013</time>
+        
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bootstrap/'>bootstrap</a>, <a class='category' href='/blog/categories/express/'>express</a>, <a class='category' href='/blog/categories/jade/'>jade</a>, <a class='category' href='/blog/categories/javascript/'>javaScript</a>, <a class='category' href='/blog/categories/node-dot-js/'>node.js</a>
+  
+</span>
+
+
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5devgal.com//getting-started/index.html" data-via="jewelsjacobs" data-counturl="http://html5devgal.com//getting-started/index.html" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+  
+  <script src="//platform.linkedin.com/in.js" type="text/javascript">
+  lang: en_US
+  </script>
+  <script type="IN/Share" data-counter="right"></script>
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+<script src="//about.me/embed/juliajacobs"></script>
+</section>
+<section>
+  <h1>Github Profile</h1>
+<iframe src="http://githubbadge.appspot.com/badge/jewelsjacobs?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder=0></iframe>
+  </section><section>
+  <h1>Stack Overflow</h1>
+<a href="http://stackoverflow.com/users/1571305/julia-anne-jacobs">
+<img src="http://stackoverflow.com/users/flair/1571305.png" width="208" height="58" alt="profile for Julia Anne Jacobs at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Julia Anne Jacobs at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+</a>
+  </section><section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/10/finally-got-jsdocs-working-with-node-app/">Finally Got JSdocs Working With My Node App</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/08/octopress-toc-and-coderay-codeblocks/">Octopress TOC and coderay Codeblocks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/05/automatic-javascript-linting-fixes/">Automatic JavaScript Linting Fixes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive/">Vertically and Horizontally Center With Twitter Bootstrap (Responsive)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names/">Dynamic Namespace Objects Based On Directory Structure and File Names</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jewelsjacobs">@jewelsjacobs</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jewelsjacobs',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/jjacobs2000@me.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section>
+ <h1>Twitter</h1>
+<a class="twitter-timeline" href="https://twitter.com/jewelsjacobs" data-widget-id="342412177384280064">Tweets by @jewelsjacobs</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Julia Jacobs -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://www.flickr.com/photos/joeshlabotnik/">Josh Shlabotnik</a></span>
+</p>
+
+</footer>
+  <script type="text/javascript" >
+(function($) {
+  $(".fancybox")
+    .attr('rel', 'gallery')
+    .fancybox({
+        beforeLoad: function() {
+          var el, id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+        },
+        padding    : 0,
+        margin     : 5,
+        nextEffect : 'fade',
+        prevEffect : 'none',
+        autoCenter : false,
+        afterLoad  : function () {
+            $('body').css({position : 'absolute'});
+            $.extend(this, {
+                aspectRatio : false,
+                type    : 'html',
+                width   : '100%',
+                height  : '100%',
+                content : '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: contain; background-color: #40494D; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /></div>'
+            });
+        },
+        afterClose : function() {
+          $(location).attr('href','/');
+          return;
+        }
+    });
+
+  // Launch fancyBox on first element
+$(".fancybox").eq(0).trigger('click');
+
+})(jQuery);
+</script > <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'html5devgal';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://html5devgal.com//getting-started/index.html';
+        var disqus_url = 'http://html5devgal.com//getting-started/index.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
