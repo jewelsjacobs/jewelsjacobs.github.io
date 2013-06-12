@@ -27,7 +27,7 @@ host our sites.
   and clicking the  'Sign Up' button. {% imgcap /images/signup.png Sign Up Button %}
  2. Follow the instructions to confirm your account and create a password.
 
- ### Creating The Procfile
+### Creating The Procfile
 
  1. Create a new file in Sublime Text.
 
