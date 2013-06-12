@@ -41,7 +41,7 @@ host our sites.
  5.  Save the file in your `app` directory.  Name it `Procfile` and don't add any type of file
  extension like `.txt`.
 
-    {% imgcap /images/save_procfile.png Create New File In Sublime Text %}
+    {% imgcap /images/save_procfile.png Save The Procfile %}
 
 ### Logging Into Heroku
 
