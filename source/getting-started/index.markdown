@@ -78,7 +78,7 @@ Here's how:
 
     **NOTE: When asked to type commands in the Command Window, make sure to press
     the enter key after every line and wait till each command task is compleated
-    before extering the next line.**
+    before entering the next line.**
 
     {% coderay %}
       npm install -g express –S
