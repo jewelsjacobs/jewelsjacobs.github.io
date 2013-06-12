@@ -1,10 +1,11 @@
 ---
 layout: page
-title: "heroku"
+title: "Cloud Hosting With Heroku"
 date: 2013-06-11 16:03
 comments: true
 sharing: true
 footer: true
+categories: [node.js, javaScript, bootstrap, jade, express, video]
 ---
 
 * sample unordered list
