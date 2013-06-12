@@ -53,10 +53,12 @@ Here's how:
 
     {% imgcap /images/windows_7_enviroment_variables.png Environment Variables Button %}
 
- 4. Double click PATH and add `C:\Program Files (x86)\Git\bin` into the “variable value”.
- Make sure you separate the value with “ ; “
+ 4. Double click `PATH` (or it might be `Path`).  It can either be listed under `User variables` or System variables`.
 
     {% imgcap /images/add_to_PATH.png Double click PATH %}
+
+ 5. Add `C:\Program Files (x86)\Git\bin` into the `Variable Value`.
+ Make sure you separate the value with ` ; `.
 
     {% imgcap /images/var_value.png Add path %}
 
