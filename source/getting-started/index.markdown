@@ -58,7 +58,7 @@ Here's how:
     {% imgcap /images/add_to_PATH.png Double click PATH %}
 
  5. Add `C:\Program Files (x86)\Git\bin` into the `Variable Value`.
- Make sure you separate the value with ` ; `.
+ Make sure you separate the value with `;`.
 
     {% imgcap /images/var_value.png Add path %}
 
@@ -76,7 +76,7 @@ Here's how:
 
  3. In the new Command Window type the commands shown below.
 
-    ** NOTE: When asked to type commands in the Command Window, make sure to press
+    **NOTE: When asked to type commands in the Command Window, make sure to press
     the enter key after every line and wait till each command task is compleated
     before extering the next line**
 
