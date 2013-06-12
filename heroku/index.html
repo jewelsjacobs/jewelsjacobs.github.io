@@ -145,19 +145,18 @@ host our sites.</p>
   <li>Sign Up for a free Heroku account by going to <a href="https://www.heroku.com/">the Heroku site</a>
   and clicking the  ‘Sign Up’ button. <span class="caption-wrapper"><img class="caption" src="/images/signup.png" width="" height="" alt="Sign Up Button" title="Sign Up Button" /><span class="caption-text">Sign Up Button</span></span></li>
   <li>Follow the instructions to confirm your account and create a password.</li>
-  <li>Create a new file in Sublime Text.</li>
-</ol>
+  <li>
+    <p>Create a new file in Sublime Text.</p>
 
-<p><span class="caption-wrapper"><img class="caption" src="/images/create_new_file.png" width="" height="" alt="Create New File In Sublime Text" title="Create New File In Sublime Text" /><span class="caption-text">Create New File In Sublime Text</span></span></p>
-
-<ol>
+    <p><span class="caption-wrapper"><img class="caption" src="/images/create_new_file.png" width="" height="" alt="Create New File In Sublime Text" title="Create New File In Sublime Text" /><span class="caption-text">Create New File In Sublime Text</span></span></p>
+  </li>
   <li>Copy and Paste the following code into that file.</li>
 </ol>
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
   <div class="code"><pre>
-web: node app.js
-</pre></div>
+    web: node app.js
+    </pre></div>
 </div>
  </figure></notextile></div>
 
@@ -166,7 +165,8 @@ web: node app.js
  extension like <code>.txt</code>.</li>
 </ol>
 
-<p><span class="caption-wrapper"><img class="caption" src="/images/save_procfile.png" width="" height="" alt="Create New File In Sublime Text" title="Create New File In Sublime Text" /><span class="caption-text">Create New File In Sublime Text</span></span></p>
+<pre><code>&lt;span class='caption-wrapper'&gt;&lt;img class='caption' src='/images/save_procfile.png' width='' height='' alt='Create New File In Sublime Text' title='Create New File In Sublime Text'&gt;&lt;span class='caption-text'&gt;Create New File In Sublime Text&lt;/span&gt;&lt;/span&gt;
+</code></pre>
 
 <h3 id="logging-into-heroku">Logging Into Heroku</h3>
 
@@ -179,7 +179,7 @@ web: node app.js
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
   <div class="code"><pre>
-  heroku login
+    heroku login
     </pre></div>
 </div>
  </figure></notextile></div>
@@ -231,13 +231,13 @@ includes it.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
   <div class="code"><pre>
-  git init
-  git add .
-  git config --global user.email &quot;you@example.com&quot;
-  git config --global user.name &quot;Your Name&quot;
-  git commit -m &quot;my first commit&quot;
-  heroku create
-  git push heroku master
+      git init
+      git add .
+      git config --global user.email &quot;you@example.com&quot;
+      git config --global user.name &quot;Your Name&quot;
+      git commit -m &quot;my first commit&quot;
+      heroku create
+      git push heroku master
     </pre></div>
 </div>
  </figure></notextile></div>
