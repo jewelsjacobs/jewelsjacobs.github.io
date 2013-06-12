@@ -124,6 +124,7 @@
   <li><a href="#what-you-need">What You Need</a></li>
   <li><a href="#what-you-dont-need">What You Don&rsquo;t Need</a></li>
   <li><a href="#what-youll-get">What You&rsquo;ll Get</a></li>
+  <li><a href="#preparing-for-the-course">Preparing For The Course</a></li>
 </ul>
 
 <h2 id="netfix-hulu-and-google-youtube-are-doing-it---why-cant-you">Netfix, Hulu and Google (YouTube) Are Doing It - Why Can&rsquo;t You?</h2>
@@ -167,6 +168,7 @@ cross browser / cross platform apps.</p>
   but if you know your way around your OS, it should be pretty easy to follow.
   All of the applications you need to install are available for Mac OS X or *nix as well.</li>
   <li>An internt connection</li>
+  <li>An email account - you can get a free <a href="http://mail.google.com">Gmail</a> or <a href="http://mail.yahoo.com">Yahoo</a> one.</li>
   <li>At least a slight curiousity / interest in the subject</li>
   <li>Ability to copy, paste and type</li>
 </ul>
@@ -185,6 +187,14 @@ cross browser / cross platform apps.</p>
  It&rsquo;ll look exactly like <a href="http://lit-ocean-2531.herokuapp.com/">this</a>.</li>
   <li>Lots of resources to further your knowledge</li>
   <li>A beaming sense of accomplishment and well being</li>
+</ul>
+
+<h2 id="preparing-for-the-course">Preparing For The Course</h2>
+
+<ul>
+  <li>You&rsquo;ll save time by downloading and installing all of the required applications before
+ the class.  View the <a href="http://html5devgal.com/getting-started/#downloading-and-installing-stuff">Downloading And Installing Stuff</a>
+ section.</li>
 </ul>
 
 <p><a href="/getting-started/">Lets Get Started!</a></p>
@@ -388,6 +398,20 @@ $(".fancybox").eq(0).trigger('click');
 
 })(jQuery);
 </script > <!-- Delete or comment this line to disable Fancybox -->
+<script type="text/javascript" >
+  $(document).ready(function(){
+      $('a').each(function() {
+          var a = new RegExp('/' + window.location.host + '/');
+          if(!a.test(this.href)) {
+              $(this).click(function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  window.open(this.href, '_blank');
+              });
+          }
+      });
+  });
+</script>
 
 
 <script type="text/javascript">

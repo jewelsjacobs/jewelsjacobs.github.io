@@ -326,6 +326,20 @@ $(".fancybox").eq(0).trigger('click');
 
 })(jQuery);
 </script > <!-- Delete or comment this line to disable Fancybox -->
+<script type="text/javascript" >
+  $(document).ready(function(){
+      $('a').each(function() {
+          var a = new RegExp('/' + window.location.host + '/');
+          if(!a.test(this.href)) {
+              $(this).click(function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  window.open(this.href, '_blank');
+              });
+          }
+      });
+  });
+</script>
 
 
 <script type="text/javascript">

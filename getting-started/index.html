@@ -9,7 +9,7 @@
   <meta name="author" content="Julia Jacobs">
 
   
-  <meta name="description" content="Getting Started Jun 11th, 2013 Downloading And Installing Stuff Setting Up Your Application Environment Running Some Commands in The Command Window &hellip;">
+  <meta name="description" content="Getting Started Jun 11th, 2013 Downloading And Installing Stuff Setting Up Your Application Environment Adding ssh-keygen To Your PATH Running Some &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -118,7 +118,10 @@
   
   <ul id="markdown-toc">
   <li><a href="#downloading-and-installing-stuff">Downloading And Installing Stuff</a></li>
-  <li><a href="#setting-up-your-application-environment">Setting Up Your Application Environment</a></li>
+  <li><a href="#setting-up-your-application-environment">Setting Up Your Application Environment</a>    <ul>
+      <li><a href="#adding-ssh-keygen-to-your-path">Adding ssh-keygen To Your PATH</a></li>
+    </ul>
+  </li>
   <li><a href="#running-some-commands-in-the-command-window">Running Some Commands in The Command Window</a></li>
   <li><a href="#create-a-project-in-sublime-text">Create A Project In Sublime Text</a></li>
   <li><a href="#making-your-site-pretty-with-a-bootstrap-template">Making Your Site Pretty With A Bootstrap Template</a></li>
@@ -131,7 +134,10 @@
 
 <ul>
   <li><a href="http://nodejs.org/">node.js installer</a></li>
-  <li><a href="http://www.sublimetext.com/">A cool coding tool - IDE called Sublime Text</a></li>
+  <li><a href="https://toolbelt.heroku.com/windows">Heroku Toolbelt</a>. <strong><em>This can take a while to install
+ as files get downloaded during the process.  If the installer seems to hang or freeze with a full progress bar,
+ just wait a couple of minutes and it will continue.</em></strong></li>
+  <li><a href="http://www.sublimetext.com/">A cool coding tool / IDE called Sublime Text</a></li>
 </ul>
 
 <p><span class="caption-wrapper"><img class="caption" src="/images/Sublime_Text_Logo.png" width="" height="" alt="Sublime Text" title="Sublime Text" /><span class="caption-text">Sublime Text</span></span></p>
@@ -143,6 +149,45 @@
 <ol>
   <li>Go to your Documents folder.</li>
   <li>Create a directory called <code>app</code> in Windows Explorer.</li>
+</ol>
+
+<h3 id="adding-ssh-keygen-to-your-path">Adding ssh-keygen To Your PATH</h3>
+
+<p>There is an application called <code>ssh-keygen</code> installed with Heroku
+Toolbelt.  Unfortunatly you can’t run it in your command window
+unless you tell Windows where to find it.</p>
+
+<p>You do this by adding it’s location to the Windows PATH environment variable.</p>
+
+<p>Here’s how:</p>
+
+<ol>
+  <li>Click the <code>Start</code> button on the bottem left corner of your screen.  On the right side of the <code>Start Menu</code> you’ll see
+  <code>Computer</code>.  Right click on <code>Computer</code> and choose <code>Properties</code> from the pop-up / context menu.</li>
+</ol>
+
+<p><span class="caption-wrapper"><img class="caption" src="/images/computer_properties.png" width="" height="" alt="Computer Properties" title="Computer Properties" /><span class="caption-text">Computer Properties</span></span></p>
+
+<ol>
+  <li>Click <code>Advanced Systems Settings</code> on the left.</li>
+</ol>
+
+<p><span class="caption-wrapper"><img class="caption" src="/images/system_advanced_settings_thumb.png" width="" height="" alt="Advanced System Settings" title="Advanced System Settings" /><span class="caption-text">Advanced System Settings</span></span></p>
+
+<ol>
+  <li>
+    <p>Click the <code>Advanced</code> tab and then the <code>Environment Variables. . .</code> button.</p>
+
+    <p><span class="caption-wrapper"><img class="caption" src="/images/windows_7_enviroment_variables.png" width="" height="" alt="Environment Variables Button" title="Environment Variables Button" /><span class="caption-text">Environment Variables Button</span></span></p>
+  </li>
+  <li>
+    <p>Double click PATH and add <code>C:\Program Files (x86)\Git\bin</code> into the “variable value”.
+ Make sure you separate the value with “ ; “</p>
+
+    <p><span class="caption-wrapper"><img class="caption" src="/images/add_to_PATH.png" width="" height="" alt="Double click PATH" title="Double click PATH" /><span class="caption-text">Double click PATH</span></span></p>
+
+    <p><span class="caption-wrapper"><img class="caption" src="/images/var_value.png" width="" height="" alt="Add path" title="Add path" /><span class="caption-text">Add path</span></span></p>
+  </li>
 </ol>
 
 <h2 id="running-some-commands-in-the-command-window">Running Some Commands in The Command Window</h2>
@@ -179,7 +224,7 @@
   <li>In the top menu choose <code>Project -&gt; Add Folder to Project . . .</code>.</li>
 </ol>
 
-<p><span class="caption-wrapper"><img class="caption" src="/images/SublimeTextAddFoldersToProject.png" width="" height="" alt="Add Folders To Project" title="Add Folders To Project" /><span class="caption-text">Add Folders To Project</span></span></p>
+<p><span class="caption-wrapper"><img class="caption" src="/images/add_folder_to_project.png" width="" height="" alt="Add Folders To Project" title="Add Folders To Project" /><span class="caption-text">Add Folders To Project</span></span></p>
 
 <ol>
   <li>Navigate to the application directory.  This will be the <code>app</code> directory you created in Documents. You’ll see all of the files express installed
@@ -193,20 +238,20 @@
 <h2 id="making-your-site-pretty-with-a-bootstrap-template">Making Your Site Pretty With A Bootstrap Template</h2>
 
 <ol>
-  <li>In Sublime text open up the <code>layout.jade</code> file in</li>
+  <li>
+    <p>In Sublime text open up the <code>layout.jade</code> file in the <code>app\views</code> directory</p>
+
+    <p><span class="caption-wrapper"><img class="caption" src="/images/layout_jade.png" width="" height="" alt="Add Folders To Project" title="Add Folders To Project" /><span class="caption-text">Add Folders To Project</span></span></p>
+  </li>
+  <li>
+    <p>Copy and paste the code below into that file.  If you have problems copying and pasting the code,
+ click on the grey <code>view raw</code> link  to open up a webpage with the raw code.</p>
+  </li>
 </ol>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
-  <div class="code"><pre>
-- app
-  - views
-    </pre></div>
-</div>
- </figure></notextile></div>
+<p><span class="caption-wrapper"><img class="caption" src="/images/view_raw.png" width="" height="" alt="View Raw Code In Seperate Page" title="View Raw Code In Seperate Page" /><span class="caption-text">View Raw Code In Seperate Page</span></span></p>
 
-<ol>
-  <li>Copy and paste this code into that file:</li>
-</ol>
+<p>It’s easier to copy and paste the code from that seperate page.</p>
 
 <div><script src="https://gist.github.com/5759325.js"></script>
 <noscript><pre><code /></pre></noscript></div>
@@ -215,7 +260,7 @@
   <li>
     <p>In Sublime text open up the <code>index.jade</code> file in the same <code>views</code> directory.</p>
 
-    <p><span class="caption-wrapper"><img class="caption" src="/images/layoutJade.png" width="" height="" alt="layout.jade" title="layout.jade" /><span class="caption-text">layout.jade</span></span></p>
+    <p><span class="caption-wrapper"><img class="caption" src="/images/index_jade.png" width="" height="" alt="index.jade" title="index.jade" /><span class="caption-text">index.jade</span></span></p>
   </li>
   <li>
     <p>Copy and paste this code into that file:</p>
@@ -436,6 +481,20 @@ $(".fancybox").eq(0).trigger('click');
 
 })(jQuery);
 </script > <!-- Delete or comment this line to disable Fancybox -->
+<script type="text/javascript" >
+  $(document).ready(function(){
+      $('a').each(function() {
+          var a = new RegExp('/' + window.location.host + '/');
+          if(!a.test(this.href)) {
+              $(this).click(function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  window.open(this.href, '_blank');
+              });
+          }
+      });
+  });
+</script>
 
 
 <script type="text/javascript">

@@ -125,6 +125,13 @@
 <p>We are going to keep things super simple by embedding one YouTube Video
 into the site.</p>
 
+<p>YouTube gives you code to embed any video on its website into a webpage.
+I grabbed some embed code and converted it into the jade syntax with that <a href="http://html2jade.aaron-powell.com/">handy HTML to Jade converter</a>.</p>
+
+<p>If you want to grab some different HTML embed code,
+you can get instructions on how to do this
+<a href="http://www.htmlgoodies.com/tutorials/web_graphics/article.php/3480061/How-To-Add-a-YouTube-Video-to-Your-Web-Site.htm">here</a>.</p>
+
 <ol>
   <li>Go to the <code>index.jade</code> file again in Sublime Text</li>
   <li>Copy and paste</li>
@@ -149,8 +156,11 @@ iframe(width='560', height='315', src='http://www.youtube.com/embed/H7Xyboh6GpY'
 
 <p><strong>One tricky thing to note abut jade:</strong></p>
 
-<p>The jade tag heirchy is based on indentation.  You have to make sure your newly pasted code is indented in the right place.
-Otherwise the express web server will complain.</p>
+<p>The jade tag heirchy is based on indentation.  You have to make sure your newly pasted code is indented in the right place.</p>
+
+<p><strong>IT MUST BE 6 SPACES FROM THE LEFT EDGE OF THE DOCUMENT.</strong></p>
+
+<p>Otherwise the express web server will complain.</p>
 
 <p>It should look like this:</p>
 
@@ -161,7 +171,7 @@ Otherwise the express web server will complain.</p>
 
 <p>Now refresh your local site and you should see the embedded video.</p>
 
-<p><a href="/heroku/">More Advanced: Hosting Your New Site On The Cloud</a></p>
+<p><a href="/heroku/">Hosting Your New Site On The Cloud</a></p>
 
   
     <footer>
@@ -362,6 +372,20 @@ $(".fancybox").eq(0).trigger('click');
 
 })(jQuery);
 </script > <!-- Delete or comment this line to disable Fancybox -->
+<script type="text/javascript" >
+  $(document).ready(function(){
+      $('a').each(function() {
+          var a = new RegExp('/' + window.location.host + '/');
+          if(!a.test(this.href)) {
+              $(this).click(function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  window.open(this.href, '_blank');
+              });
+          }
+      });
+  });
+</script>
 
 
 <script type="text/javascript">

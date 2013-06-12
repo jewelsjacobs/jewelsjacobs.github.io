@@ -9,7 +9,7 @@
   <meta name="author" content="Julia Jacobs">
 
   
-  <meta name="description" content="Cloud Hosting With Heroku Jun 11th, 2013 Putting Your Site On The Cloud Configuring Your App For Heroku Creating The Procfile Heroku Toolbelt Deploy &hellip;">
+  <meta name="description" content="Cloud Hosting With Heroku Jun 11th, 2013 Putting Your Site On The Cloud Configuring Your App For Heroku Creating The Procfile Logging Into Heroku &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -120,7 +120,7 @@
   <li><a href="#putting-your-site-on-the-cloud">Putting Your Site On The Cloud</a></li>
   <li><a href="#configuring-your-app-for-heroku">Configuring Your App For Heroku</a>    <ul>
       <li><a href="#creating-the-procfile">Creating The Procfile</a></li>
-      <li><a href="#heroku-toolbelt">Heroku Toolbelt</a></li>
+      <li><a href="#logging-into-heroku">Logging Into Heroku</a></li>
     </ul>
   </li>
   <li><a href="#deploy-your-app-to-heroku">Deploy Your App To Heroku</a></li>
@@ -142,10 +142,16 @@ host our sites.</p>
 <h3 id="creating-the-procfile">Creating The Procfile</h3>
 
 <ol>
-  <li>Sign Up for a free Heroku account by going to <a href="https://www.heroku.com/">the site</a>
+  <li>Sign Up for a free Heroku account by going to <a href="https://www.heroku.com/">the Heroku site</a>
   and clicking the  ‘Sign Up’ button. <span class="caption-wrapper"><img class="caption" src="/images/signup.png" width="" height="" alt="Sign Up Button" title="Sign Up Button" /><span class="caption-text">Sign Up Button</span></span></li>
   <li>Follow the instructions to confirm your account and create a password.</li>
-  <li>Create a new text file called <code>Procfile</code> - no <code>.txt</code> extension - with the code:</li>
+  <li>Create a new file in Sublime Text.</li>
+</ol>
+
+<p><span class="caption-wrapper"><img class="caption" src="/images/create_new_file.png" width="" height="" alt="Create New File In Sublime Text" title="Create New File In Sublime Text" /><span class="caption-text">Create New File In Sublime Text</span></span></p>
+
+<ol>
+  <li>Copy and Paste the following code into that file.</li>
 </ol>
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
@@ -155,22 +161,19 @@ web: node app.js
 </div>
  </figure></notextile></div>
 
-<p>This file needs to reside in your <code>app directory</code>.</p>
+<ol>
+  <li>Save the file in your <code>app</code> directory.  Name it <code>Procfile</code> and don’t add any type of file
+ extension like <code>.txt</code>.</li>
+</ol>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
-  <div class="code"><pre>
-- app
-  - Procfile
-    </pre></div>
-</div>
- </figure></notextile></div>
+<p><span class="caption-wrapper"><img class="caption" src="/images/save_procfile.png" width="" height="" alt="Create New File In Sublime Text" title="Create New File In Sublime Text" /><span class="caption-text">Create New File In Sublime Text</span></span></p>
 
-<h3 id="heroku-toolbelt">Heroku Toolbelt</h3>
+<h3 id="logging-into-heroku">Logging Into Heroku</h3>
 
 <ol>
-  <li>Navigate to your <code>app</code> directory in your terminal / command window
- if your not there already.</li>
-  <li>Download and install <a href="https://toolbelt.heroku.com/windows">Heroku Toolbelt</a>.</li>
+  <li>If your command window is still open, close it to stop the web server.</li>
+  <li>Follow the <a href="http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window">previous instructions</a>
+ on opening it in your <code>app</code> directory.</li>
   <li>In the command window type:</li>
 </ol>
 
@@ -206,26 +209,32 @@ Just follow these instructions.</p>
 includes it.</p>
 
 <ol>
-  <li>Navigate to your <code>app</code> directory in your terminal / command window
- if your not there already.</li>
-  <li>Make sure you are logged into heroku.  If not, in the command window type:</li>
+  <li>Follow the <a href="http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window">previous instructions</a>
+ on opening your command window in your <code>app</code> directory if it isn’t already opened.</li>
+  <li>Make sure you are logged into heroku.  If not or just not sure, type the following in the command window:</li>
 </ol>
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
   <div class="code"><pre>
-  heroku login
+      heroku logout
+      heroku login
     </pre></div>
 </div>
  </figure></notextile></div>
 
 <ol>
-  <li>Type the following commands in the command window:</li>
+  <li>Type the following <code>git</code> commands in the command window.
+ <strong>BE SURE TO WAIT TILL THE TASKS FROM EACH COMMAND ARE COMPLETED BEFORE ENTERING THE NEXT</strong>
+ Also note that you might get some warnings about line endings.  Don’t worry about that.
+ Replace <code>you@example.com</code> with the email address you used for your Heroku account and <code>Your Name</code> with your name</li>
 </ol>
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
   <div class="code"><pre>
   git init
   git add .
+  git config --global user.email &quot;you@example.com&quot;
+  git config --global user.name &quot;Your Name&quot;
   git commit -m &quot;my first commit&quot;
   heroku create
   git push heroku master
@@ -449,6 +458,20 @@ $(".fancybox").eq(0).trigger('click');
 
 })(jQuery);
 </script > <!-- Delete or comment this line to disable Fancybox -->
+<script type="text/javascript" >
+  $(document).ready(function(){
+      $('a').each(function() {
+          var a = new RegExp('/' + window.location.host + '/');
+          if(!a.test(this.href)) {
+              $(this).click(function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  window.open(this.href, '_blank');
+              });
+          }
+      });
+  });
+</script>
 
 
 <script type="text/javascript">
