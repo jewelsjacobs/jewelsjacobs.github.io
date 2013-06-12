@@ -16,7 +16,7 @@ categories: [node.js, javaScript, bootstrap, jade, express, video]
 We are going to keep things super simple by embedding one YouTube Video
 into the site.
 
-YouTube gives you code to embed any video on its website into a webpage.
+YouTube gives you code to embed any video on it's website into a webpage.
 I grabbed some embed code and converted it into the jade syntax with that [handy HTML to Jade converter](http://html2jade.aaron-powell.com/).
 
 If you want to grab some different HTML embed code,
