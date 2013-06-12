@@ -43,17 +43,17 @@ Here's how:
  1. Click the `Start` button on the bottem left corner of your screen.  On the right side of the `Start Menu` you'll see
   `Computer`.  Right click on `Computer` and choose `Properties` from the pop-up / context menu.
 
-   {% imgcap /images/computer_properties.png Computer Properties %}
+    {% imgcap /images/computer_properties.png Computer Properties %}
 
  2. Click `Advanced Systems Settings` on the left.
 
-   {% imgcap /images/system_advanced_settings_thumb.png Advanced System Settings %}
+    {% imgcap /images/system_advanced_settings_thumb.png Advanced System Settings %}
 
  3. Click the `Advanced` tab and then the `Environment Variables. . .` button.
 
     {% imgcap /images/windows_7_enviroment_variables.png Environment Variables Button %}
 
- 4. Double click `PATH` (or it might be `Path`).  It can either be listed under `User variables` or System variables`.
+ 4. Double click `PATH` (or it might be `Path`).  It can either be listed under `User variables` or `System variables`.
 
     {% imgcap /images/add_to_PATH.png Double click PATH %}
 
@@ -67,7 +67,7 @@ Here's how:
  1. In Windows Explorer, simply hold the Shift key and right-click on the `app` folder.
  2. Choose Open Command Window here
 
- {% imgcap /images/openCommandWindow.png Shift + Right-Click on folder  %}
+    {% imgcap /images/openCommandWindow.png Shift + Right-Click on folder  %}
 
  3. In the new Command Window type the following.  Make sure to press the enter key after every line.
     {% coderay %}
@@ -83,7 +83,7 @@ Here's how:
  1. Open up the Sublime Text program.
  2. In the top menu choose `Project -> Add Folder to Project . . .`.
 
- {% imgcap /images/add_folder_to_project.png Add Folders To Project %}
+    {% imgcap /images/add_folder_to_project.png Add Folders To Project %}
 
  3. Navigate to the application directory.  This will be the `app` directory you created in Documents. You'll see all of the files express installed
  to create your app.
@@ -96,12 +96,12 @@ Here's how:
 
  1. In Sublime text open up the `layout.jade` file in the `app\views` directory
 
-     {% imgcap /images/layout_jade.png Add Folders To Project %}
+    {% imgcap /images/layout_jade.png Add Folders To Project %}
 
  2. Copy and paste the code below into that file.  If you have problems copying and pasting the code,
  click on the grey `view raw` link  to open up a webpage with the raw code.
 
-  {% imgcap /images/view_raw.png View Raw Code In Seperate Page %}
+    {% imgcap /images/view_raw.png View Raw Code In Seperate Page %}
 
  It's easier to copy and paste the code from that seperate page.
 

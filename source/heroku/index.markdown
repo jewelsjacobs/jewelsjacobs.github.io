@@ -30,27 +30,27 @@ host our sites.
  2. Follow the instructions to confirm your account and create a password.
  3. Create a new file in Sublime Text.
 
- {% imgcap /images/create_new_file.png Create New File In Sublime Text %}
+    {% imgcap /images/create_new_file.png Create New File In Sublime Text %}
 
  4. Copy and Paste the following code into that file.
 
-  {% coderay %}
-web: node app.js
-{% endcoderay %}
+    {% coderay %}
+    web: node app.js
+    {% endcoderay %}
 
  5.  Save the file in your `app` directory.  Name it `Procfile` and don't add any type of file
  extension like `.txt`.
 
-  {% imgcap /images/save_procfile.png Create New File In Sublime Text %}
+    {% imgcap /images/save_procfile.png Create New File In Sublime Text %}
 
 ### Logging Into Heroku
 
  1. If your command window is still open, close it to stop the web server.
  2. Follow the [previous instructions](http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window)
  on opening it in your `app` directory.
- 4. In the command window type:
-   {% coderay %}
-  heroku login
+ 3. In the command window type:
+    {% coderay %}
+    heroku login
     {% endcoderay %}
 
  Enter the email and password of your new Heroku account and then allow Heroku to
@@ -81,7 +81,7 @@ includes it.
  on opening your command window in your `app` directory if it isn't already opened.
  2. Make sure you are logged into heroku.  If not or just not sure, type the following in the command window:
 
-   {% coderay %}
+    {% coderay %}
       heroku logout
       heroku login
     {% endcoderay %}
@@ -92,13 +92,13 @@ includes it.
  Replace `you@example.com` with the email address you used for your Heroku account and `Your Name` with your name
 
     {% coderay %}
-  git init
-  git add .
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-  git commit -m "my first commit"
-  heroku create
-  git push heroku master
+      git init
+      git add .
+      git config --global user.email "you@example.com"
+      git config --global user.name "Your Name"
+      git commit -m "my first commit"
+      heroku create
+      git push heroku master
     {% endcoderay %}
 
 These commands will:
