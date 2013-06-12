@@ -117,7 +117,7 @@ Here's how:
 
 {% gist 5759325 %}
 
- 3. In Sublime text open up the `index.jade` file in the same `views` directory.
+ 3. In Sublime Text open up the `index.jade` file in the same `views` directory.
 
     {% imgcap /images/index_jade.png index.jade %}
 
