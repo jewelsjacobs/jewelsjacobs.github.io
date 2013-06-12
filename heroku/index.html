@@ -9,7 +9,7 @@
   <meta name="author" content="Julia Jacobs">
 
   
-  <meta name="description" content="Cloud Hosting With Heroku Jun 11th, 2013 Putting Your Site On The Cloud Configuring Your App For Heroku Creating The Procfile Logging Into Heroku &hellip;">
+  <meta name="description" content="Cloud Hosting With Heroku Jun 11th, 2013 Putting Your Site On The Cloud Configuring Your App For Heroku Logging Into Heroku Deploy Your App To &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -119,7 +119,6 @@
   <ul id="markdown-toc">
   <li><a href="#putting-your-site-on-the-cloud">Putting Your Site On The Cloud</a></li>
   <li><a href="#configuring-your-app-for-heroku">Configuring Your App For Heroku</a>    <ul>
-      <li><a href="#creating-the-procfile">Creating The Procfile</a></li>
       <li><a href="#logging-into-heroku">Logging Into Heroku</a></li>
     </ul>
   </li>
@@ -139,18 +138,23 @@ host our sites.</p>
 
 <h2 id="configuring-your-app-for-heroku">Configuring Your App For Heroku</h2>
 
-<h3 id="creating-the-procfile">Creating The Procfile</h3>
-
 <ol>
   <li>Sign Up for a free Heroku account by going to <a href="https://www.heroku.com/">the Heroku site</a>
   and clicking the  ‘Sign Up’ button. <span class="caption-wrapper"><img class="caption" src="/images/signup.png" width="" height="" alt="Sign Up Button" title="Sign Up Button" /><span class="caption-text">Sign Up Button</span></span></li>
   <li>Follow the instructions to confirm your account and create a password.</li>
+</ol>
+
+<p>### Creating The Procfile</p>
+
+<ol>
   <li>
     <p>Create a new file in Sublime Text.</p>
 
     <p><span class="caption-wrapper"><img class="caption" src="/images/create_new_file.png" width="" height="" alt="Create New File In Sublime Text" title="Create New File In Sublime Text" /><span class="caption-text">Create New File In Sublime Text</span></span></p>
   </li>
-  <li>Copy and Paste the following code into that file.</li>
+  <li>
+    <p>Copy and Paste the following code into that file.</p>
+  </li>
 </ol>
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
@@ -210,7 +214,7 @@ includes it.</p>
 <ol>
   <li>Follow the <a href="http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window">previous instructions</a>
  on opening your Command Window in your <code>app</code> directory if it isn’t already opened.</li>
-  <li>Make sure you are logged into heroku.  If not or just not sure, type the following in the Command Window:</li>
+  <li>Make sure you are logged into Heroku.  If not or just not sure, type the following in the Command Window:</li>
 </ol>
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
@@ -245,7 +249,7 @@ includes it.</p>
 <ul>
   <li>Turn your app directory into a local git repository,</li>
   <li>Add and commit all of the app files to the repository</li>
-  <li>Create a heroku website (also called an app)</li>
+  <li>Create a Heroku website (also called an app)</li>
   <li>Deploy the local git repository to the remote Heroku repository and app</li>
 </ul>
 
@@ -253,9 +257,11 @@ includes it.</p>
 
 <p>After the app has finished deploying to Heroku, you can open it up
 in your browser by typing <code>heroku open</code> in the Command Window.
-You shoud then see your new app on your new Heroku website!</p>
+You should then see your new app on your new Heroku website!</p>
 
 <p>Be sure to check it out on a mobile device or tablet.</p>
+
+<p>Want to learn more?  Check out <a href="/resources/">these resources</a>.</p>
 
   
     <footer>
