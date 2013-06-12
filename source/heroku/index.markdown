@@ -23,22 +23,23 @@ host our sites.
 
 ## Configuring Your App For Heroku
 
-### Creating The Procfile
-
  1. Sign Up for a free Heroku account by going to [the Heroku site](https://www.heroku.com/)
   and clicking the  'Sign Up' button. {% imgcap /images/signup.png Sign Up Button %}
  2. Follow the instructions to confirm your account and create a password.
- 3. Create a new file in Sublime Text.
+
+ ### Creating The Procfile
+
+ 1. Create a new file in Sublime Text.
 
     {% imgcap /images/create_new_file.png Create New File In Sublime Text %}
 
- 4. Copy and Paste the following code into that file.
+ 2. Copy and Paste the following code into that file.
 
     {% coderay %}
     web: node app.js
     {% endcoderay %}
 
- 5.  Save the file in your `app` directory.  Name it `Procfile` and don't add any type of file
+ 3.  Save the file in your `app` directory.  Name it `Procfile` and don't add any type of file
  extension like `.txt`.
 
 {% imgcap /images/save_procfile.png Save The Procfile %}
@@ -79,7 +80,7 @@ includes it.
 
  1. Follow the [previous instructions](http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window)
  on opening your Command Window in your `app` directory if it isn't already opened.
- 2. Make sure you are logged into heroku.  If not or just not sure, type the following in the Command Window:
+ 2. Make sure you are logged into Heroku.  If not or just not sure, type the following in the Command Window:
 
     {% coderay %}
       heroku logout
@@ -104,13 +105,15 @@ These commands will:
 
  * Turn your app directory into a local git repository,
  * Add and commit all of the app files to the repository
- * Create a heroku website (also called an app)
+ * Create a Heroku website (also called an app)
  * Deploy the local git repository to the remote Heroku repository and app
 
 ## Viewing Your New Heroku Hosted Site
 
 After the app has finished deploying to Heroku, you can open it up
 in your browser by typing `heroku open` in the Command Window.
-You shoud then see your new app on your new Heroku website!
+You should then see your new app on your new Heroku website!
 
 Be sure to check it out on a mobile device or tablet.
+
+Want to learn more?  Check out [these resources](/resources/).
