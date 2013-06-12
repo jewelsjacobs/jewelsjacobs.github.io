@@ -25,26 +25,30 @@ host our sites.
 
 ### Creating The Procfile
 
- 1. Sign Up for a free Heroku account by going to [the site](https://www.heroku.com/)
+ 1. Sign Up for a free Heroku account by going to [the Heroku site](https://www.heroku.com/)
   and clicking the  'Sign Up' button. {% imgcap /images/signup.png Sign Up Button %}
  2. Follow the instructions to confirm your account and create a password.
- 3. Create a new text file called `Procfile` - no `.txt` extension - with the code:
- {% coderay %}
+ 3. Create a new file in Sublime Text.
+
+ {% imgcap /images/create_new_file.png Create New File In Sublime Text %}
+
+ 4. Copy and Paste the following code into that file.
+
+  {% coderay %}
 web: node app.js
 {% endcoderay %}
 
-This file needs to reside in your `app directory`.
-  {% coderay %}
-- app
-  - Procfile
-    {% endcoderay %}
+ 5.  Save the file in your `app` directory.  Name it `Procfile` and don't add any type of file
+ extension like `.txt`.
 
-### Heroku Toolbelt
+  {% imgcap /images/save_procfile.png Create New File In Sublime Text %}
 
- 1. Navigate to your `app` directory in your terminal / command window
- if your not there already.
- 2. Download and install [Heroku Toolbelt](https://toolbelt.heroku.com/windows).
- 3. In the command window type:
+### Logging Into Heroku
+
+ 1. If your command window is still open, close it to stop the web server.
+ 2. Follow the [previous instructions](http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window)
+ on opening it in your `app` directory.
+ 4. In the command window type:
    {% coderay %}
   heroku login
     {% endcoderay %}
@@ -73,19 +77,25 @@ Just follow these instructions.
 You also don't need to worry about installing git as the Heroku Toolbelt you already installed
 includes it.
 
- 1. Navigate to your `app` directory in your terminal / command window
- if your not there already.
- 2. Make sure you are logged into heroku.  If not, in the command window type:
+ 1. Follow the [previous instructions](http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window)
+ on opening your command window in your `app` directory if it isn't already opened.
+ 2. Make sure you are logged into heroku.  If not or just not sure, type the following in the command window:
 
    {% coderay %}
-  heroku login
+      heroku logout
+      heroku login
     {% endcoderay %}
 
- 3. Type the following commands in the command window:
+ 3. Type the following `git` commands in the command window.
+ **BE SURE TO WAIT TILL THE TASKS FROM EACH COMMAND ARE COMPLETED BEFORE ENTERING THE NEXT**
+ Also note that you might get some warnings about line endings.  Don't worry about that.
+ Replace `you@example.com` with the email address you used for your Heroku account and `Your Name` with your name
 
     {% coderay %}
   git init
   git add .
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
   git commit -m "my first commit"
   heroku create
   git push heroku master

@@ -16,6 +16,13 @@ categories: [node.js, javaScript, bootstrap, jade, express, video]
 We are going to keep things super simple by embedding one YouTube Video
 into the site.
 
+YouTube gives you code to embed any video on its website into a webpage.
+I grabbed some embed code and converted it into the jade syntax with that [handy HTML to Jade converter](http://html2jade.aaron-powell.com/).
+
+If you want to grab some different HTML embed code,
+you can get instructions on how to do this
+[here](http://www.htmlgoodies.com/tutorials/web_graphics/article.php/3480061/How-To-Add-a-YouTube-Video-to-Your-Web-Site.htm).
+
  1. Go to the `index.jade` file again in Sublime Text
  2. Copy and paste
 
@@ -32,6 +39,9 @@ After the lines
 **One tricky thing to note abut jade:**
 
 The jade tag heirchy is based on indentation.  You have to make sure your newly pasted code is indented in the right place.
+
+**IT MUST BE 6 SPACES FROM THE LEFT EDGE OF THE DOCUMENT.**
+
 Otherwise the express web server will complain.
 
 It should look like this:
@@ -42,4 +52,4 @@ If you can't get it right, just copy and paste that full code into your `index.j
 
 Now refresh your local site and you should see the embedded video.
 
-[More Advanced: Hosting Your New Site On The Cloud](/heroku/)
+[Hosting Your New Site On The Cloud](/heroku/)

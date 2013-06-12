@@ -44,6 +44,7 @@ cross browser / cross platform apps.
   but if you know your way around your OS, it should be pretty easy to follow.
   All of the applications you need to install are available for Mac OS X or *nix as well.
  * An internt connection
+ * An email account - you can get a free [Gmail](http://mail.google.com) or [Yahoo](http://mail.yahoo.com) one.
  * At least a slight curiousity / interest in the subject
  * Ability to copy, paste and type
 
@@ -58,5 +59,11 @@ cross browser / cross platform apps.
  It'll look exactly like [this](http://lit-ocean-2531.herokuapp.com/).
  * Lots of resources to further your knowledge
  * A beaming sense of accomplishment and well being
+
+## Preparing For The Course
+
+ * You'll save time by downloading and installing all of the required applications before
+ the class.  View the [Downloading And Installing Stuff](http://html5devgal.com/getting-started/#downloading-and-installing-stuff)
+ section.
 
 [Lets Get Started!](/getting-started/)

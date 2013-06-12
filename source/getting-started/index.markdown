@@ -16,7 +16,10 @@ categories: [node.js, javaScript, bootstrap, jade, express]
 Download the following:
 
  * [node.js installer](http://nodejs.org/)
- * [A cool coding tool - IDE called Sublime Text](http://www.sublimetext.com/)
+ * [Heroku Toolbelt](https://toolbelt.heroku.com/windows). ***This can take a while to install
+ as files get downloaded during the process.  If the installer seems to hang or freeze with a full progress bar,
+ just wait a couple of minutes and it will continue.***
+ * [A cool coding tool / IDE called Sublime Text](http://www.sublimetext.com/)
 
  {% imgcap /images/Sublime_Text_Logo.png Sublime Text %}
 
@@ -26,6 +29,36 @@ Then install your new stuff.
 
  1. Go to your Documents folder.
  2. Create a directory called `app` in Windows Explorer.
+
+### Adding ssh-keygen To Your PATH
+
+There is an application called `ssh-keygen` installed with Heroku
+Toolbelt.  Unfortunatly you can't run it in your command window
+unless you tell Windows where to find it.
+
+You do this by adding it's location to the Windows PATH environment variable.
+
+Here's how:
+
+ 1. Click the `Start` button on the bottem left corner of your screen.  On the right side of the `Start Menu` you'll see
+  `Computer`.  Right click on `Computer` and choose `Properties` from the pop-up / context menu.
+
+   {% imgcap /images/computer_properties.png Computer Properties %}
+
+ 2. Click `Advanced Systems Settings` on the left.
+
+   {% imgcap /images/system_advanced_settings_thumb.png Advanced System Settings %}
+
+ 3. Click the `Advanced` tab and then the `Environment Variables. . .` button.
+
+    {% imgcap /images/windows_7_enviroment_variables.png Environment Variables Button %}
+
+ 4. Double click PATH and add `C:\Program Files (x86)\Git\bin` into the “variable value”.
+ Make sure you separate the value with “ ; “
+
+    {% imgcap /images/add_to_PATH.png Double click PATH %}
+
+    {% imgcap /images/var_value.png Add path %}
 
 ## Running Some Commands in The Command Window
 
@@ -48,7 +81,7 @@ Then install your new stuff.
  1. Open up the Sublime Text program.
  2. In the top menu choose `Project -> Add Folder to Project . . .`.
 
- {% imgcap /images/SublimeTextAddFoldersToProject.png Add Folders To Project %}
+ {% imgcap /images/add_folder_to_project.png Add Folders To Project %}
 
  3. Navigate to the application directory.  This will be the `app` directory you created in Documents. You'll see all of the files express installed
  to create your app.
@@ -59,20 +92,22 @@ Then install your new stuff.
 
 ## Making Your Site Pretty With A Bootstrap Template
 
- 1. In Sublime text open up the `layout.jade` file in
+ 1. In Sublime text open up the `layout.jade` file in the `app\views` directory
 
-    {% coderay %}
-- app
-  - views
-    {% endcoderay %}
+     {% imgcap /images/layout_jade.png Add Folders To Project %}
 
- 2. Copy and paste this code into that file:
+ 2. Copy and paste the code below into that file.  If you have problems copying and pasting the code,
+ click on the grey `view raw` link  to open up a webpage with the raw code.
+
+  {% imgcap /images/view_raw.png View Raw Code In Seperate Page %}
+
+ It's easier to copy and paste the code from that seperate page.
 
 {% gist 5759325 %}
 
  3. In Sublime text open up the `index.jade` file in the same `views` directory.
 
-    {% imgcap /images/layoutJade.png layout.jade %}
+    {% imgcap /images/index_jade.png index.jade %}
 
  4. Copy and paste this code into that file:
 
