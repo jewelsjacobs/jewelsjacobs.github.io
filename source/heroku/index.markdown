@@ -45,10 +45,10 @@ host our sites.
 
 ### Logging Into Heroku
 
- 1. If your command window is still open, close it to stop the web server.
+ 1. If your Command Window is still open, close it to stop the web server.
  2. Follow the [previous instructions](http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window)
  on opening it in your `app` directory.
- 3. In the command window type:
+ 3. In the Command Window type:
     {% coderay %}
     heroku login
     {% endcoderay %}
@@ -78,18 +78,17 @@ You also don't need to worry about installing git as the Heroku Toolbelt you alr
 includes it.
 
  1. Follow the [previous instructions](http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window)
- on opening your command window in your `app` directory if it isn't already opened.
- 2. Make sure you are logged into heroku.  If not or just not sure, type the following in the command window:
+ on opening your Command Window in your `app` directory if it isn't already opened.
+ 2. Make sure you are logged into heroku.  If not or just not sure, type the following in the Command Window:
 
     {% coderay %}
       heroku logout
       heroku login
     {% endcoderay %}
 
- 3. Type the following `git` commands in the command window.
- **BE SURE TO WAIT TILL THE TASKS FROM EACH COMMAND ARE COMPLETED BEFORE ENTERING THE NEXT**
+ 3. Type the following `git` commands in the Command Window.
  Also note that you might get some warnings about line endings.  Don't worry about that.
- Replace `you@example.com` with the email address you used for your Heroku account and `Your Name` with your name
+ Replace `you@example.com` with the email address you used for your Heroku account and `Your Name` with your name.
 
     {% coderay %}
       git init
@@ -111,7 +110,7 @@ These commands will:
 ## Viewing Your New Heroku Hosted Site
 
 After the app has finished deploying to Heroku, you can open it up
-in your browser by typing `heroku open` in the command window.
+in your browser by typing `heroku open` in the Command Window.
 You shoud then see your new app on your new Heroku website!
 
 Be sure to check it out on a mobile device or tablet.

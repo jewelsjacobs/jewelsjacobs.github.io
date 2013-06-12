@@ -33,7 +33,7 @@ Then install your new stuff.
 ### Adding ssh-keygen To Your PATH
 
 There is an application called `ssh-keygen` installed with Heroku
-Toolbelt.  Unfortunatly you can't run it in your command window
+Toolbelt.  Unfortunatly you can't run it in your Command Window
 unless you tell Windows where to find it.
 
 You do this by adding it's location to the Windows PATH environment variable.
@@ -69,7 +69,17 @@ Here's how:
 
     {% imgcap /images/openCommandWindow.png Shift + Right-Click on folder  %}
 
- 3. In the new Command Window type the following.  Make sure to press the enter key after every line.
+ 3. Your Command Window should now be open and the current directory will be the
+ `C:\Users\-YourUserName-\Documents\app>` directory.
+
+    {% imgcap /images/command_window.png Command Window  %}
+
+ 3. In the new Command Window type the commands shown below.
+
+    ** NOTE: When asked to type commands in the Command Window, make sure to press
+    the enter key after every line and wait till each command task is compleated
+    before extering the next line**
+
     {% coderay %}
       npm install -g express –S
       express

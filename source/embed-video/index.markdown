@@ -26,15 +26,15 @@ you can get instructions on how to do this
  1. Go to the `index.jade` file again in Sublime Text
  2. Copy and paste
 
-{% coderay %}
-iframe(width='560', height='315', src='http://www.youtube.com/embed/H7Xyboh6GpY', frameborder='0', allowfullscreen='allowfullscreen')
-{% endcoderay %}
+    {% coderay %}
+    iframe(width='560', height='315', src='http://www.youtube.com/embed/H7Xyboh6GpY', frameborder='0', allowfullscreen='allowfullscreen')
+    {% endcoderay %}
 
 After the lines
-{% coderay %}
+    {% coderay %}
     //
        Place embedded YouTube Code after this line
-{% endcoderay %}
+    {% endcoderay %}
 
 **One tricky thing to note abut jade:**
 
