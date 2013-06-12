@@ -104,7 +104,7 @@ Here's how:
 
 ## Making Your Site Pretty With A Bootstrap Template
 
- 1. In Sublime text open up the `layout.jade` file in the `app\views` directory
+ 1. In Sublime Text open up the `layout.jade` file in the `app\views` directory
 
     {% imgcap /images/layout_jade.png Add Folders To Project %}
 
