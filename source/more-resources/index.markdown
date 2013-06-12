@@ -40,4 +40,5 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQ
  * [John Bender from jQuery Mobile](http://johnbender.us/)
  * [Good John Bender presentation on perils of developing with HTML5](http://www.youtube.com/watch?v=mEivOr3fcMs)
 
+##**More**
  [more](/additinal-resources/)

@@ -22,9 +22,6 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQ
  * [node.js](http://nodejs.org/)
  * [Compiling Node Modules Built with node-gyp for Windows](https://github.com/TooTallNate/node-gyp/wiki/Visual-Studio-2010-Setup)
 
-##**AT&T**
- * [AT&T Assets (requires registration)](https://brand.att.com/att/scripts/login/login.aspx)
-
 ##**Responsive Design - creating websites for all devices and browser sizes**
  * [Media Queries For All Devices](http://nmsdvid.com/snippets/)
  * [Detectizr - Modernizr Device Info Detection Plugin](https://github.com/barisaydinoglu/Detectizr)
@@ -97,4 +94,5 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQ
  * [total storage - localstorage management](http://upstatement.com/blog/2012/01/jquery-local-storage-done-right-and-easy/)
  * [jQuery Overlay Image Check](https://github.com/jewelsjacobs/jquery.overlayImageCheck)
 
+##**More**
 [more](/resourcescont/)

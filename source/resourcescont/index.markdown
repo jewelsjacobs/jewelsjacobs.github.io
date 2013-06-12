@@ -88,4 +88,5 @@ categories: [3D UI, css, CSS3D, HTML5, javaScript, three.js, smart tv, grunt, jQ
 ###**jsFiddle - show javascript code to the world - usually used when asking for help in stackoverflow, etc**
  * [jsFiddle](http://jsfiddle.net/)
 
+##**More**
  [more](/more-resources/)
