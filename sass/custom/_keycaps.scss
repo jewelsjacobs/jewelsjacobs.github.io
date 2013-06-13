@@ -1,0 +1,152 @@
+.admain p {
+	font-family:Trebuchet,"Lucida Sans Unicode","Lucida Grande","Lucida Sans",Arial,sans-serif;
+}
+
+kbd, .Wing {
+	font-family:Verdana,Geneva,Tahoma,sans-serif;
+	-moz-border-radius: 7px; -webkit-border-radius: 7px; 
+	border: thick outset #777 ;	/* width, then style, then color */
+	padding: 1px 4px;
+	color: #000000;
+ 	background-color: #ddd; 
+	font-size:90%;
+	line-height:1.6em;
+}
+
+@font-face {	
+/* Wingdings that comes with Windows. */
+	font-family: 'Wingdings';
+	src: url('/fonts/wingding.eot');
+	src: local('☺'), local('Wingdings'), local('WingdingsRegular'), url('/fonts/wingding.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+.Wing {
+	font-family: Wingdings; font-size:135%; 
+	line-height:2.0em;
+}
+.Windowskey:before {
+	font-family: Wingdings;
+	content: "\f0ff";
+	color: black;
+ 	background-color: #ddd; 
+	font-size:180%;
+	line-height:1.1em;
+}
+
+
+
+@font-face {	/* a keyboard font, free for web use */
+	font-family: 'KeystrokeRegular';
+	src: url('/fonts/Keystroke.eot');
+	src: local('☺'), local('KeystrokeRegular'), url('/fonts/Keystroke.woff') format('woff'), url('/fonts/Keystroke.ttf') format('truetype');
+}
+.Keystroke {
+	font-family: "KeystrokeRegular","Courier New",cursive;
+	color: #000000;
+ 	background-color: #F4F4F4; 
+	font-size:350%;
+	line-height:1.3em;
+}
+
+@font-face {	/* a keyboard font, free for web use */
+	font-family: 'BigKeyCaps';
+	src: url('/fonts/david-rakowski-BigKeyCaps.eot');
+	src: local('BKCap'), local('BKCap Regular'), url('/fonts/david-rakowski-BigKeyCaps.woff') format('woff'), url('/fonts/david-rakowski-BigKeyCaps.ttf') format('truetype');
+}
+.BigKeyCaps {
+	font-family: "BigKeyCaps","Courier New",cursive;
+	color: #000000;
+ 	background-color: #F4F4F4; 
+	font-size:45px;
+	line-height:1.3em;
+}
+.BigKeyCaps .w { padding:1px 1px 1px 1px; margin-right:1px;  }
+
+@font-face {	/* a keyboard font, free for web use, from www.larabiefonts.com (number- and letter-keycaps) */
+	font-family: 'BetsyFlanaganRegular';
+	src: url('/fonts/BetsyFlanagan.eot');
+	src: local('☺'), local('BetsyFlanagan-Regular'), url('/fonts/BetsyFlanagan.woff') format('woff'), url('/fonts/BetsyFlanagan.ttf') format('truetype');
+}
+@font-face {	/* a keyboard font, free for web use, from www.larabiefonts.com (special keycaps) */
+	font-family: 'BetsyFlanaganTwo-Regular';
+	src: url('/fonts/BetsyFlanagan2.eot');
+	src: local('☺'), local('BetsyFlanagan2'), url('/fonts/BetsyFlanagan2.woff') format('woff'), url('/fonts/BetsyFlanagan2.otf') format('truetype');
+}
+/* Betsy Flanagan Two is a "Keycaps" font, with F1-F12, Alt, Ctrl, Bksp, Cursor keys, etc. Courier (or any other font) wouldn't substitute right, since e=Bksp, g=Spacebar, E=Alt, G=Shift, etc. Put a "download the PDF version" link on each page where you use keycap fonts */
+.BetsyFlanaganTwo { 
+	font-family:"BetsyFlanaganTwo-Regular",cursive;
+	color: #000000;
+ 	background-color: #F4F4F4; 
+	font-weight: normal;	/* normal, bold, bolder, lighter */
+	font-style: normal; /* normal, italic */
+	font-size:65px;	/* yes, it needs to be big to be intelligible */
+	line-height:0.9em;
+}
+
+@font-face {	/* a keyboard font, free for web use */
+	font-family: 'KeyCapsNormal';
+	src: url('/font/KeyCapsNormal.eot');
+	src: local('☺'), local('KeyCapsNormal'), url('/font/KeyCapsNormal.woff') format('woff'), url('/font/KeyCapsNormal.ttf') format('truetype');
+}
+.KeyCapsNormal {
+	font-family: "KeyCapsNormal","Courier New",cursive;
+	color: #000000;
+ 	background-color: #F4F4F4; 
+	font-size:75px;
+	line-height:.9em;
+	padding: -20 0 0 0; margin: -20 0 0 0;
+}
+@font-face {
+	font-family: 'Mac Key Caps';
+	src: local('☺'), local('Mac Key Caps'), url('/font/MacKeyCapsFontparkLinotype.ttf') format('truetype');
+}
+.MacKeyCapsFontparkLinotype, .MKCFL {
+	font-family: "Mac Key Caps","Courier New",serif;
+	color: #000000;
+ 	background-color: #F4F4F4; 
+	font-size:40px;
+	line-height:1.0em;
+}
+
+@font-face {
+	font-family: 'MacKeyCapsRegular';
+	src: url('/font/MacKeyCaps.eot');
+	src: local('☺'), local('MacKeyCaps'), url('/font/MacKeyCaps.woff') format('woff'), url('/font/MacKeyCaps.ttf') format('truetype');
+}
+.MacKeyCapsRegular {
+	font-family: "MacKeyCapsRegular","Courier New",serif;
+	color: #000000;
+ 	background-color: #F4F4F4; 
+	font-size:80px;
+	line-height:1.0em;
+}
+
+@font-face {
+	font-family: 'KeycapsRegular';
+	src: url('/font/keycapsregular.eot');
+	src: local('☺'), local('Keycaps'), url('/font/keycapsregular.woff') format('woff'), url('/font/keycapsregular.ttf') format('truetype');
+}
+.KeyCapsRegular {
+	font-family: "KeycapsRegular","Courier New",cursive;
+	color: #000000;
+ 	background-color: #F4F4F4; 
+	font-size:40px;
+	line-height:1.1em;
+}
+/* also check out Ratkeys $25 - http://new.myfonts.com/font/quadrat/ratkeys/ and Mac Key Caps Pi Regular $39 - http://www.linotype.com/13782/mackeycapspiregular-font.html, or Keystrokes (PC/Mac keys) http://www.fontmarketplace.com/charset/keystrokes.aspx $4.99 per computer */
+
+
+/* AllPurposeSigns house for sale, room for rent, etc -- specify Unicode Range: f041-f05a */
+@font-face {
+	font-family: 'AllPurposeSigns';
+	src: url('/font/AllPurposeSigns.eot');
+	src: local('☺'), local('AllPurposeSigns'), url('/font/AllPurposeSigns.woff') format('woff'), url('/font/AllPurposeSigns.ttf') format('truetype');
+}
+.AllPurposeSigns {
+  font-family: "AllPurposeSigns",cursive;
+  font-size: 70px;
+  line-height: 80px;
+  /* FSBO - &#xF045; House For Sale &#xF041; */
+}
+ 

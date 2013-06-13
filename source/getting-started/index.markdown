@@ -64,7 +64,7 @@ Here's how:
 
 ## Running Some Commands in The Command Window
 
- 1. In Windows Explorer, simply hold the Shift key and right-click on the `app` folder.
+ 1. In Windows Explorer, simply hold <kbd>Shift</kbd> and **right-click** on the `app` folder.
  2. Choose Open Command Window here
 
     {% imgcap /images/openCommandWindow.png Shift + Right-Click on folder  %}
