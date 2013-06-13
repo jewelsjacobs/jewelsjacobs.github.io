@@ -4,7 +4,7 @@
   <title><![CDATA[Category: express | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/express/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-13T13:58:21-05:00</updated>
+  <updated>2013-06-13T14:29:42-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -23,11 +23,11 @@ based on the directory structure of my app.</p>
 
 <p><!-- more --></p>
 
-<p>Here’s how:
-##Requirements</p>
+<h2 id="requirements">Requirements</h2>
 
-<pre><code>&lt;li&gt;&lt;a title="node.js" href="http://nodejs.org/" target="_blank"&gt;node.js&lt;/a&gt;
-</code></pre>
+<ul>
+  <li><a href="http://nodejs.org/">node.js</a></li>
+</ul>
 
 <h3 id="node-modules">Node Modules</h3>
 
@@ -90,7 +90,7 @@ http.createServer(app).listen(app.get(<span class="error">‘</span>port<span cl
 
 <ul>
   <li><strong><em>startPath</em></strong> - path where your app directory resides in relation to the server.js / app.js file.</li>
-  <li>***appName - global namespace.</li>
+  <li><strong><em>appName</em></strong> - global namespace.</li>
   <li><strong><em>filePath</em></strong> - path of the file you want to write the namespace code to.</li>
 </ul>
 

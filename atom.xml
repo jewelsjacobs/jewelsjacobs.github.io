@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-13T13:58:21-05:00</updated>
+  <updated>2013-06-13T14:29:42-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -271,14 +271,14 @@ by one so I created a shell script to do this recursivley over a directory or wi
     <link href="http://html5devgal.com//blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names/"/>
     <updated>2013-05-24T05:59:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/24/dynamic-namespace-objects-based-on-directory-structure-and-file-names</id>
-    <content type="html"><![CDATA[<p>In a <a href="http://html5devgal.com//blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/">previous post</a></p>
-
-<p>I showed how to create a dynamic namespace autoloader with node.js, express, and walk.</p>
+    <content type="html"><![CDATA[<p>In a <a href="http://html5devgal.com//blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/">previous post</a>
+I showed how to create a dynamic namespace autoloader with node.js, express, and walk.</p>
 
 <!-- more -->
-<p>Please check out this article for information on how to set this up, what node modules to install and where to put this code.</p>
+<p>Please check out <a href="http://html5devgal.com//blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/">that post</a>
+for information on how to set this up, what node modules to install and where to put this code.</p>
 
-<p>In the http.createServer() function, add this code (or something like it):</p>
+<p>In the <code>http.createServer()</code> function, add this code (or something like it):</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span> (dynamicNamespaceObjectsFilenames.js)</span> <a href="http://html5devgal.com//downloads/code/dynamicNamespaceObjectsFilenames.js">download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -433,24 +433,54 @@ by one so I created a shell script to do this recursivley over a directory or wi
 
 <p><!-- more --></p>
 
-<h1 id="jquery-plugins">jQuery plugins</h1>
+<ul id="markdown-toc">
+  <li><a href="#jquery-plugins">jQuery Plugins</a>    <ul>
+      <li><a href="#jquery-simple-center-plugin">jQuery Simple Center Plugin</a></li>
+      <li><a href="#jquery-prettify-plugin">jQuery Prettify Plugin</a></li>
+    </ul>
+  </li>
+  <li><a href="#node-module">Node Module</a>    <ul>
+      <li><a href="#titlecaps">titlecaps</a></li>
+    </ul>
+  </li>
+  <li><a href="#response-from-a-senior-dev">Response From A Senior Dev</a></li>
+  <li><a href="#my-response-to-his-response">My Response To His Response</a></li>
+</ul>
+
+<h1 id="jquery-plugins">jQuery Plugins</h1>
+
+<h2 id="jquery-simple-center-plugin">jQuery Simple Center Plugin</h2>
+
+<p><strong>UPDATE:</strong></p>
+
+<p>The a jQuery UI function <a href="http://api.jqueryui.com/position/">position()</a> centers fine so don’t
+even bother with this plugin.
+Also check out
+<a href="http://html5devgal.com//blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive/">this post on responsive centering by extending bootsrap</a>
+for an easy CSS solution.</p>
+
+<p><a href="https://github.com/jewelsjacobs/jquery.simpleCenter">jQuery Simple Center Plugin</a>
+Simple jQuery plugin to vertically and horizontally center an element within another element.</p>
+
+<h2 id="jquery-prettify-plugin">jQuery Prettify Plugin</h2>
+
 <p><a href="https://github.com/jewelsjacobs/jquery.prettify">jQuery Prettify</a>
-jQuery plugin to print an associative array / object in the browser</p>
+jQuery plugin to print an associative array / object in the browser with
+option for highlighting.</p>
 
-<p>UPDATE: The a jQuery UI function <a href="http://api.jqueryui.com/position/">position()</a> centers fine so don’t
-even bother with the following plugin.</p>
+<h1 id="node-module">Node Module</h1>
 
-<p>My Simple Center Plugin
-<a href="https://github.com/jewelsjacobs/jquery.simpleCenter">jQuery Simple Center Plugin</a>
-Simple jQuery plugin to vertically and horizontally center an element within another element.
-#Node.js modules
-<a href="https://npmjs.org/package/titlecaps">titlecaps Node.js Module</a>
+<h2 id="titlecaps">titlecaps</h2>
+
+<p><a href="https://npmjs.org/package/titlecaps">titlecaps Node.js Module</a>
 Node module to capitalize first letter in each word</p>
 
 <p>Please bear in mind that they have not been node unit or qunit tested yet, just jhinted as I’m on a tight schedule at work.  
 I’ll make it happen very soon!</p>
 
-<p>UPDATE:  I was ‘schooled’ by the more experienced dev
+<h1 id="response-from-a-senior-dev">Response From A Senior Dev</h1>
+
+<p>I was ‘schooled’ by the more experienced dev
 <a href="http://uk.linkedin.com/in/nelsonic/">Nelson Kenneth Correia</a>
 who mentioned these plugins / mod were overkill.
 I thought it prudent to mention his response:</p>
@@ -485,11 +515,13 @@ I thought it prudent to mention his response:</p>
 <br />
 <br />I look forward to reading your *next* efforts. :-)</p><footer><strong>Nelson Kenneth Correia</strong></footer></blockquote>
 
+<h1 id="my-response-to-his-response">My Response To His Response</h1>
+
 <p>His caps code worked perfectly but his CSS code has to be changed depending on the sizes of the elements which is
 not exactly what I wanted to do.  The Prettify code he references doesn’t really do what I want either.</p>
 
-<p>I made the plugin because I wanted a way to spit out all of the necessary code dynamically without including it in the html file. B
-asically , just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag.
+<p>I made the plugin because I wanted a way to spit out all of the necessary code dynamically without
+including it in the html file. Basically ,just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag.
 You still have to attach the text to the pre tag or generate the pre tag.</p>
 ]]></content>
   </entry>
@@ -504,11 +536,11 @@ based on the directory structure of my app.</p>
 
 <p><!-- more --></p>
 
-<p>Here’s how:
-##Requirements</p>
+<h2 id="requirements">Requirements</h2>
 
-<pre><code>&lt;li&gt;&lt;a title="node.js" href="http://nodejs.org/" target="_blank"&gt;node.js&lt;/a&gt;
-</code></pre>
+<ul>
+  <li><a href="http://nodejs.org/">node.js</a></li>
+</ul>
 
 <h3 id="node-modules">Node Modules</h3>
 
@@ -572,7 +604,7 @@ http.createServer(app).listen(app.get(<span class="string"><span class="delimite
 
 <ul>
   <li><strong><em>startPath</em></strong> - path where your app directory resides in relation to the server.js / app.js file.</li>
-  <li>***appName - global namespace.</li>
+  <li><strong><em>appName</em></strong> - global namespace.</li>
   <li><strong><em>filePath</em></strong> - path of the file you want to write the namespace code to.</li>
 </ul>
 
@@ -767,10 +799,10 @@ progress).</p>
 
 <p><!-- more --></p>
 
-<p>In this example my render DOM element container has an id of ‘video_container’.
+<p>In this example my render DOM element container has an id of <code>video_container</code>.
 Just replace it with yours. Also I’m using jquery so you will need to have that included in your app.</p>
 
-<p>I attached this to a global variable (poc is the global namespace of my app) so I can just enter “poc.DebugData()” in the console.</p>
+<p>I attached this to a global variable (<code>poc</code> is the global namespace of my app) so I can just enter <code>poc.DebugData()</code> in the console.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Debug Code </span></figcaption>
  <div class="CodeRay">
@@ -808,8 +840,9 @@ poc.<span class="function">DebugData</span> = <span class="keyword">function</sp
     <link href="http://html5devgal.com//blog/2013/05/01/javascript-for-samsung-smarttv-browser-detection/"/>
     <updated>2013-05-01T05:59:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/01/javascript-for-samsung-smarttv-browser-detection</id>
-    <content type="html"><![CDATA[<p><strong>UPDATE</strong>
-This is better achieved with a Modernizr plugin called <a href="https://github.com/barisaydinoglu/Detectizr">Detectizr</a>.
+    <content type="html"><![CDATA[<p><strong>UPDATE:</strong></p>
+
+<p>This is better achieved with a Modernizr plugin called <a href="https://github.com/barisaydinoglu/Detectizr">Detectizr</a>.
 Use that instead.  I’ll keep the rest of this info for reference.</p>
 
 <p>Here’s the code to determine if the current browser is a SmartTV - requires
@@ -830,7 +863,9 @@ Use that instead.  I’ll keep the rest of this info for reference.</p>
 <p>This works because the Samsung SmartTV does not support Web Sockets which I find out by running the
 <a href="http://modernizr.github.io/Modernizr/test/index.html">Modernizr Test Suite</a> on the SmartTV.</p>
 
-<p>UPDATE: Actually I wound up changing this to use User-Agent sniffing based on a
+<p><strong>UPDATE:</strong></p>
+
+<p>Actually I wound up changing this to use User-Agent sniffing based on a
 great <a href="http://lnkd.in/Wtidi7">discussion</a> I had with <a href="www.linkedin.com/in/dmikey">Derek Anderson</a></p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>User-Agent Sniffing </span></figcaption>
@@ -890,12 +925,17 @@ with x, y, and z coordinates.</p>
 <p>Basically a 3D grid has an <strong><em>x plane</em></strong> (which is horizontal), a <strong><em>y plane</em></strong>
 (which is vertical) and a <strong><em>z plane</em></strong> (which is depth)</p>
 
-<p>An object with coordinates x=0, y=0 and z=0 is smack in the <strong><em>middle</em></strong> of this grid
- * A negative coordinate on the x plane will move an element left, positive to the right
- * A negative coordinate on the y plane will move an element down, positive will move it up
- * A negative coordinate on the z plane will move an element back, positive will move it forward</p>
+<p>An object with coordinates x=0, y=0 and z=0 is smack in the <strong><em>middle</em></strong> of this grid</p>
 
-<p><span class="caption-wrapper"><img class="caption" src="http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png" width="" height="" alt="3D Grid" title="3D Grid" /><span class="caption-text">3D Grid</span></span></p>
+<ul>
+  <li>A negative coordinate on the x plane will move an element left, positive to the right</li>
+  <li>A negative coordinate on the y plane will move an element down, positive will move it up</li>
+  <li>
+    <p>A negative coordinate on the z plane will move an element back, positive will move it forward</p>
+
+    <p><span class="caption-wrapper"><img class="caption" src="http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png" width="" height="" alt="3D Grid" title="3D Grid" /><span class="caption-text">3D Grid</span></span></p>
+  </li>
+</ul>
 
 <p>three.js has a <a href="https://raw.github.com/mrdoob/three.js/master/examples/js/renderers/CSS3DRenderer.js">CSS3D renderer</a>
 which, magically using some very heavy matrix equations, dynamically translates x, y and z
@@ -952,7 +992,7 @@ fire off only if you click on objects located in a certain z-plane coordinate?.<
 
 <p>So by viewing these coordinates we know where the object is!</p>
 
-<p>This comes in <em>**VERY **</em>handy when tracking the camera position during navigation.</p>
+<p>This comes in <strong><em>VERY</em></strong> handy when tracking the camera position during navigation.</p>
 
 <h3 id="tracking-the-camera">Tracking The Camera</h3>
 <p>The camera position can be found in the second child of whatever element is defined as the ‘container’ of the scene.</p>
@@ -1012,13 +1052,17 @@ but in the css z = -5000.0625, a <strong><em>NEGATIVE</em></strong> value.</p>
 
 <p>Because the camera is ‘facing’ <strong><em>toward</em></strong> the grid and the objects in the grid,
 the negative and positive values of the x, y, and z coordinates are OPPOSITE of the actual grid and objects.
-So the way it works in the three.js library is:
- * +x moves the camera to the LEFT of the grid whereas -z moves the camera to the RIGHT
- * +y moves the camera DOWN in the grid whereas -z moves the camera UP
- * +z moves the camera AWAY from the grid whereas -z moves the camera CLOSER</p>
+So the way it works in the three.js library is:</p>
 
-<p><strong><em>UPDATE</em></strong>
-I just was honored with a tweet from the great Ricardo Cabello Miguel aka <a href="http://www.mrdoob.com/">mr.doob</a>,
+<ul>
+  <li>+x moves the camera to the LEFT of the grid whereas -z moves the camera to the RIGHT</li>
+  <li>+y moves the camera DOWN in the grid whereas -z moves the camera UP</li>
+  <li>+z moves the camera AWAY from the grid whereas -z moves the camera CLOSER</li>
+</ul>
+
+<p><strong><em>UPDATE:</em></strong></p>
+
+<p>I just was honored with a tweet from the great Ricardo Cabello Miguel aka <a href="http://www.mrdoob.com/">mr.doob</a>,
 creator of three.js, about a better way to get the cameras position in relationship to an object:</p>
 
 <div class="embed tweet"><blockquote class="twitter-tweet"><p><a href="https://twitter.com/jewelsjacobs">@jewelsjacobs</a> I think you are making things harder than they are&#8230; why not just camera.position.distanceTo( object.position )?</p>&mdash; Mr.d ͡° ͜ʖ ͡°b (@mrdoob) <a href="https://twitter.com/mrdoob/statuses/327555248531050497">April 25, 2013</a></blockquote>

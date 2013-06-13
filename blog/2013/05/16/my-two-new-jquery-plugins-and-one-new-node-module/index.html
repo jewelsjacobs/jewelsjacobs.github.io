@@ -9,8 +9,7 @@
   <meta name="author" content="Julia Jacobs">
 
   
-  <meta name="description" content="On my quest to plugify and properly modulerize my code I created two new jQuery plugins and one new node nodule. jQuery plugins
-jQuery Prettify &hellip;">
+  <meta name="description" content="On my quest to plugify and properly modulerize my code I created two new jQuery plugins and one new node nodule. jQuery Plugins jQuery Simple Center &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -131,24 +130,54 @@ jQuery Prettify &hellip;">
 
 <p><!-- more --></p>
 
-<h1 id="jquery-plugins">jQuery plugins</h1>
+<ul id="markdown-toc">
+  <li><a href="#jquery-plugins">jQuery Plugins</a>    <ul>
+      <li><a href="#jquery-simple-center-plugin">jQuery Simple Center Plugin</a></li>
+      <li><a href="#jquery-prettify-plugin">jQuery Prettify Plugin</a></li>
+    </ul>
+  </li>
+  <li><a href="#node-module">Node Module</a>    <ul>
+      <li><a href="#titlecaps">titlecaps</a></li>
+    </ul>
+  </li>
+  <li><a href="#response-from-a-senior-dev">Response From A Senior Dev</a></li>
+  <li><a href="#my-response-to-his-response">My Response To His Response</a></li>
+</ul>
+
+<h1 id="jquery-plugins">jQuery Plugins</h1>
+
+<h2 id="jquery-simple-center-plugin">jQuery Simple Center Plugin</h2>
+
+<p><strong>UPDATE:</strong></p>
+
+<p>The a jQuery UI function <a href="http://api.jqueryui.com/position/">position()</a> centers fine so don’t
+even bother with this plugin.
+Also check out
+<a href="/blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive/">this post on responsive centering by extending bootsrap</a>
+for an easy CSS solution.</p>
+
+<p><a href="https://github.com/jewelsjacobs/jquery.simpleCenter">jQuery Simple Center Plugin</a>
+Simple jQuery plugin to vertically and horizontally center an element within another element.</p>
+
+<h2 id="jquery-prettify-plugin">jQuery Prettify Plugin</h2>
+
 <p><a href="https://github.com/jewelsjacobs/jquery.prettify">jQuery Prettify</a>
-jQuery plugin to print an associative array / object in the browser</p>
+jQuery plugin to print an associative array / object in the browser with
+option for highlighting.</p>
 
-<p>UPDATE: The a jQuery UI function <a href="http://api.jqueryui.com/position/">position()</a> centers fine so don’t
-even bother with the following plugin.</p>
+<h1 id="node-module">Node Module</h1>
 
-<p>My Simple Center Plugin
-<a href="https://github.com/jewelsjacobs/jquery.simpleCenter">jQuery Simple Center Plugin</a>
-Simple jQuery plugin to vertically and horizontally center an element within another element.
-#Node.js modules
-<a href="https://npmjs.org/package/titlecaps">titlecaps Node.js Module</a>
+<h2 id="titlecaps">titlecaps</h2>
+
+<p><a href="https://npmjs.org/package/titlecaps">titlecaps Node.js Module</a>
 Node module to capitalize first letter in each word</p>
 
 <p>Please bear in mind that they have not been node unit or qunit tested yet, just jhinted as I’m on a tight schedule at work.  
 I’ll make it happen very soon!</p>
 
-<p>UPDATE:  I was ‘schooled’ by the more experienced dev
+<h1 id="response-from-a-senior-dev">Response From A Senior Dev</h1>
+
+<p>I was ‘schooled’ by the more experienced dev
 <a href="http://uk.linkedin.com/in/nelsonic/">Nelson Kenneth Correia</a>
 who mentioned these plugins / mod were overkill.
 I thought it prudent to mention his response:</p>
@@ -183,11 +212,13 @@ I thought it prudent to mention his response:</p>
 <br />
 <br />I look forward to reading your *next* efforts. :-)</p><footer><strong>Nelson Kenneth Correia</strong></footer></blockquote>
 
+<h1 id="my-response-to-his-response">My Response To His Response</h1>
+
 <p>His caps code worked perfectly but his CSS code has to be changed depending on the sizes of the elements which is
 not exactly what I wanted to do.  The Prettify code he references doesn’t really do what I want either.</p>
 
-<p>I made the plugin because I wanted a way to spit out all of the necessary code dynamically without including it in the html file. B
-asically , just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag.
+<p>I made the plugin because I wanted a way to spit out all of the necessary code dynamically without
+including it in the html file. Basically ,just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag.
 You still have to attach the text to the pre tag or generate the pre tag.</p>
 </div>
 
