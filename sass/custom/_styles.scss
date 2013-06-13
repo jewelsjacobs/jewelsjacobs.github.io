@@ -28,4 +28,8 @@
   line-height: 1.45em;
 }
 
+.gist .gist-file .gist-data .file-data .lines {
+  width: 100%;
+}
+
 @import "custom/coderay";
