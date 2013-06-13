@@ -23,4 +23,9 @@
   border-right-color: #a5a5a5;
 }
 
+.gist .gist-file .gist-data .line-data {
+  font-size: 13px;
+  line-height: 1.45em;
+}
+
 @import "custom/coderay";
