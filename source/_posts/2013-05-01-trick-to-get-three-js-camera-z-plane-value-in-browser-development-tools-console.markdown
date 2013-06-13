@@ -11,10 +11,10 @@ Here's a tip on how to get the z plane camera position in chrome's console.
 
   <!-- more -->
 
-In this example my render DOM element container has an id of 'video_container'.
+In this example my render DOM element container has an id of `video_container`.
 Just replace it with yours. Also I'm using jquery so you will need to have that included in your app.
 
-I attached this to a global variable (poc is the global namespace of my app) so I can just enter "poc.DebugData()" in the console.
+I attached this to a global variable (`poc` is the global namespace of my app) so I can just enter `poc.DebugData()` in the console.
 
 {% coderay lang:javascript Debug Code %}
 poc.DebugData = function () {

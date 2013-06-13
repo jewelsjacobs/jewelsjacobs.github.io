@@ -8,13 +8,13 @@ footer: true
 categories: [javaScript, node.js]
 ---
 In a [previous post](/blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/)
-
 I showed how to create a dynamic namespace autoloader with node.js, express, and walk.
 
 <!-- more -->
-Please check out this article for information on how to set this up, what node modules to install and where to put this code.
+Please check out [that post](/blog/2013/05/16/create-dynamic-namespace-autoloader-with-node-js-express-walk-and-titlecaps/)
+for information on how to set this up, what node modules to install and where to put this code.
 
-In the http.createServer() function, add this code (or something like it):
+In the `http.createServer()` function, add this code (or something like it):
 
 {% include_code dynamicNamespaceObjectsFilenames.js %}
 

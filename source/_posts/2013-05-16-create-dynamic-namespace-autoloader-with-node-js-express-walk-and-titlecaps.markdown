@@ -12,10 +12,9 @@ based on the directory structure of my app.
 
   <!-- more -->
 
-Here's how:
 ##Requirements
 
-	<li><a title="node.js" href="http://nodejs.org/" target="_blank">node.js</a>
+ * [node.js](http://nodejs.org/)
 
 ###Node Modules
 
@@ -61,7 +60,7 @@ http.createServer(app).listen(app.get('port'), function(){
 To auto generate the namespace file when the http server starts, modify the http.createServer code block to look like this. Make sure to replace following variables:
 
  * ***startPath*** - path where your app directory resides in relation to the server.js / app.js file.
- * ***appName - global namespace.
+ * ***appName*** - global namespace.
  * ***filePath*** - path of the file you want to write the namespace code to.
 
 {% coderay lang:javascript Code to Add %}

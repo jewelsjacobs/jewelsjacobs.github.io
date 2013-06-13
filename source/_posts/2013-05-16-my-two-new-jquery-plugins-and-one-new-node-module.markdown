@@ -12,24 +12,43 @@ On my quest to plugify and properly modulerize my code I created two new jQuery 
 
   <!-- more -->
 
-#jQuery plugins
-[jQuery Prettify](https://github.com/jewelsjacobs/jquery.prettify)
-jQuery plugin to print an associative array / object in the browser
+* sample unordered list
+{:toc}
 
-UPDATE: The a jQuery UI function [position()](http://api.jqueryui.com/position/) centers fine so don't
-even bother with the following plugin.
+# jQuery Plugins
 
-My Simple Center Plugin
+## jQuery Simple Center Plugin
+
+**UPDATE:**
+
+The a jQuery UI function [position()](http://api.jqueryui.com/position/) centers fine so don't
+even bother with this plugin.
+Also check out
+[this post on responsive centering by extending bootsrap](/blog/2013/05/29/vertically-and-horizontally-center-with-twitter-bootstrap-responsive/)
+for an easy CSS solution.
+
 [jQuery Simple Center Plugin](https://github.com/jewelsjacobs/jquery.simpleCenter)
 Simple jQuery plugin to vertically and horizontally center an element within another element.
-#Node.js modules
+
+## jQuery Prettify Plugin
+
+[jQuery Prettify](https://github.com/jewelsjacobs/jquery.prettify)
+jQuery plugin to print an associative array / object in the browser with
+option for highlighting.
+
+# Node Module
+
+## titlecaps
+
 [titlecaps Node.js Module](https://npmjs.org/package/titlecaps)
 Node module to capitalize first letter in each word
 
 Please bear in mind that they have not been node unit or qunit tested yet, just jhinted as I'm on a tight schedule at work.  
 I'll make it happen very soon!
 
-UPDATE:  I was 'schooled' by the more experienced dev
+# Response From A Senior Dev
+
+I was 'schooled' by the more experienced dev
 [Nelson Kenneth Correia](http://uk.linkedin.com/in/nelsonic/)
 who mentioned these plugins / mod were overkill.
 I thought it prudent to mention his response:
@@ -67,9 +86,11 @@ The last thing I want is my junior developers copy-pasting this kind of code!
 I look forward to reading your *next* efforts. :-)
   {% endblockquote %}
 
+# My Response To His Response
+
 His caps code worked perfectly but his CSS code has to be changed depending on the sizes of the elements which is
 not exactly what I wanted to do.  The Prettify code he references doesn't really do what I want either.
 
-I made the plugin because I wanted a way to spit out all of the necessary code dynamically without including it in the html file. B
-asically , just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag.
+I made the plugin because I wanted a way to spit out all of the necessary code dynamically without
+including it in the html file. Basically ,just create a div, give the function and object and viola. From what I can tell of the plugin he refers to just formats text in a pre tag.
 You still have to attach the text to the pre tag or generate the pre tag.

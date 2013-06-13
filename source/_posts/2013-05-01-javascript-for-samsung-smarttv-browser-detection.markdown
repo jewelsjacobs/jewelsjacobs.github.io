@@ -8,7 +8,8 @@ footer: true
 categories: [javaScript]
 ---
 
-**UPDATE**
+**UPDATE:**
+
 This is better achieved with a Modernizr plugin called [Detectizr](https://github.com/barisaydinoglu/Detectizr).
 Use that instead.  I'll keep the rest of this info for reference.
 
@@ -26,7 +27,9 @@ function isSmartTV() {
 This works because the Samsung SmartTV does not support Web Sockets which I find out by running the
 [Modernizr Test Suite](http://modernizr.github.io/Modernizr/test/index.html) on the SmartTV.
 
-UPDATE: Actually I wound up changing this to use User-Agent sniffing based on a
+**UPDATE:**
+
+Actually I wound up changing this to use User-Agent sniffing based on a
 great [discussion](http://lnkd.in/Wtidi7) I had with [Derek Anderson](www.linkedin.com/in/dmikey)
 
 {% coderay lang:javascript User-Agent Sniffing %}

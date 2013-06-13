@@ -25,9 +25,10 @@ Basically a 3D grid has an ***x plane*** (which is horizontal), a ***y plane***
 (which is vertical) and a ***z plane*** (which is depth)
 
 An object with coordinates x=0, y=0 and z=0 is smack in the ***middle*** of this grid
- * A negative coordinate on the x plane will move an element left, positive to the right
- * A negative coordinate on the y plane will move an element down, positive will move it up
- * A negative coordinate on the z plane will move an element back, positive will move it forward
+
+* A negative coordinate on the x plane will move an element left, positive to the right
+* A negative coordinate on the y plane will move an element down, positive will move it up
+* A negative coordinate on the z plane will move an element back, positive will move it forward
 
   {% imgcap http://www.chromesphere.com/tutorials/other/Co-ordinates/xyz%20planes_full.png 3D Grid %}
 
@@ -78,7 +79,7 @@ Say you've got an object element with the following css:
 
 So by viewing these coordinates we know where the object is!
 
-This comes in ***VERY ***handy when tracking the camera position during navigation.
+This comes in ***VERY*** handy when tracking the camera position during navigation.
 
 ###Tracking The Camera
 The camera position can be found in the second child of whatever element is defined as the 'container' of the scene.
@@ -131,11 +132,13 @@ What gives?
 Because the camera is 'facing' ***toward*** the grid and the objects in the grid,
 the negative and positive values of the x, y, and z coordinates are OPPOSITE of the actual grid and objects.
 So the way it works in the three.js library is:
- * +x moves the camera to the LEFT of the grid whereas -z moves the camera to the RIGHT
- * +y moves the camera DOWN in the grid whereas -z moves the camera UP
- * +z moves the camera AWAY from the grid whereas -z moves the camera CLOSER
 
- ***UPDATE***
+* +x moves the camera to the LEFT of the grid whereas -z moves the camera to the RIGHT
+* +y moves the camera DOWN in the grid whereas -z moves the camera UP
+* +z moves the camera AWAY from the grid whereas -z moves the camera CLOSER
+
+ ***UPDATE:***
+
 I just was honored with a tweet from the great Ricardo Cabello Miguel aka [mr.doob](http://www.mrdoob.com/),
 creator of three.js, about a better way to get the cameras position in relationship to an object:
 
