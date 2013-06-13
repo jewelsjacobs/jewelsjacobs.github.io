@@ -116,4 +116,5 @@ You should then see your new app on your new Heroku website!
 
 Be sure to check it out on a mobile device or tablet.
 
+## Resources
 Want to learn more?  Check out [these resources](/resources/).

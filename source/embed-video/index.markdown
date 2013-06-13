@@ -52,4 +52,5 @@ If you can't get it right, just copy and paste that full code into your `index.j
 
 Now refresh your local site and you should see the embedded video.
 
+## Hosting In The Cloud
 [Hosting Your New Site On The Cloud](/heroku/)

@@ -135,4 +135,5 @@ Apps like this tend to use an HTML template parser like jade because it’s easy
 
 Now go back to [http://localhost:3000/](http://localhost:3000/) and refresh the page.  Fabulous!
 
+## Embedding Video
 [Let's Embed Some Video . . ](/embed-video/)
