@@ -24,9 +24,7 @@ cross browser / cross platform apps.
 
 ## What Technologies Will We Be Using
 
-**NOTE:**
-
-***Do not download anything from these links.  Programs you will need to download
+<i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> ***Do not download anything from these links.  Programs you will need to download
 will be listed in the [Downloading And Installing Stuff](http://html5devgal.com/getting-started/#downloading-and-installing-stuff)
  section.  These are here just for reference.***
 

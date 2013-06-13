@@ -57,9 +57,8 @@ host our sites.
  Enter the email and password of your new Heroku account and then allow Heroku to
  generate a public key.
 
- **NOTE**
-
- A lot of permission errors occur because of public / private key craziness.
+ <i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> A lot of permission errors occur
+ because of public / private key craziness.
  If you run into any `Permission denied (publickey)` errors during this process,
  get with me and I will help.  If you're looking for ways to fix it yourself,
  check out this [Managing Your SSH Keys](https://devcenter.heroku.com/articles/keys)

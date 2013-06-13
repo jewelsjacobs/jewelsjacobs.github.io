@@ -36,13 +36,11 @@ After the lines
        Place embedded YouTube Code after this line
     {% endcoderay %}
 
-**One tricky thing to note abut jade:**
+<i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> **The jade tag heirchy is based on
+indentation.  You have to make sure your newly pasted code is indented in the right place. IT MUST BE
+6 SPACES FROM THE LEFT EDGE OF THE DOCUMENT.**
 
-The jade tag heirchy is based on indentation.  You have to make sure your newly pasted code is indented in the right place.
-
-**IT MUST BE 6 SPACES FROM THE LEFT EDGE OF THE DOCUMENT.**
-
-Otherwise the express web server will complain.
+***Otherwise the express web server will complain.***
 
 It should look like this:
 

@@ -16,7 +16,8 @@ categories: [node.js, javaScript, bootstrap, jade, express]
 Download the following:
 
  * [node.js installer](http://nodejs.org/)
- * [Heroku Toolbelt](https://toolbelt.heroku.com/windows). ***This can take a while to install
+ * [Heroku Toolbelt](https://toolbelt.heroku.com/windows).
+ <i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> ***This can take a while to install
  as files get downloaded during the process.  If the installer seems to hang or freeze with a full progress bar,
  just wait a couple of minutes and it will continue.***
  * [A cool coding tool / IDE called Sublime Text](http://www.sublimetext.com/)
@@ -76,7 +77,7 @@ Here's how:
 
  3. In the new Command Window type the commands shown below.
 
-    **NOTE: When asked to type commands in the Command Window, make sure to press
+    <i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> **When asked to type commands in the Command Window, make sure to press
     the enter key after every line and wait till each command task is compleated
     before entering the next line.**
 
