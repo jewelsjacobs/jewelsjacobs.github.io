@@ -46,7 +46,8 @@ It should look like this:
 
 {% gist 5760251 %}
 
-If you can't get it right, just copy and paste that full code into your `index.jade` file and save it.
+If you can't get it right, just replace all of your current `index.jade` file code
+with the code above and save it.
 
 Now refresh your local site (at http://localhost:3000/) and you should see the embedded video.
 
