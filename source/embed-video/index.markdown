@@ -48,7 +48,7 @@ It should look like this:
 
 If you can't get it right, just copy and paste that full code into your `index.jade` file and save it.
 
-Now refresh your local site and you should see the embedded video.
+Now refresh your local site (at http://localhost:3000/) and you should see the embedded video.
 
 ## Hosting In The Cloud
 [Hosting Your New Site On The Cloud](/heroku/)

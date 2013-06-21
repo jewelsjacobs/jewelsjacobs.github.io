@@ -105,24 +105,34 @@ Here's how:
 
 ## Making Your Site Pretty With A Bootstrap Template
 
+### Layout Page
+
  1. In Sublime Text open up the `layout.jade` file in the `app\views` directory
 
     {% imgcap /images/layout_jade.png Add Folders To Project %}
 
- 2. Copy and paste the code below into that file.  If you have problems copying and pasting the code,
- click on the grey `view raw` link  to open up a webpage with the raw code.
+ 2. Copy and paste the code below into that file.
 
-    {% imgcap /images/view_raw.png View Raw Code In Seperate Page %}
+<i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> **When asked to copy and paste code, make sure
+all the origional code / text in the file is deleted first. Unless asked to copy and paste after a specific
+line or section in the code.**
+
+ If you have problems copying and pasting the code, click on the grey `view raw` link
+ to open up a webpage with the raw code.
+
+{% imgcap /images/view_raw.png View Raw Code In Seperate Page %}
 
  It's easier to copy and paste the code from that seperate page.
 
 {% gist 5759325 %}
 
- 3. In Sublime Text open up the `index.jade` file in the same `views` directory.
+### Home Page
+
+ 1. In Sublime Text open up the `index.jade` file in the same `views` directory.
 
     {% imgcap /images/index_jade.png index.jade %}
 
- 4. Copy and paste this code into that file:
+ 2. Copy and paste this code into that file:
 
 {% gist 5759336 %}
 
