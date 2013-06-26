@@ -4,7 +4,7 @@
   <title><![CDATA[Category: About Me | HTML5 Dev Gal]]></title>
   <link href="http://html5devgal.com//blog/categories/about-me/atom.xml" rel="self"/>
   <link href="http://html5devgal.com//"/>
-  <updated>2013-06-26T12:14:45-05:00</updated>
+  <updated>2013-06-26T12:39:31-05:00</updated>
   <id>http://html5devgal.com//</id>
   <author>
     <name><![CDATA[Julia Jacobs]]></name>
@@ -92,7 +92,7 @@ You still have to attach the text to the pre tag or generate the pre tag.</p>
     <link href="http://html5devgal.com//blog/2013/05/01/career-tips-for-javascript-developers/"/>
     <updated>2013-05-01T05:59:00-05:00</updated>
     <id>http://html5devgal.com//blog/2013/05/01/career-tips-for-javascript-developers</id>
-    <content type="html"><![CDATA[<p><span class='caption-wrapper'><img class='caption' src='http://s3.amazonaws.com/rapgenius/1291131680_two-thumbs-up.jpg' width='' height='' alt='I am very much success in my jobs!' title='I am very much success in my jobs!'><span class='caption-text'>I am very much success in my jobs!</span></span></p>
+    <content type="html"><![CDATA[<p><span class='caption-wrapper'><img class='caption' src='http://s3.amazonaws.com/rapgenius/1291131680_two-thumbs-up.jpg' alt='I am very much success in my jobs!' title='I am very much success in my jobs!'><span class='caption-text'>I am very much success in my jobs!</span></span></p>
 
 <p>Here’s some tips that will benefit ANY JavaScript developer on their path to success:</p>
 
