@@ -7,8 +7,8 @@ module Jekyll
     @img = nil
     @title = nil
     @class = ''
-#    @width = ''
-#    @height = ''
+    @width = ''
+    @height = ''
 
     def initialize(tag_name, markup, tokens)
       if markup =~ /(\S.*\s+)?(https?:\/\/|\/)(\S+)(\s+\d+\s+\d+)?(\s+.+)?/i
@@ -17,13 +17,13 @@ module Jekyll
         if $5
           @title = $5.strip
         end
-#        if $4 =~ /\s*(\d+)\s+(\d+)/
-#          @width = $1
-#          @height = $2
-#        else
-#          @width = $1
-#          @height = $2
-#        end
+        if $4 =~ /\s*(\d+)\s+(\d+)/
+          @width = $1
+          @height = $2
+        else
+          @width = 'auto'
+          @height = 'auto'
+        end
       end
       super
     end
@@ -32,8 +32,7 @@ module Jekyll
       output = super
       if @img
         "<span class='#{('caption-wrapper ' + @class).rstrip}'>" +
-#          "<img class='caption' src='#{@img}' width='#{@width}' height='#{@height}' alt='#{@title}' title='#{@title}'>" +
-          "<img class='caption' src='#{@img}' alt='#{@title}' title='#{@title}'>" +
+          "<img class='caption' src='#{@img}' width='#{@width}' height='#{@height}' alt='#{@title}' title='#{@title}'>" +
           "<span class='caption-text'>#{@title}</span>" +
         "</span>"
       else
