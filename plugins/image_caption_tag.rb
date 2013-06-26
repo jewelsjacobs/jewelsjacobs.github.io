@@ -21,8 +21,8 @@ module Jekyll
           @width = $1
           @height = $2
         else
-          @width = 'auto'
-          @height = 'auto'
+          @width = 'auto !important'
+          @height = 'auto !important'
         end
       end
       super
@@ -32,7 +32,7 @@ module Jekyll
       output = super
       if @img
         "<span class='#{('caption-wrapper ' + @class).rstrip}'>" +
-          "<img class='caption' src='#{@img}' width='#{@width}' height='#{@height}' alt='#{@title}' title='#{@title}'>" +
+          "<img class='caption' src='#{@img}' style='width:#{@width}; height:#{@height};' alt='#{@title}' title='#{@title}'>" +
           "<span class='caption-text'>#{@title}</span>" +
         "</span>"
       else

@@ -34,11 +34,11 @@ module Jekyll
         end
         @img['class'].gsub!(/"/, '') if @img['class']
       end
-      if !@img['width'].nil?
-        @img['width']      = 'auto'
+      if width.nil?
+        @img.delete('width')
       end
-      if !@img['height'].nil?
-        @img['height']     = 'auto'
+      if height.nil?
+        @img.delete('height')
       end
       super
     end
