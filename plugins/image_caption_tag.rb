@@ -7,8 +7,8 @@ module Jekyll
     @img = nil
     @title = nil
     @class = ''
-    @width = ''
-    @height = ''
+    @width = 'auto'
+    @height = 'auto'
 
     def initialize(tag_name, markup, tokens)
       if markup =~ /(\S.*\s+)?(https?:\/\/|\/)(\S+)(\s+\d+\s+\d+)?(\s+.+)?/i
