@@ -61,7 +61,7 @@ You do this by adding it's location to the Windows PATH environment variable:
 
     {% imgcap /images/var_value.png Add path %}
 
-## Install Web App
+## Install Your Web App
 
  1. In Windows Explorer, simply hold <kbd>Shift</kbd> and **right-click** on the `app` folder.
  2. Choose Open Command Window here
