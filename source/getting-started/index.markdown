@@ -28,7 +28,7 @@ Then install your new stuff.
 
 ## Setting Up Your Application Environment
 
- 1. Go to your Documents folder.
+ 1. Go to your `Documents` or `My Documents` folder.
  2. Create a directory called `app` in Windows Explorer.
 
 ### Adding ssh-keygen To Your PATH
