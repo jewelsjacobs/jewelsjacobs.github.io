@@ -56,7 +56,7 @@ cross browser / cross platform apps.
 ## Preparing For The Course
 
  * You'll save time by downloading and installing all of the required applications before
- the class.  View the [Downloading And Installing Stuff](http://html5devgal.com/getting-started/#downloading-and-installing-stuff)
+ the lab.  View the [Downloading And Installing Stuff](http://html5devgal.com/getting-started/#downloading-and-installing-stuff)
  section.
 
 ## [Lets Get Started . . .](/getting-started/)
