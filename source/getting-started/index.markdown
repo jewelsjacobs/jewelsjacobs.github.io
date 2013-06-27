@@ -39,8 +39,8 @@ unless you tell Windows where to find it.
 
 You do this by adding it's location to the Windows PATH environment variable:
 
- 1. Click the `Start` button on the bottem left corner of your screen.  On the right side of the `Start Menu` you'll see
-  `Computer`.  Right click on `Computer` and choose `Properties` from the pop-up / context menu.
+ 1. Click the `Start` {% imgcap /images/windows_start_button.jpg 36 36 %} button on the bottem left corner of your screen.
+ On the right side of the `Start Menu` you'll see `Computer`.  Right click on `Computer` and choose `Properties` from the pop-up / context menu.
 
     {% imgcap /images/computer_properties.png Computer Properties %}
 
