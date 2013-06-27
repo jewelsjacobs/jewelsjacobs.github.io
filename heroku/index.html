@@ -128,7 +128,9 @@
     </ul>
   </li>
   <li><a href="#deploy-your-app-to-heroku">Deploy Your App To Heroku</a></li>
-  <li><a href="#viewing-your-new-heroku-hosted-site">Viewing Your New Heroku Hosted Site</a></li>
+  <li><a href="#viewing-your-new-heroku-hosted-app">Viewing Your New Heroku Hosted App</a></li>
+  <li><a href="#updating-your-heroku-app">Updating Your Heroku App</a></li>
+  <li><a href="#permission-denied-publickey-error"><code>Permission denied (publickey)</code> Error</a></li>
   <li><a href="#resources">Resources</a></li>
 </ul>
 
@@ -251,12 +253,7 @@ includes it.</p>
 </div>
  </figure></notextile></div>
 
-<p><i class="icon-exclamation-sign bg_red_icon"> </i> A lot of permission errors occur
-because of public / private key craziness. If you run into any <code>Permission denied (publickey)</code> errors
-during this process, get with me and I will help.  If you’re looking for ways to fix it yourself,
-check out <a href="https://devcenter.heroku.com/articles/keys">Heroku’s guide to managing Your SSH Keys</a>.</p>
-
-<p>These commands will:</p>
+<p>The git commands will:</p>
 
 <ul>
   <li>Turn your app directory into a local git repository,</li>
@@ -265,13 +262,47 @@ check out <a href="https://devcenter.heroku.com/articles/keys">Heroku’s guide 
   <li>Deploy the local git repository to the remote Heroku repository and app</li>
 </ul>
 
-<h2 id="viewing-your-new-heroku-hosted-site">Viewing Your New Heroku Hosted Site</h2>
+<h2 id="viewing-your-new-heroku-hosted-app">Viewing Your New Heroku Hosted App</h2>
 
 <p>After the app has finished deploying to Heroku, you can open it up
 in your browser by typing <code>heroku open</code> in the Command Window.
-You should then see your new app on your new Heroku website!</p>
+You should then see your new app on your new Heroku app!</p>
 
 <p>Be sure to check it out on a mobile device or tablet.</p>
+
+<h2 id="updating-your-heroku-app">Updating Your Heroku App</h2>
+
+<p>If you want to make changes to your app and then load those changes back up to Heroku:</p>
+
+<ol>
+  <li>Make and save your code changes in Sublime Text.</li>
+  <li>Open up your <code>app</code> directory in the Command Window.  You can <a href="http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window">go back to the directions</a>.</li>
+  <li>Type the following git commands:</li>
+</ol>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+      git add .
+      git commit -m &quot;some message describing your changes&quot;
+      git push heroku master
+    </pre></div>
+</div>
+ </figure></notextile></div>
+
+<p>This is where you might get a <code>Permission denied (publickey)</code> error.</p>
+
+<h2 id="permission-denied-publickey-error"><code>Permission denied (publickey)</code> Error</h2>
+
+<p>A lot of permission errors occur because of public / private key craziness. If you run into any <code>Permission denied (publickey)</code> errors
+during this process, get with me and I will help.</p>
+
+<p>If you’re looking for ways to fix it yourself,
+check out <a href="https://devcenter.heroku.com/articles/keys">Heroku’s guide to managing Your SSH Keys</a>. If that doesn’t work,
+do some Googleing. You’ll find ALOT of people who have ran into the same problem and posted fixes.</p>
+
+<p>Some posted fixes might be documented with *nix commands, so make sure
+you use DOS command equivalants in the Command Window.
+Here’s <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Step_by_Step_Guide/ap-doslinux.html">a good DOS to Linux commands guide</a>.</p>
 
 <h2 id="resources">Resources</h2>
 <p>Want to learn more?  Check out <a href="/resources/">these resources</a>.</p>
