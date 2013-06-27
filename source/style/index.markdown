@@ -28,7 +28,7 @@ Table of Contents
 
 ## Editing Your App In The Sublime Text Program
 
- 1. In the Sublime Text program's top menu choose `Project -> Add Folder to Project . . .`.
+ 1. In the Sublime Text program's top menu choose `Project -> Add Folder to Project...`.
 
     {% imgcap /images/add_folder_to_project.png Add Folder To Project %}
 
