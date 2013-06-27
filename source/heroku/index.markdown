@@ -16,12 +16,12 @@ Table of Contents
 ## Putting Your Site On The Cloud
 
 [Heroku](https://www.heroku.com/) is a great cloud based host that offers free accounts for developers
-with very small sites that won't take up a lot of resources.
+with very small sites or apps that won't take up a lot of resources.
 
 {% imgcap /images/heroku.png 97 36 Heroku %}
 
-It's a perfect way to publish your site for free.  We are going to use Heroku to
-host our sites.
+It's a perfect way to publish your site or app for free.  We are going to use Heroku to
+host our app.
 
 ## Configuring Your App For Heroku
 
