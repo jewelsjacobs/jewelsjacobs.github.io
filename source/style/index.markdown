@@ -83,7 +83,7 @@ Save the code by pressing <kbd>Control</kbd> **+** <kbd>S</kbd>.
 
 I know [jade](http://jade-lang.com/) looks like weirded out HTML for those of you that are familiar with HTML.  It's an HTML
 template engine that the node.js server compiles into regular HTML using the express node module. We could have just
-as well used regular HTML. The express modue automatically defaults to jade so I kept it to keep this simple.
+as well used regular HTML. The express module app creator automatically defaults to jade so I kept it to keep this simple.
 
 There are a TON of similar template engines that are designed to make HTML coding quicker with less markup.
 If you want to take a look at some, check out the [Template Chooser](http://garann.github.io/template-chooser/).
