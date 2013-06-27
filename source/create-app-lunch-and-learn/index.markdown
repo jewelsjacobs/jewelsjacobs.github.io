@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Lunch And Learn To Create An Amazing HTML5 App With Embedded Video"
+title: "Create An Amazing HTML5 App With Embedded Video"
 date: 2013-06-11 13:26
 comments: false
 sharing: false
 footer: false
-categories: [node.js, javaScript, bootstrap, jade, express]
+categories: [node.js, javaScript, bootstrap, jade, express, html5, video, howto]
 ---
 
 Table of Contents

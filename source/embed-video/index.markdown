@@ -5,7 +5,7 @@ date: 2013-06-11 15:00
 comments: false
 sharing: false
 footer: false
-categories: [node.js, javaScript, bootstrap, jade, express, video]
+categories: [node.js, javaScript, bootstrap, jade, express, html5, video, howto]
 ---
 
 Table of Contents

@@ -5,7 +5,7 @@ date: 2013-06-11 16:03
 comments: false
 sharing: false
 footer: false
-categories: [node.js, javaScript, bootstrap, jade, express, video]
+categories: [node.js, javaScript, bootstrap, jade, express, html5, video, howto]
 ---
 
 Table of Contents
@@ -18,7 +18,7 @@ Table of Contents
 [Heroku](https://www.heroku.com/) is a great cloud based host that offers free accounts for developers
 with very small sites that won't take up a lot of resources.
 
-{% imgcap /images/heroku.png Heroku %}
+{% imgcap /images/heroku.png 97 36 Heroku %}
 
 It's a perfect way to publish your site for free.  We are going to use Heroku to
 host our sites.
@@ -26,7 +26,7 @@ host our sites.
 ## Configuring Your App For Heroku
 
  1. Sign Up for a free Heroku account by going to [the Heroku site](https://www.heroku.com/)
-  and clicking the  'Sign Up' button. {% imgcap /images/signup.png Sign Up Button %}
+  and clicking the `Sign Up` {% imgcap /images/signup.png 143 36 %} button.
  2. Follow the instructions to confirm your account and create a password.
 
 ### Creating The Procfile
@@ -100,6 +100,12 @@ includes it.
       heroku create
       git push heroku master
     {% endcoderay %}
+
+
+<i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> A lot of permission errors occur
+because of public / private key craziness. If you run into any `Permission denied (publickey)` errors
+during this process, get with me and I will help.  If you're looking for ways to fix it yourself,
+check out [Heroku's guide to managing Your SSH Keys](https://devcenter.heroku.com/articles/keys).
 
 These commands will:
 
