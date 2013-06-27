@@ -101,26 +101,49 @@ includes it.
       git push heroku master
     {% endcoderay %}
 
-
-<i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> A lot of permission errors occur
-because of public / private key craziness. If you run into any `Permission denied (publickey)` errors
-during this process, get with me and I will help.  If you're looking for ways to fix it yourself,
-check out [Heroku's guide to managing Your SSH Keys](https://devcenter.heroku.com/articles/keys).
-
-These commands will:
+The git commands will:
 
  * Turn your app directory into a local git repository,
  * Add and commit all of the app files to the repository
  * Create a Heroku website (also called an app)
  * Deploy the local git repository to the remote Heroku repository and app
 
-## Viewing Your New Heroku Hosted Site
+## Viewing Your New Heroku Hosted App
 
 After the app has finished deploying to Heroku, you can open it up
 in your browser by typing `heroku open` in the Command Window.
-You should then see your new app on your new Heroku website!
+You should then see your new app on your new Heroku app!
 
 Be sure to check it out on a mobile device or tablet.
+
+## Updating Your Heroku App
+
+If you want to make changes to your app and then load those changes back up to Heroku:
+
+1. Make and save your code changes in Sublime Text.
+2. Open up your `app` directory in the Command Window.  You can [go back to the directions](http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window).
+3. Type the following git commands:
+
+    {% coderay %}
+      git add .
+      git commit -m "some message describing your changes"
+      git push heroku master
+    {% endcoderay %}
+
+This is where you might get a `Permission denied (publickey)` error.
+
+## `Permission denied (publickey)` Error
+
+A lot of permission errors occur because of public / private key craziness. If you run into any `Permission denied (publickey)` errors
+during this process, get with me and I will help.
+
+If you're looking for ways to fix it yourself,
+check out [Heroku's guide to managing Your SSH Keys](https://devcenter.heroku.com/articles/keys). If that doesn't work,
+do some Googleing. You'll find ALOT of people who have ran into the same problem and posted fixes.
+
+Some posted fixes might be documented with *nix commands, so make sure
+you use DOS command equivalants in the Command Window.
+Here's [a good DOS to Linux commands guide](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Step_by_Step_Guide/ap-doslinux.html).
 
 ## Resources
 Want to learn more?  Check out [these resources](/resources/).
