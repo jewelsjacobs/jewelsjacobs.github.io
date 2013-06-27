@@ -9,7 +9,7 @@
   <meta name="author" content="Julia Jacobs">
 
   
-  <meta name="description" content="Embedding Video Jun 11th, 2013 Getting Some YouTube Code Hosting In The Cloud Getting Some YouTube Code We are going to keep things super simple by &hellip;">
+  <meta name="description" content="Embedding Video Jun 11th, 2013 Table of Contents Getting Some YouTube Code For Developers - Adding More YouTube Videos Check Out Your App! Advanced &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -117,25 +117,25 @@
 <time datetime="2013-06-11T15:00:00-05:00" pubdate data-updated="true">Jun 11<span>th</span>, 2013</time></p>
   </header>
   
-  <ul id="markdown-toc">
-  <li><a href="#getting-some-youtube-code">Getting Some YouTube Code</a></li>
-  <li><a href="#hosting-in-the-cloud">Hosting In The Cloud</a></li>
+  <p>Table of Contents</p>
+
+<ul id="markdown-toc">
+  <li><a href="#getting-some-youtube-code">Getting Some YouTube Code</a>    <ul>
+      <li><a href="#for-developers---adding-more-youtube-videos">For Developers - Adding More YouTube Videos</a></li>
+    </ul>
+  </li>
+  <li><a href="#check-out-your-app">Check Out Your App!</a></li>
+  <li><a href="#advanced---hosting-your-new-site-on-the-cloud---heroku"><a href="/heroku/">Advanced - Hosting Your New Site On The Cloud &#8230;</a></a></li>
 </ul>
 
 <h2 id="getting-some-youtube-code">Getting Some YouTube Code</h2>
 
 <p>We are going to keep things super simple by embedding one YouTube Video
-into the site.</p>
-
-<p>YouTube gives you code to embed any video on it’s website into a webpage.
-I grabbed some embed code and converted it into the jade syntax with that <a href="http://html2jade.aaron-powell.com/">handy HTML to Jade converter</a>.</p>
-
-<p>If you want to grab some different HTML embed code,
-you can get instructions on how to do this
-<a href="http://www.htmlgoodies.com/tutorials/web_graphics/article.php/3480061/How-To-Add-a-YouTube-Video-to-Your-Web-Site.htm">here</a>.</p>
+into the app code.</p>
 
 <ol>
-  <li>Go to the <code>index.jade</code> file again in Sublime Text</li>
+  <li>Go to the <code>index.jade</code> file again in Sublime Text. <i class="icon-exclamation-sign bg_red_icon"> </i> <strong>Do not delete
+ any of the existing code.</strong></li>
   <li>Copy and paste</li>
 </ol>
 
@@ -162,75 +162,48 @@ indentation.  You have to make sure your newly pasted code is indented in the ri
 
 <p><strong><em>Otherwise the express web server will complain.</em></strong></p>
 
-<p>It should look like this:</p>
+<p>It should look like this (lines 29 and 30):</p>
 
 <div><script src="https://gist.github.com/5760251.js"></script>
 <noscript><pre><code /></pre></noscript></div>
 
 <p>If you can’t get it right, just replace all of your current <code>index.jade</code> file code
-with the code above and save it.</p>
+with the code above.</p>
 
-<p>Now refresh your local site (at http://localhost:3000/) and you should see the embedded video.</p>
+<p>Save the code by pressing <kbd>Control</kbd> <strong>+</strong> <kbd>S</kbd>.</p>
 
-<h2 id="hosting-in-the-cloud">Hosting In The Cloud</h2>
-<p><a href="/heroku/">Hosting Your New Site On The Cloud</a></p>
+<h3 id="for-developers---adding-more-youtube-videos">For Developers - Adding More YouTube Videos</h3>
 
-  
-    <footer>
-      <p class="meta">
-        
-        
+<p>YouTube gives you code to embed any video on it’s website into a webpage.
+I grabbed some embed code and converted it into the jade syntax with that <a href="http://html2jade.aaron-powell.com/">handy HTML to Jade converter</a>.</p>
 
+<p>If you want to grab some different HTML embed code,
+you can <a href="http://www.htmlgoodies.com/tutorials/web_graphics/article.php/3480061/How-To-Add-a-YouTube-Video-to-Your-Web-Site.htm">get instructions on how to do this here</a>.</p>
 
+<p>After you get the HTML embed snippet, just run it through that html to jade converter.
+Then paste the line into your <code>index.jade</code> file right after the last video code line.</p>
 
+<h2 id="check-out-your-app">Check Out Your App!</h2>
+<p>Now go to your local app <a href="http://localhost:3000/">http://localhost:3000/</a> and you should see the embedded video.
+If you’re app does not load you probably don’t have the node server running. Here’s how to make that happen.</p>
 
+<ol>
+  <li>Open up your <code>app</code> directory in the Command Window.  You can <a href="http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window">go back to the directions</a>
+ if you need to.</li>
+  <li>Run the following commands in the Command Window:</li>
+</ol>
 
-
-
-
-  
-
-
-<time datetime="2013-06-11T15:00:00-05:00" pubdate data-updated="true">Jun 11<span>th</span>, 2013</time>
-        
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/bootstrap/'>bootstrap</a>, <a class='category' href='/blog/categories/express/'>express</a>, <a class='category' href='/blog/categories/jade/'>jade</a>, <a class='category' href='/blog/categories/javascript/'>javaScript</a>, <a class='category' href='/blog/categories/node-dot-js/'>node.js</a>, <a class='category' href='/blog/categories/video/'>video</a>
-  
-</span>
-
-
-      </p>
-      
-        <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5devgal.com//embed-video/index.html" data-via="jewelsjacobs" data-counturl="http://html5devgal.com//embed-video/index.html" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-  
-  <script src="//platform.linkedin.com/in.js" type="text/javascript">
-  lang: en_US
-  </script>
-  <script type="IN/Share" data-counter="right"></script>
-  
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
+  <div class="code"><pre>
+      node app
+    </pre></div>
 </div>
+ </figure></notextile></div>
 
-      
-    </footer>
+<h2 id="advanced---hosting-your-new-site-on-the-cloud---heroku"><a href="/heroku/">Advanced - Hosting Your New Site On The Cloud &#8230;</a></h2>
+
   
 </article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
 
 </div>
 
@@ -389,22 +362,6 @@ $(".fancybox").eq(0).trigger('click');
   });
 </script>
 
-
-<script type="text/javascript">
-      var disqus_shortname = 'html5devgal';
-      
-        
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://html5devgal.com//embed-video/index.html';
-        var disqus_url = 'http://html5devgal.com//embed-video/index.html';
-        var disqus_script = 'embed.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
 
 
 

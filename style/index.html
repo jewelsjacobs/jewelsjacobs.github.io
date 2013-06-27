@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Getting Started - HTML5 Dev Gal</title>
+  <title>Give Your App Some Style - HTML5 Dev Gal</title>
   <meta name="author" content="Julia Jacobs">
 
   
-  <meta name="description" content="Getting Started Jun 11th, 2013 Table of Contents Downloading And Installing Stuff Setting Up Your Application Environment Adding ssh-keygen To Your &hellip;">
+  <meta name="description" content="Give Your App Some Style Jun 26th, 2013 Table of Contents Using The Sublime Text Program Run The Sublime Text Program Editing Your App In The &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://html5devgal.com//getting-started/">
+  <link rel="canonical" href="http://html5devgal.com//style/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css" rel="stylesheet">
@@ -101,7 +101,7 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Getting Started</h1>
+    <h1 class="entry-title">Give Your App Some Style</h1>
     <p class="meta">
 
 
@@ -114,119 +114,159 @@
   
 
 
-<time datetime="2013-06-11T13:58:00-05:00" pubdate data-updated="true">Jun 11<span>th</span>, 2013</time></p>
+<time datetime="2013-06-26T18:24:00-05:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time></p>
   </header>
   
   <p>Table of Contents</p>
 
 <ul id="markdown-toc">
-  <li><a href="#downloading-and-installing-stuff">Downloading And Installing Stuff</a></li>
-  <li><a href="#setting-up-your-application-environment">Setting Up Your Application Environment</a>    <ul>
-      <li><a href="#adding-ssh-keygen-to-your-path">Adding ssh-keygen To Your PATH</a></li>
+  <li><a href="#using-the-sublime-text-program">Using The Sublime Text Program</a>    <ul>
+      <li><a href="#run-the-sublime-text-program">Run The Sublime Text Program</a></li>
     </ul>
   </li>
-  <li><a href="#install-web-app">Install Web App</a></li>
-  <li><a href="#adding-style-to-your-site---style"><a href="/style/">Adding Style To Your Site &#8230;</a></a></li>
+  <li><a href="#editing-your-app-in-the-sublime-text-program">Editing Your App In The Sublime Text Program</a></li>
+  <li><a href="#making-your-site-pretty-with-a-bootstrap-template">Making Your Site Pretty With A Bootstrap Template</a>    <ul>
+      <li><a href="#layout-page">Layout Page</a></li>
+      <li><a href="#home-page">Home Page</a></li>
+      <li><a href="#a-note-about-jade-vs-html-for-html-developers">A Note About Jade vs. HTML for HTML developers</a>        <ul>
+          <li><a href="#how-does-jade-look-when-converted-to-html">How Does Jade Look When Converted To HTML?</a></li>
+          <li><a href="#how-does-html-look-when-converted-to-jade">How Does HTML Look When Converted To Jade?</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#admiring-the-fruits-of-your-labor">Admiring The Fruits Of Your Labor</a></li>
+  <li><a href="#lets-embed-some-video---embed-video"><a href="/embed-video/">Let’s Embed Some Video . . </a></a></li>
 </ul>
 
-<h2 id="downloading-and-installing-stuff">Downloading And Installing Stuff</h2>
+<h2 id="using-the-sublime-text-program">Using The Sublime Text Program</h2>
 
-<p>Download the following:</p>
-
-<ul>
-  <li><a href="http://nodejs.org/">node.js installer</a></li>
-  <li><a href="https://toolbelt.heroku.com/windows">Heroku Toolbelt</a>.
- <i class="icon-exclamation-sign bg_red_icon"> </i> <strong><em>This can take a while to install
- as files get downloaded during the process.  If the installer seems to hang or freeze with a full progress bar,
- just wait a couple of minutes and it will continue.</em></strong></li>
-  <li><a href="http://www.sublimetext.com/">Sublime Text</a></li>
-</ul>
-
-<p>Then install your new stuff.</p>
-
-<h2 id="setting-up-your-application-environment">Setting Up Your Application Environment</h2>
-
-<ol>
-  <li>Go to your Documents folder.</li>
-  <li>Create a directory called <code>app</code> in Windows Explorer.</li>
-</ol>
-
-<h3 id="adding-ssh-keygen-to-your-path">Adding ssh-keygen To Your PATH</h3>
-
-<p>There is an application called <code>ssh-keygen</code> installed with Heroku
-Toolbelt.  Unfortunatly you can’t run it in your Command Window
-unless you tell Windows where to find it.</p>
-
-<p>You do this by adding it’s location to the Windows PATH environment variable:</p>
+<h3 id="run-the-sublime-text-program">Run The Sublime Text Program</h3>
 
 <ol>
   <li>
-    <p>Click the <code>Start</code> button on the bottem left corner of your screen.  On the right side of the <code>Start Menu</code> you’ll see
-  <code>Computer</code>.  Right click on <code>Computer</code> and choose <code>Properties</code> from the pop-up / context menu.</p>
+    <p>Click on the <code>Start</code> <span class="caption-wrapper"><img class="caption" src="/images/windows_start_button.jpg" style="width:36px; height:36px;" alt="" title="" /><span class="caption-text"></span></span> button in the bottem left corner of your desktop.</p>
 
-    <p><span class="caption-wrapper"><img class="caption" src="/images/computer_properties.png" style="width:auto !important; height:auto !important;" alt="Computer Properties" title="Computer Properties" /><span class="caption-text">Computer Properties</span></span></p>
+    <p><span class="caption-wrapper"><img class="caption" src="/images/start_menu.png" style="width:auto !important; height:auto !important;" alt="Start Menu" title="Start Menu" /><span class="caption-text">Start Menu</span></span></p>
   </li>
+  <li>Type <code>Sublime</code> in the <code>Search Programs and files</code> box <span class="caption-wrapper"><img class="caption" src="/images/search_program_box.png" style="width:204px; height:36px;" alt="" title="" /><span class="caption-text"></span></span></li>
   <li>
-    <p>Click <code>Advanced Systems Settings</code> on the left.</p>
+    <p>Double click on <code>Sublime Text 2</code> to launch it.  You might have to wait a minute or two for Sublime Text to launch.</p>
 
-    <p><span class="caption-wrapper"><img class="caption" src="/images/system_advanced_settings_thumb.png" style="width:auto !important; height:auto !important;" alt="Advanced System Settings" title="Advanced System Settings" /><span class="caption-text">Advanced System Settings</span></span></p>
-  </li>
-  <li>
-    <p>Click the <code>Advanced</code> tab and then the <code>Environment Variables. . .</code> button.</p>
-
-    <p><span class="caption-wrapper"><img class="caption" src="/images/windows_7_enviroment_variables.png" style="width:auto !important; height:auto !important;" alt="Environment Variables Button" title="Environment Variables Button" /><span class="caption-text">Environment Variables Button</span></span></p>
-  </li>
-  <li>
-    <p>Double click <code>PATH</code> (or it might be <code>Path</code>).  It can either be listed under <code>User variables</code> or <code>System variables</code>.</p>
-
-    <p><span class="caption-wrapper"><img class="caption" src="/images/add_to_PATH.png" style="width:auto !important; height:auto !important;" alt="Double click PATH" title="Double click PATH" /><span class="caption-text">Double click PATH</span></span></p>
-  </li>
-  <li>
-    <p>Add <code>C:\Program Files (x86)\Git\bin</code> into the <code>Variable Value</code>.
- Make sure you separate the value with <code>;</code>.</p>
-
-    <p><span class="caption-wrapper"><img class="caption" src="/images/var_value.png" style="width:auto !important; height:auto !important;" alt="Add path" title="Add path" /><span class="caption-text">Add path</span></span></p>
+    <p><span class="caption-wrapper"><img class="caption" src="/images/run_sublime.png" style="width:auto !important; height:auto !important;" alt="Launch Sublime Text" title="Launch Sublime Text" /><span class="caption-text">Launch Sublime Text</span></span></p>
   </li>
 </ol>
 
-<h2 id="install-web-app">Install Web App</h2>
+<h2 id="editing-your-app-in-the-sublime-text-program">Editing Your App In The Sublime Text Program</h2>
 
 <ol>
-  <li>In Windows Explorer, simply hold <kbd>Shift</kbd> and <strong>right-click</strong> on the <code>app</code> folder.</li>
   <li>
-    <p>Choose Open Command Window here</p>
+    <p>In the Sublime Text program’s top menu choose <code>Project -&gt; Add Folder to Project . . .</code>.</p>
 
-    <p><span class="caption-wrapper"><img class="caption" src="/images/openCommandWindow.png" style="width:auto !important; height:auto !important;" alt="Shift + Right-Click on folder" title="Shift + Right-Click on folder" /><span class="caption-text">Shift + Right-Click on folder</span></span></p>
+    <p><span class="caption-wrapper"><img class="caption" src="/images/add_folder_to_project.png" style="width:auto !important; height:auto !important;" alt="Add Folder To Project" title="Add Folder To Project" /><span class="caption-text">Add Folder To Project</span></span></p>
   </li>
   <li>
-    <p>Your black DOS Command Window should now be open and the current directory will be the
- <code>C:\Users\-YourUserName-\Documents\app</code> directory.</p>
+    <p>In the <code>Browse For Folder</code> window that just came up, find your User folder.</p>
 
-    <p><span class="caption-wrapper"><img class="caption" src="/images/command_window.png" style="width:auto !important; height:auto !important;" alt="Command Window" title="Command Window" /><span class="caption-text">Command Window</span></span></p>
+    <p><span class="caption-wrapper"><img class="caption" src="/images/UserFolder.png" style="width:auto !important; height:auto !important;" alt="The User Folder" title="The User Folder" /><span class="caption-text">The User Folder</span></span></p>
   </li>
   <li>
-    <p>In the new Command Window type the commands shown below.</p>
+    <p>Navigate to and select the <code>app</code> folder in the <code>My Documents</code> folder. Click the <code>OK</code> button.</p>
 
-    <p><i class="icon-exclamation-sign bg_red_icon"> </i> <strong>When asked to type commands in the Command Window, make sure to press
-the enter key after every line and wait till each command task is compleated
-before entering the next line.</strong></p>
+    <p><span class="caption-wrapper"><img class="caption" src="/images/NavToAppDir.png" style="width:auto !important; height:auto !important;" alt="Select and add app folder" title="Select and add app folder" /><span class="caption-text">Select and add app folder</span></span></p>
   </li>
+</ol>
+
+<p>Don’t be too intimitated with all of the files and folders.
+ For those of you who are interested in learning more about this application structure, I’d be happy to
+ explain it afterwords.</p>
+
+<h2 id="making-your-site-pretty-with-a-bootstrap-template">Making Your Site Pretty With A Bootstrap Template</h2>
+
+<h3 id="layout-page">Layout Page</h3>
+
+<ol>
+  <li>
+    <p>In the Sublime Text program, on the left side, click the left arrow next to <code>views</code> to expand the folder.</p>
+
+    <p><span class="caption-wrapper"><img class="caption" src="/images/ExpandViews.png" style="width:auto !important; height:auto !important;" alt="Expand views folder" title="Expand views folder" /><span class="caption-text">Expand views folder</span></span></p>
+  </li>
+  <li>
+    <p>Double click on the <code>layout.jade</code> file shown beneath the <code>views</code> folder on the left side.</p>
+
+    <p><span class="caption-wrapper"><img class="caption" src="/images/layout_jade.png" style="width:auto !important; height:auto !important;" alt="layout.jade" title="layout.jade" /><span class="caption-text">layout.jade</span></span></p>
+  </li>
+  <li>Delete the exsisting code in the file.</li>
+  <li>Copy and paste the code below into that file.
+If you have problems copying and pasting the code below, click on <span class="caption-wrapper"><img class="caption" src="/images/view_raw.png" style="width:81px; height:34px;" alt="" title="" /><span class="caption-text"></span></span>
+to open up a webpage with the raw code. It’s easier to copy and paste the code from that seperate page.</li>
+</ol>
+
+<div><script src="https://gist.github.com/5759325.js"></script>
+<noscript><pre><code /></pre></noscript></div>
+
+<p>Save the code by pressing <kbd>Control</kbd> <strong>+</strong> <kbd>S</kbd>.</p>
+
+<h3 id="home-page">Home Page</h3>
+
+<ol>
+  <li>
+    <p>In the Sublime Text program double click on the <code>index.jade</code> file shown beneath the <code>views</code> folder on the left side.</p>
+
+    <p><span class="caption-wrapper"><img class="caption" src="/images/index_jade.png" style="width:auto !important; height:auto !important;" alt="index.jade" title="index.jade" /><span class="caption-text">index.jade</span></span></p>
+  </li>
+  <li>Delete the exsisting code in the file.</li>
+  <li>Copy and paste the code below into that file.  You can use the raw code by clicking on <span class="caption-wrapper"><img class="caption" src="/images/view_raw.png" style="width:81px; height:34px;" alt="" title="" /><span class="caption-text"></span></span>
+ if you found it easier.</li>
+</ol>
+
+<div><script src="https://gist.github.com/5759336.js"></script>
+<noscript><pre><code /></pre></noscript></div>
+
+<p>Save the code by pressing <kbd>Control</kbd> <strong>+</strong> <kbd>S</kbd>.</p>
+
+<h3 id="a-note-about-jade-vs-html-for-html-developers">A Note About Jade vs. HTML for HTML developers</h3>
+
+<p>I know <a href="http://jade-lang.com/">jade</a> looks like weirded out HTML for those of you that are familiar with HTML.  It’s an HTML
+template engine that the node.js server compiles into regular HTML using the express node module. We could have just
+as well used regular HTML. The express modue automatically defaults to jade so I kept it to keep this simple.</p>
+
+<p>There are a TON of similar template engines that are designed to make HTML coding quicker with less markup.
+If you want to take a look at some, check out the <a href="http://garann.github.io/template-chooser/">Template Chooser</a>.</p>
+
+<h4 id="how-does-jade-look-when-converted-to-html">How Does Jade Look When Converted To HTML?</h4>
+
+<p>If you want to see what the index.jade or layout.jade file will look like when compiled into an HTML file, you’ll
+have to do the following:</p>
+
+<ol>
+  <li>Open up your <code>app</code> directory in the Command Window.  You can <a href="http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window">go back to the directions</a>
+ if you need to.</li>
+  <li>Run the following commands in the Command Window to convert the <code>index.jade</code> file:</li>
 </ol>
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="CodeRay">
   <div class="code"><pre>
-      npm install -g express –S
-      express
-      npm install
-      node app
+      npm install -g jade
+      cd views
+      jade index.jade
     </pre></div>
 </div>
  </figure></notextile></div>
 
-<p>Open up a browser and visit <a href="http://localhost:3000/">http://localhost:3000/</a> to see your bare bones, node.js, express app.</p>
+<p>You can then find an index.html file in the Sublime Text program where the index.jade file is.</p>
 
-<h2 id="adding-style-to-your-site---style"><a href="/style/">Adding Style To Your Site &#8230;</a></h2>
+<h4 id="how-does-html-look-when-converted-to-jade">How Does HTML Look When Converted To Jade?</h4>
 
+<p>If you’ve got some HTML code and you want to know what it would look like as jade code
+you can use <a href="http://html2jade.aaron-powell.com/">this handy HTML to Jade converter</a>.</p>
+
+<h2 id="admiring-the-fruits-of-your-labor">Admiring The Fruits Of Your Labor</h2>
+
+<p>Now go back to <a href="http://localhost:3000/">http://localhost:3000/</a>.  If you don’t see your changes, you might have to
+refresh the cache. <a href="http://www.refreshyourcache.com/en/home/">Here are instructions to refresh cache for all different types of browsers</a>.</p>
+
+<h2 id="lets-embed-some-video---embed-video"><a href="/embed-video/">Let’s Embed Some Video . . </a></h2>
 
   
 </article>
