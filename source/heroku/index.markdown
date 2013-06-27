@@ -2,11 +2,13 @@
 layout: page
 title: "Cloud Hosting With Heroku"
 date: 2013-06-11 16:03
-comments: true
-sharing: true
-footer: true
+comments: false
+sharing: false
+footer: false
 categories: [node.js, javaScript, bootstrap, jade, express, video]
 ---
+
+Table of Contents
 
 * sample unordered list
 {:toc}
@@ -29,7 +31,7 @@ host our sites.
 
 ### Creating The Procfile
 
- 1. Create a new file in Sublime Text.
+ 1. In the Sublime Text program's top menu choose `File -> New File` to create a new blank file.
 
     {% imgcap /images/create_new_file.png Create New File In Sublime Text %}
 
@@ -39,10 +41,16 @@ host our sites.
     web: node app.js
     {% endcoderay %}
 
- 3.  Save the file in your `app` directory.  Name it `Procfile` and don't add any type of file
+### Saving The Procfile
+
+ 1. In the Sublime Text program's top menu choose `File -> Save As...`.
+
+    {% imgcap /images/save_as.png %}
+
+ 2. Save the file as `Procfile` in your `app` directory. Don't add any type of file
  extension like `.txt`.
 
-{% imgcap /images/save_procfile.png Save The Procfile %}
+    {% imgcap /images/save_proc.png %}
 
 ### Logging Into Heroku
 
@@ -57,24 +65,17 @@ host our sites.
  Enter the email and password of your new Heroku account and then allow Heroku to
  generate a public key.
 
- <i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> A lot of permission errors occur
- because of public / private key craziness.
- If you run into any `Permission denied (publickey)` errors during this process,
- get with me and I will help.  If you're looking for ways to fix it yourself,
- check out this [Managing Your SSH Keys](https://devcenter.heroku.com/articles/keys)
- Heroku Guide.
-
 ## Deploy Your App To Heroku
 
 Heroku manages your application in it's own Git repository.  Git is a version control system
 like Subversion or Perforce.  If you want to know more about Git
 [check out this site](http://git-scm.com/). If you want to know more about working with
-Heroku's git repository [take a look here](https://devcenter.heroku.com/articles/git#tracking-your-app-in-git).
+Heroku's Git repository [take a look here](https://devcenter.heroku.com/articles/git#tracking-your-app-in-git).
 
-Don't worry though, you don't need to know anything about git to get your app on Heroku.
+Don't worry though, you don't need to know anything about Git to get your app on Heroku.
 Just follow these instructions.
 
-You also don't need to worry about installing git as the Heroku Toolbelt you already installed
+You also don't need to worry about installing Git as the Heroku Toolbelt you already installed
 includes it.
 
  1. Follow the [previous instructions](http://html5devgal.com/getting-started/#running-some-commands-in-the-command-window)
@@ -88,7 +89,7 @@ includes it.
 
  3. Type the following `git` commands in the Command Window.
  Also note that you might get some warnings about line endings.  Don't worry about that.
- Replace `you@example.com` with the email address you used for your Heroku account and `Your Name` with your name.
+ **Replace `you@example.com` with the email address you used for your Heroku account and `Your Name` with your name.**
 
     {% coderay %}
       git init

@@ -2,11 +2,13 @@
 layout: page
 title: "Getting Started"
 date: 2013-06-11 13:58
-comments: true
-sharing: true
-footer: true
+comments: false
+sharing: false
+footer: false
 categories: [node.js, javaScript, bootstrap, jade, express]
 ---
+
+Table of Contents
 
 * sample unordered list
 {:toc}
@@ -20,9 +22,7 @@ Download the following:
  <i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> ***This can take a while to install
  as files get downloaded during the process.  If the installer seems to hang or freeze with a full progress bar,
  just wait a couple of minutes and it will continue.***
- * [A cool coding tool / IDE called Sublime Text](http://www.sublimetext.com/)
-
- {% imgcap /images/Sublime_Text_Logo.png Sublime Text %}
+ * [Sublime Text](http://www.sublimetext.com/)
 
 Then install your new stuff.
 
@@ -37,9 +37,7 @@ There is an application called `ssh-keygen` installed with Heroku
 Toolbelt.  Unfortunatly you can't run it in your Command Window
 unless you tell Windows where to find it.
 
-You do this by adding it's location to the Windows PATH environment variable.
-
-Here's how:
+You do this by adding it's location to the Windows PATH environment variable:
 
  1. Click the `Start` button on the bottem left corner of your screen.  On the right side of the `Start Menu` you'll see
   `Computer`.  Right click on `Computer` and choose `Properties` from the pop-up / context menu.
@@ -63,19 +61,19 @@ Here's how:
 
     {% imgcap /images/var_value.png Add path %}
 
-## Running Some Commands in The Command Window
+## Install Web App
 
  1. In Windows Explorer, simply hold <kbd>Shift</kbd> and **right-click** on the `app` folder.
  2. Choose Open Command Window here
 
     {% imgcap /images/openCommandWindow.png Shift + Right-Click on folder  %}
 
- 3. Your Command Window should now be open and the current directory will be the
- `C:\Users\-YourUserName-\Documents\app>` directory.
+ 3. Your black DOS Command Window should now be open and the current directory will be the
+ `C:\Users\-YourUserName-\Documents\app` directory.
 
     {% imgcap /images/command_window.png Command Window  %}
 
- 3. In the new Command Window type the commands shown below.
+ 4. In the new Command Window type the commands shown below.
 
     <i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> **When asked to type commands in the Command Window, make sure to press
     the enter key after every line and wait till each command task is compleated
@@ -87,64 +85,7 @@ Here's how:
       npm install
       node app
     {% endcoderay %}
- 4. Open up a browser and visit [http://localhost:3000/](http://localhost:3000/) to see your bare bones, node.js, express website.
+Open up a browser and visit [http://localhost:3000/](http://localhost:3000/) to see your bare bones, node.js, express app.
 
-## Create A Project In Sublime Text
+## [Adding Style To Your Site . . .](/style/)
 
- 1. Open up the Sublime Text program.
- 2. In the top menu choose `Project -> Add Folder to Project . . .`.
-
-    {% imgcap /images/add_folder_to_project.png Add Folders To Project %}
-
- 3. Navigate to the application directory.  This will be the `app` directory you created in Documents. You'll see all of the files express installed
- to create your app.
-
- Don't be too intimitated with all of the files and folders.
- For those of you who are interested in learning more about this application structure, I'd be happy to
- explain it afterwords.
-
-## Making Your Site Pretty With A Bootstrap Template
-
-### Layout Page
-
- 1. In Sublime Text open up the `layout.jade` file in the `app\views` directory
-
-    {% imgcap /images/layout_jade.png Add Folders To Project %}
-
- 2. Copy and paste the code below into that file.
-
-<i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> **When asked to copy and paste code, make sure
-all the origional code / text in the file is deleted first. Unless asked to copy and paste after a specific
-line or section in the code.**
-
- If you have problems copying and pasting the code, click on the grey `view raw` link
- to open up a webpage with the raw code.
-
-{% imgcap /images/view_raw.png View Raw Code In Seperate Page %}
-
- It's easier to copy and paste the code from that seperate page.
-
-{% gist 5759325 %}
-
-### Home Page
-
- 1. In Sublime Text open up the `index.jade` file in the same `views` directory.
-
-    {% imgcap /images/index_jade.png index.jade %}
-
- 2. Copy and paste this code into that file:
-
-{% gist 5759336 %}
-
-I know jade looks like weirded out HTML for those of you that are familiar with HTML.
-
-Anyone freaked out by the jade syntax and used to HTML syntax can use [this handy HTML to Jade converter](http://html2jade.aaron-powell.com/).
-
-Apps like this tend to use an HTML template parser like jade because it’s easy to integrate dynamic server side data.
-
-## Admiring The Fruits Of Your Labor
-
-Now go back to [http://localhost:3000/](http://localhost:3000/) and refresh the page.  Fabulous!
-
-## Embedding Video
-[Let's Embed Some Video . . ](/embed-video/)

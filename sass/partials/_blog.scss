@@ -52,7 +52,11 @@ article {
   }
   .caption-wrapper {
     display: inline-block;
-    margin-bottom: 10px;
+    vertical-align: middle;
+    .caption {
+      display: block;
+      margin: 0 auto;
+    }
     .caption-text {
       background: #fff;
       text-align: center;

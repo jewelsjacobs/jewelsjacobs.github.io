@@ -2,45 +2,34 @@
 layout: page
 title: "Lunch And Learn To Create An Amazing HTML5 App With Embedded Video"
 date: 2013-06-11 13:26
-comments: true
-sharing: true
-footer: true
+comments: false
+sharing: false
+footer: false
 categories: [node.js, javaScript, bootstrap, jade, express]
 ---
 
-{% imgcap /images/html5Rocks.png HTML5 Rocks! %}
+Table of Contents
 
 * sample unordered list
 {:toc}
 
-## Netfix, Hulu and Google (YouTube) Are Doing It - Why Can't You?
+## Be Your Own Internet Video Provider
 
-{% imgcap /images/ivps.png Internet Sevice Providers Using HTML5 %}
+{% imgcap pull-left /images/ivps.png 150 150 IVPs Using HTML5 %}
 
-HTML5 is all the rage these days.  I know you've all probably seen presentations and read articles.
+HTML5 is all the rage these days.
+I know you've all probably seen presentations and read articles.
 This is going to be a little different.  Today we are going to make an HTML5 app using
 a lot of the same technologies Netflix, Hulu and other internet video providers use to create
 cross browser / cross platform apps.
 
 ## What Technologies Will We Be Using
 
-<i class="icon-exclamation-sign bg_red_icon" markdown="0"> </i> ***Do not download anything from these links.  Programs you will need to download
-will be listed in the [Downloading And Installing Stuff](http://html5devgal.com/getting-started/#downloading-and-installing-stuff)
- section.  These are here just for reference.***
+{% imgcap pull-left /images/nodejs-light.png 150 36 node.js %}
 
- * [node.js - a JavaScript server](http://nodejs.org/)
+{% imgcap pull-left /images/bootstrap.png 36 36 Twitter Bootstrap %}
 
- {% imgcap /images/nodejs-light.png node.js %}
-
- * [express - a node.js module web server](http://expressjs.com/) . . . *no IIS or Apache here!*
-
- * [Twitter Bootstrap - A clean responsive design layout framework](http://twitter.github.io/bootstrap/)
-
- {% imgcap /images/bootstrap.png Twitter Bootstrap %}
-
- * [jade - html node templating engine](http://jade-lang.com/)
-
- {% imgcap /images/jade.png Jade %}
+{% imgcap /images/jade.png 63 36 Jade %}
 
 ## What You Need
 
@@ -70,5 +59,4 @@ will be listed in the [Downloading And Installing Stuff](http://html5devgal.com/
  the class.  View the [Downloading And Installing Stuff](http://html5devgal.com/getting-started/#downloading-and-installing-stuff)
  section.
 
-## Getting Started
-[Lets Get Started!](/getting-started/)
+## [Lets Get Started . . .](/getting-started/)

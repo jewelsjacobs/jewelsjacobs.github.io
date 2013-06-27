@@ -18,8 +18,8 @@ module Jekyll
           @title = $5.strip
         end
         if $4 =~ /\s*(\d+)\s+(\d+)/
-          @width = $1
-          @height = $2
+          @width = $1 + 'px'
+          @height = $2 + 'px'
         else
           @width = 'auto !important'
           @height = 'auto !important'
