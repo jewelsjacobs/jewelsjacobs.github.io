@@ -2,6 +2,7 @@
 layout: post
 title: "Finally Got JSdocs Working With My Node App"
 date: 2013-06-10 14:40
+comments: true
 sharing: true
 footer: true
 categories: [jsdoc, documentation, node.js, javaScript]
